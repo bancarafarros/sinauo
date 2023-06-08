@@ -1,0 +1,6 @@
+body {
+    background-color: lightcoral;
+    background-image: url(gambar/boy.png);
+    background-repeat: repeat-x;
+    background-position: top center;
+}
