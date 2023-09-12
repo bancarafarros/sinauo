@@ -1,0 +1,38 @@
+div {
+    display: block;
+}
+
+span {
+    display: inline;
+}
+
+nilai default property display
+{
+    display: inline;
+    display: block;
+    display: inline-block;
+    display: none;           
+}
+
+inline
+> secara default tidak menambahkan baris baru
+> lebar dan tinggi elemen sebesar konten di dalamnya
+> tinggi dan lebar elemen inline tidak dapat diatur kecuali diubah jadi inline-block
+> margin dan padding hanya mempengaruhi elemen secara horizontal
+> b, strong, i, em, a, span, dll adalah contoh yg punya inline
+> img aja yg bisa diatur widthnya sama heightnya
+
+inline-block
+> gk ada tag yang secara default punya property display: inline-block
+> kalo mau punya harus diubah secara manual
+> perilaku dasarnya = inline
+> inline-block bisa diatur widthnya sama heightnya
+
+block
+> tag html yang secara default menambahkan baris baru ketika dibuat
+> jika lebarnya / widthnya tidak diatur maka secara default lebarnya / widthnya akan memenuhi halaman browser / parentnya
+> di dalam tag dengan default block kita dapat menyimpan tag yang memiliki inline, inline-block, block
+> h1-h6, p, hr, div, dll adalah contoh yg punya block
+
+none
+> digunakan untuk menghilangkan sebuah tag
