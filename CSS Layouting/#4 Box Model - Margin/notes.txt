@@ -1,0 +1,19 @@
+OVERLAPPING MARGIN
+> 2 margin vertikal beda elemen gk berlaku, karena diambil margin yg paling gede, jadinya kena overlapping margin vertikal
+> overlapping margin horizontal berlaku, dengan syarat:
+    > display diganti jadi inline-block
+    > tag div gk pake enter (nempel semua)
+
+NEGATIVE MARGIN
+sesuai namanya, kalo dipake jadi kebalik / berlawanan
+kalo top yg harusnya biar turun malah jadi naek
+
+AUTO
+> value khusus buat property margin-left margin-right
+> harus dipake left right (22nya), gk boleh salah satu
+
+SHORTHAND
+> 1 value buat dipake empat sisi
+> 2 value, value pertama buat atas bawah, value kedua buat kiri kanan
+> 3 value, value pertama atas, value kedua buat kiri kanan, value ketiga buat bawah
+> 4 value buat atas, kanan, bawah, dan kiri (dibaca dari kiri)
