@@ -1,0 +1,10 @@
+> setiap elemen di halaman berada di dalam sebuah box
+> kita bisa mengatur ukuran dan posisi kotak tsb
+> kita bisa memberi warna / gambar sebaga background kotak tsb
+
+css box model terdiri dari:
+    > margin: area transparan di sekitar kotak (di luar border)
+    > padding: area transparan di dalam kotak (antara content dan border)
+    > border: batas di sekeliling content dan padding
+    > content: isi sebenarnya di dalam box, bisa text / gambar
+
