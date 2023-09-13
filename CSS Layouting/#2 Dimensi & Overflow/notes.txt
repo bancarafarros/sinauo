@@ -1,0 +1,14 @@
+Dimensi
+> width & height punya satuan:
+    > px, absolut
+    > %, relative
+
+    > in; cm; mm, ukuran duni nyata
+    > pt; pc, buat di percetakan
+
+Overflow
+punya value:
+    > visible: value default
+    > auto: full otomatis, bisa ngasih scroll sama ngilangin scroll
+    > hidden: ngumpetin konten yg kelebihan
+    > scroll: ngasih scroll aja tapi gk bisa ngumpetin scroll
