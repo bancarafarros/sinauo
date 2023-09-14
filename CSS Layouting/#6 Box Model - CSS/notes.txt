@@ -1,0 +1,2 @@
+> css harus direset supaya bisa meiliki kendali penuh terhadap css tsb
+> bisa make css reset buat reset css biar gampang
