@@ -1,3 +1,5 @@
+margin 0 gk perlu dikasih satuan px
+
 OVERLAPPING MARGIN
 > 2 margin vertikal beda elemen gk berlaku, karena diambil margin yg paling gede, jadinya kena overlapping margin vertikal
 > overlapping margin horizontal berlaku, dengan syarat:

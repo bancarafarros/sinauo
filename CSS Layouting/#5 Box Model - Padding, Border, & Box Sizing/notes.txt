@@ -8,6 +8,7 @@ PADDING
 > 3 value, value pertama atas, value kedua buat kiri kanan, value ketiga buat bawah
 > 4 value buat atas, kanan, bawah, dan kiri (dibaca dari kiri)
 > kalo mau make diitung dulu border, padding, sama width height biar elemennya gk kegedean
+> padding 0 gk perlu dikasih satuan px
 
 BORDER
 > panduan /*border: width style color;*/
