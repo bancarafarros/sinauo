@@ -1,0 +1,20 @@
+PADDING
+> biasa digunakan untuk memberikan jarak antara kotak dengan konten (isi) di dalamnya
+> gk bisa dikasih nilai negatif kayak margin (gk ngaruh gk jalan)
+> gk bisa dikasih nilai auto kayak margin (gk ngaruh gk jalan)
+> mempengaruhi ukuran elemen. semisal width sama height 300px dikasih padding 50px, ukuran elemennya jadi 350px
+> 1 value buat dipake empat sisi
+> 2 value, value pertama buat atas bawah, value kedua buat kiri kanan
+> 3 value, value pertama atas, value kedua buat kiri kanan, value ketiga buat bawah
+> 4 value buat atas, kanan, bawah, dan kiri (dibaca dari kiri)
+> kalo mau make diitung dulu border, padding, sama width height biar elemennya gk kegedean
+
+BORDER
+> panduan /*border: width style color;*/
+> style border ada solid, dotted, dashed, & doubled
+> mempengaruhi ukuran elemen. semisal width sama height 300px dikasih border 5px, ukuran elemennya jadi 305px
+> kalo mau make diitung dulu border, padding, sama width height biar elemennya gk kegedean
+
+BOX SIZING
+> biasanya yg diatur cuma lebar konten aja, tingginya gk perlu
+> properti & value box-sizing: border-box; buat ngatur ukuran elemen secara otomatis biar gk perlu ngitung2 ukuran elemen gara2 pake border sama padding
