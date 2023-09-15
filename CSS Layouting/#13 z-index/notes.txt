@@ -1,0 +1,6 @@
+z-index
+> property yg digunakan untuk mengatur tumpukan elemen non-static
+> value berupa angka
+> semakin besar angka maka elemen akan semakin berada di depan
+> kasih nilai paling gede biar elemennya di depan
+> kasih nilai paling kecil pake - biar elemennya di belakang
