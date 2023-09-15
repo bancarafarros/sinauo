@@ -1,0 +1,5 @@
+FLOAT
+> properti float bisa buat ngatur posisi dari sebuah elemen
+> sebeuah elemen bisa dipaksa untuk berada di sebelah kiri atau kanan dari parent dengan float
+> punya value default none, selain itu ada left sama right
+
