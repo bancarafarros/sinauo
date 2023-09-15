@@ -1,0 +1,10 @@
+POSITION
+> tidak seperti margin yg mempengaruhi elemen di sekitarnya
+> property position tidak mempengaruhi elemen di sekitarnya
+> punya value default static, serta relative, absolute, & fixed
+> sebuah elemen solah2 berada di dimensi lain ketika elemen tersebut diberi value selain static
+> elemen yg diberi value selain static dapat menggunakan property top, left, bottom, dan right
+
+> property top, left, bottom, dan right hampir sama dengan margin yg bisa geser2 bedanya harus pake property position relative dulu
+> ketika menggerakkan elemen dengan property top, left, bottom, dan right, ruang yang sebelumnya dipake sama elemen tadi masih ada
+> ketika menggerakkanelemen dengan posisi relative, elemen akan bergerak relatif thd posisi semulanya
