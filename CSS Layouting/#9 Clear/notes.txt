@@ -1,0 +1,12 @@
+cara stop / bersihin float
+> property overflow
+> property clear + div kosong
+> teknik micro clearfix
+
+CLEAR
+> property buat stop / bersihin float
+> punya value left, right, both
+> dipake barengan sama div kosong
+
+MICRO CLEARFIX
+> lebih efektif dibanding clear + div kosong
