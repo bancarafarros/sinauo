@@ -1,0 +1,10 @@
+ABSOLUTE
+> sebuah elemen seolah2 berada di dimensi lain ketika elemen tersebut diberi value selain static
+> ketika menggerakkan elemen dengan property top, left, bottom, dan right, ruang yang sebelumnya dipake sama elemen tadi dianggap tidak ada
+> ketika menggerakkan elemen dengan posisi absolute, elemen akan bergerak relatif thd posisi dari elemen parent, selama elemen parentnya memiliki value position selain static
+> jika diberi top: 0 dan left: 0 maka elemen akan berada di ujung kiri atas dari elemen parentnya
+
+FIXED
+> ketika menggerakkan elemen dengan posisi absolute, elemen akan bergerak relatif thd window, tidak peduli thd elemen parentnya meski memiliki value position non-static
+> value fixed ketika halaman discroll akan menempel di posisinya, tidak bergerak sama sekali
+> biasa digunakan untuk membuat navbar / topbar
