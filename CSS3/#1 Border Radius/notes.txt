@@ -1,0 +1,5 @@
+biar tulisan di dalem div yg udah dikasih border-radius gk keluar
+text-align: center;
+line-height: samain height elemen;
+
+biar elemen jadi lingkaran kasih 50% biar gampang
