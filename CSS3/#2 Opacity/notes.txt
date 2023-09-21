@@ -1,2 +1,5 @@
-kalo parentnya transparan childnya gk bisa dibikin solid
-kalo sebaliknya bisa
+> kalo parentnya transparan childnya gk bisa dibikin solid
+> kalo sebaliknya bisa
+> opacity buat ngasih transparan di elemen
+> kalo mau bikin elemen parent transparan elemen child solid bisa pake rgba
+> rgba buat ngasih transparan di warna bukan di elemen
