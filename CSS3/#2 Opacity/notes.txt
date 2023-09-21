@@ -1,0 +1,2 @@
+kalo parentnya transparan childnya gk bisa dibikin solid
+kalo sebaliknya bisa
