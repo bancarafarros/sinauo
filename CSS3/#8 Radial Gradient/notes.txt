@@ -1,0 +1,7 @@
+> radial-gradient itu VALUE buat property background-image
+> bisa pake color stop background-image: radial-gradient(red 63%, green 80%);
+> background-image: radial-gradient(tipe jangkauan at y x , warna 1, warna 2, warna n);
+> tipe: circle | ellipse
+> jangkauan: closest-corner || closest-side || farthest-corner || farthest-side
+> posisi y: top || center || bottom || px
+> posisi x: left || center || right || px
