@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3 - Fonts</title>
+    <!-- cara kedua -->
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet"> -->
+    <style>
+        /* cara ketiga */
+        @font-face { /* font-face adalah PROPERTY */
+            font-family: "Rubik";
+            src: url('Rubik-Regular.ttf') format('truetype');
+        }
+        
+        h1 {
+            font-size: 100px;
+            text-align: center;
+            
+            /* cara pertama */
+            /* font-family: "Arial Narrow", arial, sans-serif; */
+
+            /* cara kedua */
+            /* font-family: 'Josefin Sans', sans-serif; */
+
+            /* cara ketiga */
+            font-family: 'Rubik', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello World</h1>
+</body>
+</html>
