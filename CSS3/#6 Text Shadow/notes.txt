@@ -1,0 +1,2 @@
+text-shadow: x y blur color;
+text-shadow: 5px 5px 10px green;
