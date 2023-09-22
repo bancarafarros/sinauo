@@ -1,0 +1,10 @@
+SPREAD
+> box-shadow: x y blur spead color;
+> box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .75);
+> spread buat ukuran bayangan, mirip padding / border
+> spread bisa dikasih nilai -
+
+INSET
+> box-shadow: inset x y blur spead color;
+> box-shadow: inset 5px 5px 10px 5px rgba(0, 0, 0, .75);
+> inset bikin bayangan pindah ke dalem elemen
