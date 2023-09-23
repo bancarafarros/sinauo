@@ -1,0 +1,9 @@
+> property yg dipake buat manipulasi format visual elemen html
+> bisa 2d bisa 3d
+> scale: memperbesar / memperkecil
+> rotate: memutar
+> skew: membuat condong /miring
+> translate: mengubah posisi
+> transform bisa ditumpuk
+> transform kerja pake hardware
+> transform lebih efektif daripada position top, left, dkk
