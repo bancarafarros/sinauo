@@ -1,0 +1,5 @@
+> filter: opacity() make hardware
+> opacity: make kemampuan browser
+> jadi lebih cepet kalo make filter:
+> filter: drop-shadow() bisa gantiin box-shadow sama text-shadow
+> filter: bisa dipake ditumpuk
