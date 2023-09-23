@@ -1,0 +1,9 @@
+> vendor prefix dipake biar css3 bisak dipake di semua browser
+> cara penulisan -vendor prefix- property css3
+> -webkit- buat chrome, safari, opera baru
+> -moz- buat firefox
+> -ms- buat intenert explorer
+> -o- buat opera lama
+> shouldiprefix.com
+> caniuse.com
+> pleeease.io
