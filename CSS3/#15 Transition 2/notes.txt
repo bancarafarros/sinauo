@@ -1,0 +1,10 @@
+> transition: property durasi fungsi delay
+> value dari fungsi / timing function:
+    > ease (deafult)
+    > ease-in
+    > ease-out
+    > ease-in-out
+    > linear
+    > cubic-bezier(w, x, y, z)
+
+> delay untuk memberikan jeda sebelum transition dijalankan
