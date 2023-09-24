@@ -2,26 +2,28 @@
 > transition: property durasi fungsi delay
 > durasi: s || ms
 
-animateable properties:
-> background-color
-> background-position
-> background—size
-> border
-> color
-> filter
-> font—size
-> line-height
-> top left bottom right
-> margin padding
-> width height
-> opacity
-> transform
-> word-spacing
-> letter-spacing
-> etc
+> property punya nilai default all
+> bisa milih property mana aja yg mau dijalanin di transition
+> animateable properties:
+    > background-color
+    > background-position
+    > background—size
+    > border
+    > color
+    > filter
+    > font—size
+    > line-height
+    > top left bottom right
+    > margin padding
+    > width height
+    > opacity
+    > transform
+    > word-spacing
+    > letter-spacing
+    > etc
 
 non-animateable properties:
-> font-family
-> display
-> position
-> etc
+    > font-family
+    > display
+    > position
+    > etc
