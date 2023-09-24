@@ -1,0 +1,61 @@
+@keyframes taKotak {
+    /* from {
+        width: 200px;
+    }
+
+    to {
+        width: 500px;
+    } */
+
+    /* bisa pake % */
+    0% {
+        width: 200px;
+    }
+
+    50% {
+        width: 500px;
+        height: 200px;
+    }
+
+    100% {
+        width: 500px;
+        height: 500px;
+    }
+}
+
+/* start */
+/* .kotak {
+    width: 200px;
+    height: 200px;
+    background-color: salmon;
+    animation: taKotak 2s ease;
+} */
+
+/* iteration-count */
+/* .kotak {
+    width: 200px;
+    height: 200px;
+    background-color: salmon;
+    animation: taKotak 2s ease 2;
+} */
+
+/* direction */
+/* .kotak {
+    width: 200px;
+    height: 200px;
+    background-color: salmon;
+    animation: taKotak 2s ease 2 alternate;
+} */
+
+/* fill-mode */
+.kotak {
+    width: 200px;
+    height: 200px;
+    background-color: salmon;
+    animation: taKotak 3s ease infinite alternate forwards;
+}
+
+/* property animation bisa ditaro di hover (pseudo class) atau di selector biasa */
+/* .kotak:hover {
+    animation: taKotak 2s ease;
+} */
