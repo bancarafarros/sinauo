@@ -37,7 +37,7 @@ h1 {
 }
 
 .gallery li,
-.gallery li img,
+.gallery li a img,
 .gallery li span {
     border-radius: 50%;
 }
@@ -74,11 +74,11 @@ h1 {
     position: fixed;
     top: 0;
     left: 0;
-    background-color: rgba(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0);
     z-index: 99;
     transition: .8s;
     text-align: center;
-    padding: 100px;
+    padding: 100px 0;
 }
 
 .overlay:target {
@@ -98,6 +98,25 @@ h1 {
     animation: zoomDanFade 1s;
 }
 
+/* close overlay */
+.overlay .close {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    margin-left: -20px;
+    color: white;
+    text-decoration: none;
+    background-color: black;
+    border: 1px solid white;
+    line-height: 14px;
+    padding: 50x;
+    opacity: 0;
+}
+
+.overlay:target .close {
+    animation: slideDownFade 500ms 500ms forwards;
+}
+
 /* animasi */
 @keyframes zoomDanFade {
     0% {
@@ -109,24 +128,6 @@ h1 {
         transform: scale(1);
         opacity: 1;
     }
-}
-
-/* close overlay */
-.overlay .close {
-    position: absolute;
-    top: 50px;
-    left: 50%;
-    /* margin-left: 10px; */
-    color: white;
-    text-decoration: none;
-    background-color: black;
-    border: 1px solid white;
-    line-height: 14px;
-    padding: 50x;
-}
-
-.overlay:target .close {
-    animation: slideDownFade 500ms 500ms forwards;
 }
 
 @keyframes slideDownFade {
