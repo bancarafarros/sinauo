@@ -1,0 +1,72 @@
+Pada prinsip ini, fokus utamanya adalah untuk meningkatkan jumlah feedback
+dan mempercepat proses penyampaian feedback dari Operations ke Development
+(atau bisa juga dari pengguna ke tim terkait) guna mencegah agar masalah tak terulang kembali, 
+memungkinkan deteksi masalah lebih dini, serta pemulihan infrastruktur lebih cepat.
+
+> Swarming dalam Menyelesaikan Masalah
+Perlu Anda pahami bahwa DevOps pada dasarnya dibangun berdasarkan kolaborasi antara
+Developer dan IT Operations.  Itu berarti, sudah jelas bahwa mekanisme 
+“three-tier support hierarchy” merupakan antitesis dari prinsip DevOps.
+
+muncul sebuah terobosan baru dalam dunia pengelolaan insiden/masalah bernama “swarming”. 
+Model ini secara eksplisit menolak mekanisme “three-tier support hierarchy” 
+yang berbasis eskalasi dan lebih mendukung proses berbasis kolaborasi.
+
+Beberapa prinsip intinya antara lain:
+Tidak boleh ada tim dukungan yang bertingkat.
+Tidak boleh ada eskalasi dari satu tim ke tim lain.
+Suatu insiden atau masalah harus diserahkan langsung ke orang yang paling mungkin dapat menyelesaikannya.
+Orang yang menangani masalah harus mengawasinya sampai masalah tersebut selesai.
+
+Swarming menawarkan mekanisme yang lebih baik, yaitu dengan mengeliminasi antrean dan handoff
+yang ada untuk setiap insiden/masalah dengan membawa responden ahli 
+(misal, dari Developer atau IT Operations) langsung ke inti masalah. Model swarming ini
+berfokus untuk mengurangi waktu yang dibutuhkan untuk penyelesaian masalah 
+sekaligus berbagi pengetahuan di antara tim terkait mengenai insiden yang terjadi dengan cepat.
+
+Model ini didasarkan pada kolaborasi berjejaring di seluruh tim teknis
+(misal, perpaduan dari Developer dan IT Operations) daripada pendekatan eskalasi
+bertingkat pada model “three-tier support hierarchy”.
+
+Umumnya terdapat beberapa kategori berikut:
+Severity 1 Swarm: Terdiri dari 3 orang yang ahli pada bidang atau topik tertentu
+pada aplikasi perusahaan (SME atau Subject Matter Expert) dari berbagai
+tim (umumnya dari Developer dan IT Operations) dan akan dirotasi setiap minggunya.
+Tujuan dari tim ini adalah untuk menangani masalah dengan tingkat keparahan tertinggi secepat mungkin.
+Sehingga, biasanya dari 100% jumlah insiden/masalah yang masuk, tim ini hanya mengerjakan 1% 
+yang memang benar-benar masuk dalam kategori kritis. Sisanya, akan dikerjakan oleh Local Dispatch
+
+Local Dispatch Swarm: Tim ini didedikasikan untuk menerima sebagian besar insiden/masalah
+yang masuk dari pengguna (sekitar 99% masalah akan masuk ke tim ini). Mereka bertemu tiap hari
+setiap 60–90 menit untuk memilih insiden/masalah yang dapat mereka selesaikan dengan cepat 
+(biasanya sekitar 30% akan selesai di sini) dan meneruskan insiden/masalah yang tidak dapat 
+mereka pecahkan (sekitar 70% sisanya) ke Product Line support team.
+
+Backlog Swarm: Tim ini akan bertemu setiap hari untuk menyelesaikan insiden/masalah
+yang diberikan oleh Product Line support team. Tim ini berisi orang-orang teknis yang terampil dan
+berpengalaman dari berbagai departemen (baik dari Developer maupun IT Operations), dengan fokus
+pada kasus-kasus sulit yang tak bisa diselesaikan oleh Product Line support team.
+
+> Mendorong Tanggung Jawab ke Tempat Asalnya
+Ada beberapa inisiatif yang bisa kita lakukan, di antaranya:
+Kita bisa terapkan peer review (aktivitas memeriksa, meninjau, dan mengevaluasi kode 
+oleh sesama Developer) terhadap perubahan kode yang dilakukan untuk menjamin bahwa 
+kode dapat beroperasi di lingkungan production sesuai yang diharapkan.
+
+Kita dapat mengotomatiskan sebanyak mungkin proses pemeriksaan kualitas kode yang 
+biasanya dilakukan oleh departemen QA (Quality Assurance). 
+
+Alih-alih Developer harus meminta ke tim lain agar pengujian bisa dijadwalkan atau
+dijalankan segera, kita bisa mengeliminasi birokrasi tersebut agar pengujian tersebut 
+dapat dilakukan kapan saja. Sehingga, ini memungkinkan Developer untuk menguji kode
+mereka sendiri sesegera mungkin dan bahkan men-deploy perubahan kode 
+ke dalam lingkungan production secara mandiri.
+
+Intinya, menciptakan alur feedback (umpan balik) yang cepat merupakan hal yang
+sangat penting untuk mencapai kualitas kode, keamanan aplikasi,
+dan keandalan infrastruktur dalam proses pengembangan aplikasi.
+Nah, salah satu cara terbaik untuk mencapainya adalah dengan memiliki praktik
+seperti continuous integration atau continuous deployment
+yang dipadukan bersama dengan rangkaian automated test
+yang cepat. Dengan mempraktikkan hal-hal ini, 
+feedback bisa segera tersampaikan dengan cepat ke Developer (atau tim terkait) dan segera diperbaiki.
