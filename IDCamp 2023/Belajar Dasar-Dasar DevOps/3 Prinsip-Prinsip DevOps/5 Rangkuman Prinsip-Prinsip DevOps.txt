@@ -1,0 +1,64 @@
+> Pengantar The Three Ways: Prinsip-Prinsip yang Mendasari DevOps
+Terdapat 3 prinsip utama yang akan kita pelajari:
+Prinsip terkait alur kerja, yang mampu mengakselerasi penyelesaian dan/atau penyerahan 
+pekerjaan dari Developer, ke IT Operations, hingga ke pengguna aplikasi.
+
+Prinsip terkait umpan balik, yang memungkinkan perusahaan untuk menciptakan sistem kerja 
+yang lebih aman dan lebih baik.
+
+Prinsip terkait proses belajar dan eksperimen yang berkelanjutan, yang mampu 
+menciptakan kultur yang menumbuhkan dua hal: 
+pemahaman bahwa pengulangan dan latihan merupakan syarat untuk menguasai sesuatu; serta
+kesadaran betapa pentingnya eksperimen yang terus-menerus guna meningkatkan 
+keterampilan dalam pengambilan risiko dan sebagai 
+proses belajar baik dari keberhasilan maupun kegagalan.
+
+> The First Way: Prinsip Terkait Alur Kerja
+Prinsip ini menjelaskan bahwa kita membutuhkan alur kerja yang cepat dan lancar 
+dalam proses pengembangan aplikasi, mulai dari penulisan kode oleh Developer
+ke penyiapan infrastruktur dan proses deploy aplikasi oleh IT Operations
+hingga akhirnya sampai di gadget pengguna/pelanggan 
+dan terasa manfaat atau nilai dari aplikasi/fitur/pembaruan perangkat lunak tersebut.
+
+untuk mengoptimalkan alur kerja, yakni dengan membuat pekerjaan kita menjadi “tampak”, 
+membatasi work in process, mengurangi skala batch yang dikerjakan, memangkas jumlah handoff, 
+serta mengidentifikasi dan memperbaiki constraint.
+
+Intinya adalah untuk memperbaiki alur kerja sehingga 
+proses pengembangan aplikasi bisa berlangsung cepat, tetapi tetap 
+menjaga keandalan infrastruktur dan meningkatkan kualitas aplikasi.
+
+> The Second Way: Prinsip terkait Umpan Balik
+fokus utamanya adalah untuk meningkatkan jumlah feedback dan 
+mempercepat proses penyampaian feedback (dari Operations ke Development) 
+guna mencegah agar masalah tak terulang kembali, memungkinkan deteksi masalah lebih dini, 
+serta pemulihan infrastruktur lebih cepat.
+
+salah satu cara terbaik untuk mencapainya adalah dengan memiliki praktik 
+seperti continuous integration atau continuous deployment 
+yang dipadukan bersama dengan rangkaian automated test yang cepat.
+
+> The Third Way: Prinsip terkait Proses Belajar dan Eksperimen yang Berkelanjutan
+Prinsip ini menjelaskan tentang cara memupuk kultur untuk mendorong proses belajar 
+dan eksperimen yang berkelanjutan. Selain itu, prinsip ini juga membenamkan 
+pemahaman bahwa cara untuk menguasai sesuatu adalah melalui pengulangan dan berlatih terus-menerus.
+
+eksperimen dan pengambilan risiko adalah hal yang bagus bagi IT 
+karena memungkinkan kita untuk senantiasa meningkatkan sistem kerja.
+
+Proses eksperimen ini sering kali mengharuskan tim untuk berani melakukan 
+hal-hal di luar kebiasaan mereka selama ini. Ini merupakan hal yang bagus. 
+Pasalnya, ketika terjadi kesalahan atau kegagalan, tim bisa 
+memperbaikinya dan belajar dari kesalahan/kegagalan tersebut.
+
+Jika kita mampu menerapkan The First Way dan The Second Way, 
+kelak kita akan lebih berani dalam mengambil risiko. 
+Sebabnya, kita tahu bahwa risikonya takkan terlalu besar 
+(mengingat kita memiliki skala batch pekerjaan yang kecil) 
+dan akan mendapatkan feedback yang cepat mengenai pekerjaan yang kita lakukan.
+
+Apabila kita sudah terbiasa melakukan eksperimen dan belajar dari kesalahan, 
+maka akan tercipta kultur untuk selalu ingin berinovasi dan berani dalam mengambil risiko.
+
+Modul 2 Prinsip-Prinsip DevOps
+https://youtu.be/6to7_iTMs7M
