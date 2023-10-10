@@ -1,0 +1,68 @@
+Masalah pada Proses Pengembangan Aplikasi
+
+> Model Waterfall
+Pada model waterfall, setiap fase saling bergantung satu sama lain. 
+Kita tak bisa lanjut ke fase berikutnya sebelum fase yang sedang dikerjakan saat ini benar-benar selesai digarap.
+
+> Arsitektur Monolitik
+dikatakan arsitektur monolitik apabila kita menempatkan berbagai komponen aplikasi di satu unit.
+Contoh sederhananya adalah ketika kita men-deploy authentication service (layanan autentikasi), 
+order service (layanan pemesanan), account service (layanan akun), dll di satu Back-End server yang sama.
+
+Pasalnya, itu berarti semua komponen (seperti authentication service, order service, account service, dll) 
+saling terikat dan bergantung satu sama lain. Jika salah satu komponen gagal beroperasi,
+kemungkinan besar komponen yang lain akan terkendala.
+
+> Proses Manual
+Proses yang manual membuat pengembangan aplikasi menjadi lambat, tidak konsisten, dan rawan kesalahan.
+
+Sebagai contoh, pengaturan dan pengonfigurasian infrastruktur (seperti server) secara manual 
+merupakan proses yang sangat memakan waktu. Bagaimana tidak, melakukan proses ini ke beberapa server 
+yang ada terus-menerus secara manual bisa menguras tenaga dan menghabiskan waktu hingga berhari-hari.
+Ditambah lagi, rentan sekali adanya kemungkinan bahwa satu atau dua langkah terlewat sehingga 
+pada akhirnya timbul kesalahan konfigurasi.
+
+> Struktur Tim Tertutup
+Di satu sisi, Developer dituntut oleh perusahaan untuk dapat membuat perangkat lunak, 
+mengembangkan aplikasi, memperbaiki bug, dan mengerjakan banyak fitur secepat mungkin.
+
+Di sisi lain, IT Operations dituntut untuk membuat infrastruktur 
+(seperti server, database, jaringan, dan sejenisnya) yang senantiasa stabil tanpa down.
+
+Lantas, bagaimana dong cara mengatasi masalah antara Developer dan IT Operations ini? 
+Bagaimana agar keduanya bisa berkolaborasi dengan baik? 
+Nah, prakarsa mengenai DevOps pun muncul untuk menjadi solusi dari problematika ini.
+
+Pengertian DevOps
+DevOps adalah kombinasi dari filosofi kultur/budaya, 
+sekumpulan praktik, dan rangkaian alat (tools) yang dapat meningkatkan 
+kemampuan organisasi/perusahaan untuk menyajikan (deliver) aplikasi atau perangkat lunak secara cepat.
+
+Manfaat penerapan DevOps
+Ketangkasan
+    Menerapkan DevOps dapat membuat perusahaan Anda unggul secara kompetitif karena sanggup mengantisipasi 
+    kebutuhan pasar, menciptakan inovasi dengan cepat, serta merengkuh pertumbuhan bisnis yang lebih efisien.
+
+Proses rilis cepat
+    DevOps mampu meningkatkan frekuensi rilis aplikasi, fitur, atau perangkat lunak sehingga Anda dapat 
+    berinovasi dan meningkatkan kualitas produk dengan lebih cepat.
+
+Keandalan
+    Saat melakukan pembaruan pada aplikasi atau perubahan terhadap infrastruktur, pastikan kualitasnya tetap terjaga
+    agar Anda dapat menyajikan aplikasi yang ciamik lebih cepat dan andal sehingga pengguna tetap mendapatkan pengalaman yang positif.
+
+Skalabilitas
+    Hadirnya DevOps memungkinkan Anda untuk mengelola dan mengoperasikan infrastruktur beserta proses 
+    pengembangan aplikasi dalam skala besar. Automasi dan konsistensi dapat mempermudah Anda dalam mengelola 
+    sistem yang kompleks secara efisien dengan risiko yang lebih rendah.
+
+Kolaborasi meningkat
+    Anda bisa membangun tim yang lebih efektif dengan menerapkan kultur DevOps, yang menekankan nilai-nilai
+    seperti kepemilikan dan akuntabilitas. Developer dan IT Operations akan berkolaborasi dengan erat, berbagi 
+    banyak tanggung jawab, dan memadukan alur kerja mereka. Dengan ini pada akhirnya akan mengurangi inefisiensi sekaligus menghemat waktu.
+
+Keamanan
+    Jika menerapkan DevOps, bisnis Anda bisa bergerak lebih cepat sambil mempertahankan akses 
+    kontrol dan menjaga compliance. Anda bisa mengadopsi DevOps tanpa mengorbankan keamanan, 
+    yakni menggunakan compliance policies (kebijakan compliance) secara otomatis, kontrol akses yang mendetail, 
+    dan teknik manajemen konfigurasi.
