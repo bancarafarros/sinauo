@@ -1,0 +1,53 @@
+> Membuat Pekerjaan Menjadi Tampak
+Intinya, dengan menempatkan semua pekerjaan kita ke dalam sebuah antrean pada papan kerja visual
+dan membuatnya “tampak”, setiap orang (yang memiliki wewenang) dapat lebih mudah memprioritaskan
+pekerjaan dalam konteks tujuan umum/bersama, bukan hanya untuk masing-masing tim. 
+Selain itu, melakukan hal ini juga memungkinkan setiap orang/tim untuk melakukan satu 
+tugas/pekerjaan dengan prioritas tertinggi hingga benar-benar selesai yang berujung peningkatan
+kualitas pekerjaan.
+
+> Membatasi Work In Process (WIP)
+idak boleh ada tugas yang dikerjakan oleh tim (baik Developer maupun IT Operations) 
+sampai seseorang (yang memberikan tugas atau dirinya sendiri) merepresentasikannya terlebih dahulu 
+ke dalam bentuk card. Sekali lagi, ini menegaskan bahwa semua pekerjaan harus dibuat tampak/terlihat. 
+Jadi, jika suatu waktu seorang Developer mendapatkan permintaan dari divisi lain melalui email, 
+tetapi belum dimasukkan ke Kanban board, maka sang Developer tak boleh mengerjakan tugas tersebut.
+
+> Mengurangi Skala Batch yang Dikerjakan
+untuk mempersingkat lead time dan meningkatkan kualitas, kita harus berusaha untuk 
+terus memperkecil/mengurangi skala batch yang diproduksi. 
+Batas minimalnya adalah “single-piece flow”, di mana setiap operasi dilakukan satu unit pada satu waktu.
+
+makin besar ukuran unit (cakupan kode) yang di-deploy ke lingkungan production, makin sulit pula 
+untuk mendiagnosis dan memperbaiki kesalahan tersebut, dan makin lama pula waktu yang 
+dibutuhkan untuk memulihkannya (membuat aplikasi menjadi berjalan normal kembali saat terjadi down).
+
+Oleh karena itu, selaras seperti yang terjadi di manufaktur, di dunia IT pun perlu 
+diterapkan single-piece flow. Di DevOps, hal itu dapat diwujudkan dengan 
+praktik Continuous Deployment, di mana setiap perubahan kode yang dilakukan pada 
+version control system (seperti Git) diintegrasikan, diuji, dan di-deploy ke lingkungan 
+production secara bertahap dan dalam unit/cakupan kode yang tidak terlalu besar. 
+Dengan demikian, alur kerja yang ada bisa tercipta makin baik dan kualitas perangkat lunak 
+dapat kian meningkat
+
+> Memangkas Jumlah Handoff
+handoff adalah penyerahan informasi, tanggung jawab, atau pekerjaan dari satu pihak ke pihak lain.
+
+Dalam proses pengembangan aplikasi, contohnya adalah penyerahan kode yang sudah matang 
+dari Developer ke IT Operations untuk di-deploy ke lingkungan production.
+
+langkah tepat yang harus dilakukan adalah memangkas jumlah handoff, 
+baik dengan mengotomatiskan sebagian besar pekerjaan atau 
+mereorganisasi tim (misal, tim Developer dan tim IT Operations bersatu menjadi tim DevOps) 
+sehingga tim tersebut dapat menyelesaikan pekerjaan 
+(misal, menyajikan fitur baru ke pengguna) dengan cepat dan lancar tanpa perlu 
+terus-menerus bergantung pada orang/tim lain. 
+
+Hasilnya, kita dapat memperbaiki alur kerja, mengurangi waktu tunggu saat proses handoff,
+dan meningkatkan kualitas pekerjaan.
+
+> Mengidentifikasi dan Memperbaiki Constraint
+Sebagai bagian dari langkah untuk mengurangi lead time dan meningkatkan 
+throughput (jumlah pekerjaan yang berhasil selesai dan sukses dikirim ke pelanggan), 
+kita perlu secara berkala mengidentifikasi apa saja constraint (kendala) yang terjadi
+pada alur kerja, terutama dalam proses pengembangan aplikasi.
