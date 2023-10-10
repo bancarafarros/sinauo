@@ -66,3 +66,7 @@ Keamanan
     kontrol dan menjaga compliance. Anda bisa mengadopsi DevOps tanpa mengorbankan keamanan, 
     yakni menggunakan compliance policies (kebijakan compliance) secara otomatis, kontrol akses yang mendetail, 
     dan teknik manajemen konfigurasi.
+
+Modul 1 Pengenalan DevOps
+https://youtu.be/_gc51UCQQ7I
+https://youtu.be/tvIxkBKuUlE
