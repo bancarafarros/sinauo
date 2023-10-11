@@ -1,0 +1,22 @@
+Hal yang tak kalah penting lainnya saat menerapkan DevOps di perusahaan adalah 
+menciptakan budaya keterbukaan (transparansi informasi dan komunikasi) 
+dan saling berbagi di dalam dan di antara tim.
+
+Bila aplikasi mereka gagal beroperasi, itu berarti ada kesalahan pada prosesnya dan 
+mereka sama-sama bertanggung jawab untuk mengevaluasi, memperbaiki, dan mencobanya kembali. 
+Setiap orang harus memikirkan tentang keamanan, keandalan, dan kecepatan deployment.
+
+Ketahui pula bahwa gagasan utama dari DevOps ialah “Orang yang sama yang membangun aplikasi, 
+harus terlibat pula dalam proses penyajian (delivery) ke pelanggan–yakni dengan 
+menjalankannya di lingkungan production” (you build it, you run it).
+
+Sayangnya, transformasi DevOps tidak bisa dilakukan hanya dalam sekejap mata. 
+Butuh proses yang panjang dengan memadukan filosofi kultur, praktik, dan tools.
+
+memadukan tim Developer dan IT Operations agar menjadi DevOps akan 
+melahirkan banyak sekali manfaat, seperti
+meningkatkan rasa kepercayaan antara satu sama lain;
+rilis aplikasi menjadi lebih cepat;
+infrastruktur yang menjalankan aplikasi menjadi lebih andal;
+munculnya feedback loop (putaran/lingkaran umpan balik) yang lebih baik antara tim terkait dan pelanggan.
+
