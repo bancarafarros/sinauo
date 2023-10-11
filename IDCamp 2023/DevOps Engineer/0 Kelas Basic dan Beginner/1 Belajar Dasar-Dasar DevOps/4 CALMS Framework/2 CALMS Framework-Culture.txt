@@ -1,0 +1,36 @@
+Kultur dalam DevOps selalu mengedepankan orang (people) ketimbang praktik (practice atau process)
+dan alat (tools). Percayalah, semua praktik dan tools yang Anda miliki takkan berguna kecuali
+jika semua orang bersatu dan bekerja sama.
+
+Ada beberapa hal yang perlu Anda pelajari dan terapkan di perusahaan 
+sebelum benar-benar mengadopsi DevOps, seperti
+
+> Membangun lingkungan yang kolaboratif
+Developer bersama IT Operations mesti bergandeng tangan dalam membangun aplikasi.
+
+Developer bercerita mengenai bagaimana mereka menulis kode dan 
+IT Operations merawi tentang cara mereka menstabilkan infrastruktur.
+
+ketika Developer menulis kode, mereka juga akan memikirkan soal keamanan, arsitektur,
+dan kestabilan infrastruktur. Demikian pula dengan IT Operations, 
+saat mengonfigurasi server, mereka akan mempertimbangkan banyak hal agar 
+bisa menyesuaikan dengan kebutuhan Developer.
+
+> Fokus pada kebutuhan pengguna
+Mindset yang mengutamakan pengguna adalah faktor utama dalam mendorong pengembangan aplikasi.
+
+Sebagai contoh, dengan feedback loop (umpan balik yang berkelanjutan), 
+tim terkait (Developer dan IT Operations) bisa tetap terhubung dengan pengguna
+untuk mengembangkan aplikasi sesuai kebutuhan pasar.
+
+Hal tersebut bisa terpenuhi sebab proses yang sederhana dan automasi 
+sehingga dapat menyajikan pembaruan yang pengguna butuhkan secara lebih cepat.
+
+> Menyertakan keamanan di setiap fase
+Anda mesti sedini mungkin mengedukasi tim Developer dan IT Operations untuk menanamkan 
+aspek keamanan dalam pola kerja mereka. Sebagai contoh:
+Menyertakan security testing untuk memindai access key yang tersemat langsung di source code.
+Memeriksa apakah ada port aplikasi yang terbuka tanpa sengaja.
+Membuat abuse case untuk mengetahui apa saja kerentanan yang dimiliki oleh aplikasi. 
+Membangun komunikasi API yang aman.
+
