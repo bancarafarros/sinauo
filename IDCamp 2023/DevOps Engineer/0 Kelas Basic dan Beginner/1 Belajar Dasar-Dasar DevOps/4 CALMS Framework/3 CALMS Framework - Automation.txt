@@ -1,0 +1,17 @@
+Automasi akan menjadikan proses pengembangan (development), pengujian (testing), 
+dan penggelaran (deployment) menjadi cepat. Namun, untuk mewujudkan hal itu, 
+Anda perlu mengidentifikasi sekiranya di bagian mana saja proses automasi bisa diterapkan. 
+
+Beberapa contoh proses yang bisa diautomasi, antara lain:
+integrasi kode (code integration),
+reviu kode (code review),
+pengujian (testing),
+keamanan (security),
+penggelaran (deployment), dan
+pemantauan (monitoring). 
+
+Tentunya, semua proses automasi tersebut haruslah diterapkan menggunakan tools atau layanan yang tepat. 
+Sebagai contoh, Infrastructure as Code dapat digunakan untuk membuat 
+environment (sebuah sistem yang berisi hardware dan software untuk menjalankan aplikasi) 
+yang sudah ditentukan sebelumnya. Environment tersebut pun bisa kita versikan 
+sehingga konsisten dan dapat di-deploy berulang kali.
