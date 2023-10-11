@@ -1,0 +1,52 @@
+> Pengantar CALMS Framework
+Untuk bisa menerapkan DevOps dengan baik di perusahaan, ihwal terkrusial yang perlu
+Anda lakukan adalah memahami metodologi DevOps.
+
+DevOps bertujuan untuk menyatukan orang-orang untuk bekerja sama dan 
+menghilangkan hambatan sehingga mereka dapat mencapai tujuan secara efisien.
+
+CALMS merupakan framework yang digunakan sebagai sarana untuk 
+menilai apakah suatu perusahaan atau organisasi siap dalam mengadopsi DevOps, 
+serta mengukur bagaimana kemajuan perusahaan dalam transformasi atau proses penerapan DevOps mereka.
+
+> CALMS Framework: Culture
+Membangun lingkungan yang kolaboratif
+    Kolaborasi merupakan hal terpenting yang perlu diperhatikan saat mengimplementasikan 
+    DevOps di perusahaan. Baik Developer maupun IT Operations, keduanya memiliki 
+    perangkat lunak, kepentingan, dan tujuannya sendiri-sendiri. Ini bukanlah hal yang baik 
+    karena akan menciptakan gap atau kerenggangan di antara mereka.
+
+Fokus pada kebutuhan pengguna
+    Mindset yang mengutamakan pengguna adalah faktor utama dalam mendorong pengembangan aplikasi.
+
+Menyertakan keamanan di setiap fase
+    Aspek keamanan harus diimplementasikan di setiap fase dalam siklus hidup aplikasi, 
+    baik saat masih dalam proses coding maupun selepas rilis ke pasaran.
+
+> CALMS Framework: Automation
+Automasi akan menjadikan proses pengembangan (development), pengujian (testing), dan 
+penggelaran (deployment) menjadi cepat. Namun, untuk mewujudkan hal itu, 
+Anda perlu mengidentifikasi sekiranya di bagian mana saja proses automasi bisa diterapkan.
+
+> CALMS Framework: Lean
+tim Developer perlu menerapkan prinsip lean guna menghilangkan inefisiensi proses dan 
+mengoptimalkan nilai kerja, seperti meminimalkan WIP, menjadikan pekerjaan kita transparan, 
+mengeliminasi kerumitan saat proses penyerahan kode ke IT Operations, dan 
+mengurangi waktu tunggu saat berpindah dari satu fase ke fase lainnya
+
+> CALMS Framework: Measurement
+Berikut adalah beberapa contoh pertanyaan untuk mengukur kinerja atau proses Anda selama ini.
+Berapa lama waktu yang dibutuhkan dari tahap penulisan kode hingga deployment?
+Seberapa sering bug atau galat muncul?
+Berapa lama waktu yang dibutuhkan untuk pulih (recover) dari kegagalan sistem (system failure)?
+Berapa banyak orang yang menggunakan produk Anda saat ini? 
+Berapa banyak pengguna yang Anda peroleh atau justru hilang di minggu ini?
+
+Semua data-data ini akan menarik karena kelak membantu perusahaan Anda untuk membuat keputusan.
+
+> CALMS Framework: Sharing
+menciptakan budaya keterbukaan (transparansi informasi dan komunikasi) dan 
+saling berbagi di dalam dan di antara tim. Dengan begitu, semua orang akan 
+bisa bekerja sama menuju satu tujuan dan meminimalisir gesekan yang timbul ketika masalah muncul.
+
+https://youtu.be/u3UOoPcCLzo
