@@ -1,0 +1,3 @@
+poin-poin yang tadi dibahas di modul CALMS Framework akan mengarah pada praktik DevOps 
+yang merampingkan dan meningkatkan siklus pengembangan aplikasi agar bisa 
+menyajikan update lebih sering secara andal seraya menjaga stabilitas infrastruktur (seperti server).
