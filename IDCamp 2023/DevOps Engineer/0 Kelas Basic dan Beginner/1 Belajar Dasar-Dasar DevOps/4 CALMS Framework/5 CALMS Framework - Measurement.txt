@@ -1,0 +1,8 @@
+Berikut adalah beberapa contoh pertanyaan untuk mengukur kinerja atau proses Anda selama ini.
+Berapa lama waktu yang dibutuhkan dari tahap penulisan kode hingga deployment?
+Seberapa sering bug atau galat muncul?
+Berapa lama waktu yang dibutuhkan untuk pulih (recover) dari kegagalan sistem (system failure)?
+Berapa banyak orang yang menggunakan produk Anda saat ini? 
+Berapa banyak pengguna yang Anda peroleh atau justru hilang di minggu ini?
+
+Semua data-data ini akan menarik karena kelak membantu perusahaan Anda untuk membuat keputusan.
