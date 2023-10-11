@@ -1,0 +1,16 @@
+tim Developer perlu menerapkan prinsip lean guna menghilangkan inefisiensi proses 
+dan mengoptimalkan nilai kerja, seperti meminimalkan WIP, menjadikan pekerjaan kita transparan, 
+mengeliminasi kerumitan saat proses penyerahan kode ke IT Operations, 
+dan mengurangi waktu tunggu saat berpindah dari satu fase 
+ke fase lainnya (misal dari penulisan kode ke pengujian).
+
+Aplikasi tidak berarsitektur monolitik. Sebaliknya, arsitektur aplikasi dirancang dengan 
+komponen dalam bentuk kecil, terpisah satu sama lain, tetapi tetap dalam satu kesatuan; 
+yang umum disebut sebagai arsitektur microservice
+
+Dengan cara ini, tim (Developer dan IT Operations) bisa mengembangkan kode dalam 
+ukuran kecil (per komponen, per fitur, atau per fungsi bisnis) dan merilisnya dengan 
+tempo sesering mungkin.
+
+inti dari poin lean adalah mengubah semua alur kerja yang selama ini dipraktikkan 
+agar dapat berjalan dengan lebih efisien.
