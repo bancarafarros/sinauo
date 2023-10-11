@@ -1,0 +1,5 @@
+https://youtu.be/Uwvl-X8wiYc
+https://developer.mozilla.org/en-US/docs/Web/JavaScript
+https://javascript.info/intro
+https://nodejs.dev/en/learn/
+https://nodejs.dev/en/learn/differences-between-nodejs-and-the-browser/
