@@ -1,0 +1,5 @@
+CALMS merupakan framework untuk menilai apakah suatu perusahaan
+siap mengadopsi DevOps, serta mengukur bagaimana kemajuan perusahaan dalam
+transformasi atau proses penerapan DevOps mereka
+
+singkatan dari Culture, Automation, Lean, Measurement, dan Sharing.
