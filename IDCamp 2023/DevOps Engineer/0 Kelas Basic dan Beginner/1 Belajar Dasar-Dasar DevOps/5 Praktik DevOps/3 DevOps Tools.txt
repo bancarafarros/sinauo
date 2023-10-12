@@ -1,0 +1,130 @@
+> Komunikasi dan Kolaborasi
+Dalam mempraktikkan DevOps, tim Developer dan IT Operations perlu menetapkan kultur yang 
+kuat seputar transparansi informasi dan komunikasi supaya keduanya punya rasa 
+saling memiliki satu sama lain.
+
+- Platform komunikasi dan kolaborasi terpadu
+Microsoft Teams, Slack, Workplace, Cisco Webex Teams, Amazon Chime
+
+- Cloud
+Anda bisa dengan mudah membuat suatu environment (yang berisi server, jaringan, penyimpanan, dll) 
+secara on-demand (sesuai permintaan) menggunakan cloud provider seperti AWS.
+
+- IDE
+Visual Studio dengan fitur Live Share, Intellij IDEA dengan fitur Code With Me, AWS Cloud9
+
+Komunikasi dan Kolaborasi ini relevan dengan Culture dan Sharing dalam CALMS Framework.
+
+> CI/CD
+Code: GitHub, GitLab, BitBucket, AWS CodeCommit
+Build: Jenkins, Travis CI, CircleCI, AWS CodeBuild
+Test: third-party tools yang tersedia di AWS Marketplace; Gremlin, Testable, LoadRunner, UFT One
+Release: Apabila artifact berbentuk compressed file, bisa ditaruh di object storage seperti Amazon S3.
+        jika berbentuk container image: Docker Hub, JFrog Artifactory, Amazon ECR, AWS CodeArtifact
+        Amazon ECR: layanan penyimpanan (registry) untuk container image di AWS. 
+                    Jadi, kita bisa dengan mudah push (simpan) container image 
+                    secara aman ke Amazon ECR. Saat ingin menjalankannya di server, 
+                    kita tinggal pull (ambil) dari registry tersebut sesuai dengan 
+                    tag yang Anda tetapkan pada container image tersebut.
+        AWS CodeArtifact: layanan artifact repository dari AWS untuk menyimpan, memublikasikan, 
+                            dan membagikan software packages yang digunakan pada proses 
+                            pengembangan aplikasi. Layanan ini dapat bekerja dengan 
+                            package manager dan build tools yang umum seperti Maven, Gradle, 
+                            npm, yarn, twine, dan pip.
+Deploy: Heroku, Netlify, GitHub Pages, AWS CodeDeploy, AWS Elastic Beanstalk
+        AWS CodeDeploy: layanan yang mengotomatiskan deployment aplikasi sehingga memungkinkan 
+                        Anda untuk men-deploy dengan andal dan cepat. Layanan ini akan 
+                        mengotomatiskan proses deployment kode ke berbagai layanan komputasi 
+                        yang tersedia di AWS, termasuk Amazon EC2 (server virtual), 
+                        AWS Fargate (komputasi serverless untuk container), 
+                        AWS Lambda (platform serverless untuk menjalankan kode), 
+                        atau server on-premise (lokal).
+        AWS Elastic Beanstalk: layanan platform-as-a-service yang memungkinkan kita untuk 
+                                men-deploy dan mengelola aplikasi di AWS dengan cepat tanpa 
+                                harus mengurusi persoalan infrastruktur. Kita hanya perlu 
+                                mengunggah kode aplikasi dan Elastic Beanstalk secara otomatis 
+                                akan mengurusi setiap detail yang diperlukan untuk menjalankan aplikasi.
+Monitor: Prometheus, Elastic Stack, Dynatrace, AWS X-Ray, Amazon CloudWatch
+
+AWS CodePipeline adalah layanan continuous delivery yang memungkinkan kita untuk membuat model, 
+memvisualisasikan, dan mengotomatiskan langkah-langkah yang diperlukan untuk merilis perangkat lunak. 
+Dengan layanan ini, kita bisa mengonfigurasi tahapan-tahapan pada CI/CD pipeline sehingga 
+memudahkan proses pengembangan aplikasi.
+
+CI/CD ini relevan dengan Automation dan Lean dalam CALMS Framework.
+
+> Infrastructure as Code
+Lingkungan development biasanya menggunakan komputer pribadi milik Developer agar bebas diotak-atik. 
+Lingkungan testing umumnya adalah server yang dibuat mirip dengan production dengan tujuan 
+menyimulasikan dunia nyata. Sementara itu, lingkungan production terdiri dari server yang 
+sudah dikonfigurasi sedemikian rupa agar mampu menghadapi pengguna sesungguhnya.
+
+apabila kita membuat dan mengonfigurasi environment (lingkungan) tersebut secara manual, 
+tentu akan rawan kesalahan dan menjadi tidak fleksibel. Namanya juga manusia, bisa jadi 
+sewaktu-waktu salah mengonfigurasi server dan ujung-ujungnya aplikasi tidak berjalan sesuai 
+dengan apa yang kita harapkan. IaC, yang merupakan praktik di mana 
+infrastruktur (seperti server, jaringan, dll) dibuat dan dikelola menggunakan kode serta 
+teknik pengembangan perangkat lunak, seperti version control system dan continuous integration.
+
+manfaat dari penerapan Infrastructure as Code adalah ia dapat membantu tim Developer dalam 
+membangun aplikasi di production-like environment (seperti lingkungan testing atau staging), 
+yang berguna untuk mendeteksi masalah lebih dini sebelum di-deploy ke production.
+
+Infrastructure automation: Terraform dan AWS CloudFormation
+pembuatan infrastruktur dan sumber daya sejenis secara otomatis hanya dengan menggunakan kode. 
+Dengan cara ini, baik Developer maupun IT Operations dapat berinteraksi dengan infrastruktur 
+secara terprogram dalam skala besar tanpa harus mengonfigurasinya secara manual.
+
+Configuration management: Chef, Puppet, Ansible, AWS OpsWorks
+Dengan manajemen konfigurasi, tim Developer dan IT Operations bisa menggunakan kode untuk 
+mengautomasi pengonfigurasian sistem operasi dan server, tugas operasional, serta banyak lagi. 
+Penggunaan kode semacam ini membuat perubahan konfigurasi menjadi repeatable dan standardized
+sehingga membebaskan Developer dan IT Operations dari konfigurasi sistem operasi, 
+aplikasi sistem, atau perangkat lunak server yang manual.
+
+Infrastructure as Code relevan dengan  Automation dalam CALMS Framework.
+
+> Arsitektur Microservices
+sebuah pendekatan desain untuk membangun aplikasi sebagai kumpulan service (layanan) yang 
+loosely coupled (setiap service tidak bergantung satu sama lain, tetapi tetap satu kesatuan).
+
+Masing-masing service dirancang hanya memiliki kemampuan tertentu dan berfokus pada 
+pemecahan suatu masalah atau tujuan bisnis. Setiap service tidak perlu saling berbagi kode atau 
+implementasi dengan service yang lain karena komunikasi yang terjadi di antara service dilakukan 
+melalui API (application programming interface).
+
+Aplikasi yang loosely coupled akan membuat timnya dapat membangun, mengubah, dan memperbaiki 
+bagiannya secara independen dari tim lain. Perubahan yang dibangun pun bisa di-deploy 
+sesering mungkin tanpa mengganggu komponen lain yang dikembangkan oleh tim yg berbeda.
+
+plikasi yang menggunakan pendekatan microservice, setiap service atau komponennya 
+di-develop (dikembangkan), di-test (diuji), dan di-deploy (digelar) secara independen 
+dari service yang yang lain.
+
+- Container: Kubernetes, OpenShift, Nomad, Amazon EKS, Amazon ECS
+suatu cara standar untuk mengemas atau membungkus kode, konfigurasi, beserta dependencies yang 
+diperlukan untuk menjalankan aplikasi. Dengan cara ini, aplikasi bisa menjadi portabel dan 
+dapat berjalan di server mana pun. Container dapat menyederhanakan cara kita dalam mengembangkan, 
+menguji, dan men-deploy aplikasi ke berbagai environment (lingkungan).
+
+- Serverless: Serverless, OpenFaaS, OpenWhisk, AWS Lambda
+pendekatan komputasi di mana kita bisa membangun dan menjalankan kode tanpa perlu memikirkan 
+infrastruktur dan server yang mendasarinya. Kita hanya perlu fokus terhadap kode dan serahkan 
+segala urusan infrastruktur ke cloud provider seperti AWS. Dalam konteks ini, serverless yang 
+akan kita bahas berkaitan dengan Function as a Service (FaaS). Dengan kata lain, cloud provider 
+menyediakan platform agar pelanggan bisa mengeksekusi kode sebagai response (reaksi) 
+terhadap event (suatu peristiwa) yang terjadi, tentu saja tanpa perlu memelihara infrastruktur.
+
+Arsitektur Microservice relevan dengan  Automation dalam CALMS Framework.
+
+> Monitoring dan Logging: Prometheus, Elastic Stack, Dynatrace, AWS X-Ray, Amazon CloudWatch
+
+digunakan untuk menilai seberapa efektif perubahan pada aplikasi dan infrastruktur, 
+serta mengevaluasi bagaimana perubahan tersebut memengaruhi kinerja dan pengalaman pengguna 
+secara keseluruhan.
+
+Ada banyak hal yang bisa kita pantau terhadap sistem kita, terutama yang berurusan dengan 
+CI/CD, seperti mengetahui frekuensi deployment, mengidentifikasi keberhasilan atau 
+kesuksesan deployment, traffic (lalu lintas) pengguna pada aplikasi, dan masih banyak lainnya.
+
+Monitoring dan Logging relevan dengan Measurement dalam CALMS Framework.
