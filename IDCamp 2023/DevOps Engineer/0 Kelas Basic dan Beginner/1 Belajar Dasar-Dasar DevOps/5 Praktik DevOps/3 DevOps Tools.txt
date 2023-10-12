@@ -75,6 +75,10 @@ pembuatan infrastruktur dan sumber daya sejenis secara otomatis hanya dengan men
 Dengan cara ini, baik Developer maupun IT Operations dapat berinteraksi dengan infrastruktur 
 secara terprogram dalam skala besar tanpa harus mengonfigurasinya secara manual.
 
+AWS CloudFormation: layanan Infrastructure as Code (IaC) yang dapat membantu menyiapkan 
+AWS resource (sumber daya AWS) sehingga kita bisa menghabiskan lebih sedikit waktu untuk 
+mengelola infrastruktur dan lebih banyak waktu untuk berfokus pada aplikasi yang berjalan di AWS.
+
 Configuration management: Chef, Puppet, Ansible, AWS OpsWorks
 Dengan manajemen konfigurasi, tim Developer dan IT Operations bisa menggunakan kode untuk 
 mengautomasi pengonfigurasian sistem operasi dan server, tugas operasional, serta banyak lagi. 
@@ -114,6 +118,10 @@ segala urusan infrastruktur ke cloud provider seperti AWS. Dalam konteks ini, se
 akan kita bahas berkaitan dengan Function as a Service (FaaS). Dengan kata lain, cloud provider 
 menyediakan platform agar pelanggan bisa mengeksekusi kode sebagai response (reaksi) 
 terhadap event (suatu peristiwa) yang terjadi, tentu saja tanpa perlu memelihara infrastruktur.
+
+AWS Lambda: layanan komputasi serverless yang memungkinkan kita untuk menulis kode dan menjalankannya 
+tanpa perlu membuat dan mengelola server. Uniknya, kode yang kita tulis hanya akan berjalan saat 
+dirinya terpanggil (invoked).
 
 Arsitektur Microservice relevan dengan  Automation dalam CALMS Framework.
 
