@@ -1,0 +1,151 @@
+DevOps adalah gerakan yang merevolusi struktur organisasi dengan menyatukan 
+tim Developer dan IT Operations. Hasilnya adalah perubahan kultur di mana 
+kedua tim tersebut saling bekerja sama, menerapkan automasi, 
+meningkatkan kecepatan proses deployment, dan membuat perusahaan menjadi lebih fleksibel.
+
+manfaat utama dari implementasi DevOps adalah memperbaiki dan merampingkan alur deployment, 
+sekaligus mengurangi frekuensi dan dampak insiden. Oleh karenanya, kita perlu suatu cara yang 
+dapat memudahkan tim dalam mengurusi proses deployment. Nah, salah satu praktiknya adalah 
+memanfaatkan DevOps Pipeline.
+
+biasa disebut juga sebagai CI/CD Pipeline merupakan serangkaian proses dan tools 
+terotomatisasi yang memungkinkan Developer dan IT Operations untuk bekerja secara 
+kohesif untuk men-deploy kode ke lingkungan production.
+
+kaitannya DevOps Pipeline dengan unsur-unsur pada CALMS Framework.
+Culture
+Pada praktiknya, DevOps Pipeline melibatkan tim Developer dan IT Operations yang menuntut mereka 
+untuk terus bekerja sama dan berkolaborasi demi menghadirkan aplikasi yang komprehensif untuk pengguna. 
+Selain itu, DevOps Pipeline terdiri dari beberapa fase pengembangan aplikasi, yang mana setiap 
+fasenya harus menyertakan keamanan tanpa kompromi. Ini menunjukkan bahwa DevOps pipeline dan 
+CALMS Framework selaras pada praktiknya.
+
+Automation
+Automation adalah hal yang penting pada DevOps Pipeline. Tanpa adanya automation, maka 
+proses handoff akan manual dan memakan waktu. Untuk itu, saat menggunakan DevOps Pipeline, 
+Developer dan IT Operations harus bisa memaksimalkan peran automation di setiap fase agar 
+bisa mengirimkan fitur dengan cepat.
+
+Lean
+Salah satu tujuan umum dari DevOps adalah perusahaan dapat melakukan deployment sesering dan 
+secepat mungkin. Karena fase-fase pada DevOps Pipeline straightforward, proses yang semula 
+belibet bisa menjadi cepat dan ringkas.
+
+Measurement
+Salah satu fase pada DevOps Pipeline adalah monitor, artinya kita memantau 
+aplikasi secara menyeluruh melalui metrik-metrik yang mengukur seluk-beluk 
+infrastruktur guna memastikan bahwa aplikasi berjalan sesuai dengan yang diharapkan.
+
+Sharing
+Karena melibatkan dua pihak, yakni Developer dan IT Operations, DevOps Pipeline dapat 
+mewujudkan lingkungan yang saling berbagi pengetahuan dan tanggung jawab. Kedua tim tersebut 
+sama-sama memiliki peran untuk menyajikan aplikasi yang komprehensif melalui sebuah tools bersama. 
+Jadi, jika aplikasi gagal beroperasi, mereka sama-sama harus menyelidiki dan memperbaiki masalahnya.
+
+Kendati DevOps Pipeline bisa saja berbeda-beda untuk setiap perusahaan, tetapi umumnya mencakup 
+komponen fundamental, seperti continuous integration, continuous delivery/deployment, 
+automation testing, validation, dan reporting.
+
+Code
+Pada tahap ini, tim Developer menulis dan mengembangkan kode aplikasi dalam 
+bahasa pemrograman tertentu. Mereka menulis kode di lingkungan development agar segala perubahan 
+atau penambahan fitur tak berimbas ke aplikasi yang dipakai pengguna.
+Nah, selepas kode siap, Developer kemudian mengirimkan/mengunggah (push) kode yang 
+telah ditulis ke sebuah lokasi terpusat, umumnya adalah Git repository.
+
+Build
+Selepas kode di-push ke repository dan dipastikan aman untuk lanjut ke fase berikutnya, 
+kode tadi lantas dieksekusi melalui proses build. Dalam konteks pengembangan aplikasi, 
+“build” mengacu pada proses yang mengubah file dan aset lainnya menjadi produk perangkat lunak 
+dalam bentuk final atau siap di-deploy.
+
+Langkah-langkahnya sebagai berikut:
+Meng-compile kode.
+Memeriksa gaya dan standar dari kode.
+Menganalisis tingkat kompleksitas dan pemeliharaan kode.
+Memvalidasi dependencies pada kode.
+Membuat sebuah artifact, seperti container image, compressed file (jar, zip, dll), installer, package, dan sebagainya.
+Menjalankan unit test.
+Usai semua proses ini sukses, barulah kita bisa masuk ke fase berikutnya.
+
+Test
+Tahapan berikutnya adalah test. Di sini, artifact yang sedianya sudah dibuat akan diuji 
+apakah memenuhi persyaratan fungsional, kinerja, desain, dan implementasi yang ditentukan atau tidak.
+Berikut beberapa contoh praktik pengujian yang dilakukan.
+Functional testing: Memvalidasi sistem aplikasi dengan kebutuhan fungsional.
+Integration testing: Setiap unit atau komponen aplikasi digabungkan dan diuji sebagai 
+                        sebuah grup/kelompok.
+Regression testing: Menjalankan kembali functional dan non-functional test untuk memastikan bahwa 
+                    aplikasi yang telah dikembangkan dan diuji sebelumnya masih berfungsi 
+                    setelah terjadi perubahan kode.
+Acceptance testing: Pengujian dilakukan oleh klien, pengguna, atau entitas resmi lainnya 
+                    guna menentukan apakah kebutuhan aplikasi dan proses bisnis 
+                    sudah terpenuhi atau belum.
+Load testing: Pengujian kinerja aplikasi yang menyimulasikan beban kerja atau traffic pada dunia nyata.
+Security testing: Mengidentifikasi kerentanan, kelemahan, ancaman, dan risiko keamanan 
+                    pada aplikasi guna mencegah serangan berbahaya dari penyusup.
+
+Release
+Di fase ini, artifact yang telah lolos pengujian kemudian dikemas/dibungkus dengan nomor versi 
+(version number) tertentu sebelum nanti akhirnya di-deploy.
+
+
+Deploy
+Usai diberi nomor versi, artifact akan di-deploy ke target environment/lingkungan
+(kumpulan sumber daya–seperti server, dll–untuk meng-hosting aplikasi) yang sesuai, 
+entah itu ke lingkungan test, staging, alpha, beta, atau production sekalipun.
+
+Monitor
+Dalam tahap ini, umumnya aplikasi sudah di-deploy ke lingkungan production dengan sempurna 
+sehingga bisa dinikmati oleh pengguna. Oleh karenanya, kita perlu memonitor aplikasi agar 
+bisa mendeteksi error ataupun kejanggalan dengan cepat dan secara tanggap langsung memperbaikinya.
+
+Continuous Integration
+merupakan praktik pada proses pengembangan aplikasi di mana Developer dengan rutin dan teratur 
+memasukkan (commit) atau menggabungkan (merge) setiap perubahan kode (code changes) mereka ke 
+sebuah repositori terpusat (central repository) dan/atau ke 
+mainline trunk (seperti branch master/main), setelah itu proses build dan unit test secara 
+otomatis pun dijalankan.
+
+Tujuan utama dari continuous integration adalah untuk menemukan dan mengatasi 
+bug atau error lebih cepat, meningkatkan kualitas aplikasi, dan mengurangi 
+waktu yang diperlukan untuk memvalidasi dan merilis pembaruan perangkat lunak (software update).
+
+Pada praktiknya, proses CI secara otomatis akan melakukan build dan menjalankan 
+unit test pada setiap perubahan kode yang baru agar dapat mengidentifikasi bug atau error dengan segera.
+
+Continuous Delivery
+adalah praktik pada proses pengembangan aplikasi di mana perubahan kode 
+(code changes) secara otomatis dipersiapkan sebelum nantinya dikirim ke lingkungan production.
+
+Jika di CI hanya sampai proses build dan unit test, di CD ini prosesnya hingga deploy semua 
+perubahan kode ke lingkungan testing, staging (pre-production), dan/atau production.
+Namun, untuk bisa men-deploy ke production, perlu melalui persetujuan manual (manual approval) 
+terlebih dahulu, entah itu oleh Developer yang lebih senior, manajer, atau siapa pun yang berhak.
+
+continuous delivery pun memungkinkan Developer untuk melakukan pengujian otomatis
+di luar unit test saja sehingga mereka dapat menguji dan memverifikasi 
+kualitas software update yang akan di-deploy ke production. Pengujian ini dapat mencakup 
+UI testing, load testing, integration testing, dll. Dengan begitu akan membantu pengembang 
+memvalidasi pembaruan secara lebih menyeluruh dan menemukan masalah secara pre-emptive.
+
+poin dari continuous delivery sekadar memastikan bahwa setiap perubahan kode 
+siap untuk di-deploy ke production melalui beberapa cara, umumnya adalah dengan 
+men-deploy kode yang sudah di-build sebelumnya ke lingkungan testing untuk 
+dilakukan pengujian otomatis. Jika mendapatkan persetujuan dari pihak terkait, barulah 
+aplikasi di-deploy ke production.
+
+Continuous Deployment
+continuous delivery memiliki proses persetujuan manual (manual approval) sebelum aplikasi 
+di-deploy ke production, sementara continuous deployment tidak memiliki hal tersebut.
+
+Jadi, dengan continuous deployment, proses deploy aplikasi ke lingkungan production berlangsung 
+secara otomatis tanpa ada persetujuan eksplisit dan intervensi manusia. Dengan begitu, 
+continuous deployment memungkinkan pemberian feedback yang berkelanjutan oleh pengguna 
+setiap kali suatu fitur atau update sampai ke perangkat mereka.
+
+DevOps pipeline atau CI/CD pipeline merupakan contoh yang tepat bagaimana tim Developer dan 
+IT Operations bekerja sama dalam menggunakan tools untuk merampingkan alur kerja dan 
+menstandardisasi praktik pada proses pengembangan aplikasi. Selain itu, DevOps pipeline pun 
+dapat memastikan bahwa kualitas kode akan terjaga, keamanan akan terjamin, 
+dan proses deployment akan berlangsung cepat dan konsisten.
