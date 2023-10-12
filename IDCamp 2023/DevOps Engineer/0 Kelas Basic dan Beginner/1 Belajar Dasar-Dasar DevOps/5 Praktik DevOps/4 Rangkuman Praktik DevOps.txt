@@ -1,0 +1,94 @@
+> DevOps Pipeline
+serangkaian proses dan tools terotomatisasi yang memungkinkan Developer dan IT Operations 
+untuk bekerja secara kohesif untuk men-deploy kode ke lingkungan production.
+
+tahapan pada DevOps Pipeline:
+Code
+Pada tahap ini, tim Developer menulis dan mengembangkan kode aplikasi dalam bahasa pemrograman tertentu.
+Selepas kode siap, Developer pun kemudian mengirimkan/mengunggah (push) kode yang telah ditulis 
+ke sebuah lokasi terpusat, umumnya adalah Git repository.
+
+Build
+Selepas kode di-push ke repository dan dipastikan aman untuk lanjut ke fase berikutnya, 
+kode tadi lantas dieksekusi melalui proses build. Usai semua proses build sukses, 
+barulah kita bisa masuk ke fase berikutnya.
+
+Test
+Tahapan berikutnya adalah test alias pengujian. Di sini, artifact yang sedianya sudah dibuat akan 
+diuji apakah memenuhi persyaratan fungsional, kinerja, desain, dan implementasi yang ditentukan 
+atau tidak. Setelah semua pengujian berhasil lolos, tahapan selanjutnya pun dimulai.
+
+Release
+Di fase ini, artifact yang telah lolos pengujian kemudian dikemas/dibungkus dengan nomor versi 
+(version number) tertentu sebelum nanti akhirnya di-deploy.
+
+Deploy
+Usai diberi nomor versi, artifact akan di-deploy ke target environment/lingkungan 
+(kumpulan sumber daya–seperti server, dll–untuk meng-hosting aplikasi) yang sesuai, 
+entah itu ke lingkungan test, staging, alpha, beta, atau production sekalipun.
+
+Monitor
+Dalam tahap ini, umumnya aplikasi sudah di-deploy ke lingkungan production dengan sempurna sehingga 
+bisa dinikmati oleh pengguna. Oleh karenanya, kita perlu memonitor aplikasi agar bisa mendeteksi 
+error ataupun kejanggalan dengan cepat dan secara tanggap langsung memperbaikinya.
+
+Continuous Integration
+merupakan praktik pada proses pengembangan aplikasi di mana Developer dengan rutin dan 
+teratur memasukkan (commit) atau menggabungkan (merge) setiap perubahan kode (code changes) 
+mereka ke sebuah repositori terpusat (central repository), setelah itu proses build dan test 
+secara otomatis pun dijalankan.
+ 
+Continuous Delivery
+praktik pada proses pengembangan aplikasi di mana perubahan kode (code changes) 
+secara otomatis dipersiapkan sebelum nantinya dikirim ke lingkungan production.
+Jika di CI hanya sampai proses build dan unit test, di CD ini prosesnya hingga deploy 
+semua perubahan kode ke lingkungan testing, staging (pre-production), dan/atau production. 
+Namun, untuk bisa men-deploy ke production, perlu melalui persetujuan manual (manual approval) 
+terlebih dahulu, entah itu oleh Developer yang lebih senior, manajer, atau siapa pun yang berhak.
+ 
+Continuous Deployment
+dengan continuous deployment, proses deploy aplikasi ke lingkungan production berlangsung 
+secara otomatis tanpa ada persetujuan eksplisit dan intervensi manusia.
+
+> DevOps Tools
+- Komunikasi dan Kolaborasi
+    Platform komunikasi dan kolaborasi terpadu: 
+    Microsoft Teams, Slack, Workplace, Cisco Webex Teams, Amazon Chime
+
+    Cloud: AWS
+
+    IDE: 
+    Visual Studio dengan fitur Live Share, Intellij IDEA dengan fitur Code With Me, AWS Cloud9
+
+- CI/CD
+    Code: GitHub, GitLab, BitBucket, AWS CodeCommit
+    
+    Build: Jenkins, Travis CI, CircleCI, AWS CodeBuild
+    
+    Test: third-party tools yang tersedia di AWS Marketplace; Gremlin, Testable, LoadRunner, UFT One
+    
+    Release: Apabila artifact berbentuk compressed file, bisa ditaruh di 
+                object storage seperti Amazon S3.
+                jika berbentuk container image: 
+                Docker Hub, JFrog Artifactory, Amazon ECR, AWS CodeArtifact
+    
+    Deploy: Heroku, Netlify, GitHub Pages, AWS CodeDeploy, AWS Elastic Beanstalk
+    
+    Monitor: Prometheus, Elastic Stack, Dynatrace, AWS X-Ray, Amazon CloudWatch
+
+- Infrastructure as Code
+    Infrastructure automation: Terraform dan AWS CloudFormation
+    pembuatan infrastruktur dan sumber daya sejenis secara otomatis hanya dengan menggunakan kode. 
+    Dengan cara ini, baik Developer maupun IT Operations dapat berinteraksi dengan infrastruktur 
+    secara terprogram dalam skala besar tanpa harus mengonfigurasinya secara manual.
+
+    Configuration management: Chef, Puppet, Ansible, AWS OpsWorks
+
+- Arsitektur Microservices
+    Container: Kubernetes, OpenShift, Nomad, Amazon EKS, Amazon ECS
+
+    Serverless: Serverless, OpenFaaS, OpenWhisk, AWS Lambda
+
+- Monitoring dan Logging: Prometheus, Elastic Stack, Dynatrace, AWS X-Ray, Amazon CloudWatch
+
+https://youtu.be/zfyTMPiYxCg
