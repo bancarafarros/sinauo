@@ -1,0 +1,78 @@
+URL (Uniform Resource Locator)
+
+apa yang terjadi di balik layar? Pertama, permintaan Anda akan diproses oleh komputer, 
+kemudian komputer Anda akan menuju server Dicoding dan bertanya mengenai website yang Anda minta. 
+Setelah memproses permintaan, server akan merespons dengan mengirim hasilnya ke komputer Anda, 
+hingga akhirnya komputer Anda akan menyajikan laman Dicoding Indonesia.
+
+> Internet di Balik Layar
+internet adalah kumpulan jaringan yang luas dan terhubung satu sama lain. Istilah "Internet" bisa 
+dikatakan berasal dari konsep interconnected network (jaringan yang saling berhubungan).
+
+Di internet, satu komputer terhubung dengan komputer yang lain dalam suatu jaringan, 
+begitu pula satu jaringan terhubung dengan jaringan yang lain. Dengan demikian, sebuah komputer 
+dapat berkomunikasi dengan komputer lain di jaringan yang jauh jaraknya berkat internet.
+
+Komputer bisa saling terhubung satu sama lain melalui kabel, gelombang radio, dan 
+jenis infrastruktur jaringan lainnya. Semua data yang dikirim melalui internet–baik berupa gambar, 
+pesan teks, atau email–diterjemahkan ke dalam kelip cahaya atau listrik (disebut juga "bit") yang 
+kemudian ditafsirkan oleh komputer penerima. Kabel dan gelombang radio tersebut menghantarkan 
+bit-bit ini dengan kecepatan cahaya. Makin banyak bit yang dapat melewati kabel dan gelombang 
+radio dalam satu waktu, artinya makin cepat pula internet bekerja.
+
+Namun, alih-alih boks dan amplop, internet mengirimkan data biner.
+
+Data yang dikirim via internet dari komputer pengirim ke komputer tujuan akan bergerak melalui 
+satu router ke router lainnya. Data dalam dunia komputer berbentuk bit.
+
+> Konsep Distributed Networking
+Dengan jumlah router dan komputer yang begitu masif, internet tidak memiliki pusat kendali. 
+Tak ada yang bertanggung jawab untuk menguasai atau mengatur internet, entah itu pemerintah, 
+pemilik telekomunikasi, ataupun para kurcaci.
+
+internet itu terbentuk dari jaringan independen dengan jumlah yang luar biasa banyak. 
+Internet sepenuhnya terdistribusi. Sistem seperti ini disebut juga sebagai Distributed Networking 
+alias Jaringan yang Terdistribusi.
+
+distributed networking adalah sistem jaringan yang saling berhubungan, tetapi independen, dan 
+umumnya tersebar di beberapa lokasi geografis. Seperti itulah internet. internet tidak bergantung 
+pada mesin individu mana pun. Semua komputer atau perangkat yang dapat mengirim dan menerima data 
+dengan cara yang benar (misal menggunakan protokol jaringan yang benar) bisa menjadi bagian dari internet.
+
+Komputer, server, dan perangkat keras jaringan bisa terhubung dan terputus dari internet kapan saja 
+tanpa perlu khawatir akan memengaruhi kelancaran fungsi internet, tidak seperti komputer yang mungkin 
+menjadi tak berfungsi sama sekali saat salah satu komponennya hilang.
+
+> Proses Pengiriman Data
+internet memiliki bentuk jaringan yang terdistribusi.
+
+data berjalan di internet secara tidak langsung (less direct). Pasalnya, jalur yang ditempuh 
+tak mesti tetap. Jalur data dapat berubah di tengah proses komunikasi antarkomputer berlangsung.
+
+Data di internet berpindah dari satu komputer ke komputer lain dalam bentuk packet dan ia bergerak 
+layaknya kita mengendarai mobil. Tergantung pada kemacetan lalu lintas atau kondisi jalan, 
+kita mungkin akan memilih–atau terpaksa–mengambil rute yang berbeda setiap kali bepergian ke 
+tempat yang sama.
+
+Katakanlah Anda memiliki gambar yang sangat besar dan ingin dikirim ke teman atau diunggah ke 
+media sosial. Gambar tersebut mungkin terdiri dari 10 juta bit (1 dan 0) sehingga terlalu banyak 
+untuk dikirim dalam satu packet. Karena itu, data tersebut akan dipecah menjadi ratusan atau bahkan 
+ribuan packet.
+
+packet ini tidak memiliki pengemudi dan tidak memilih rutenya sendiri. Setiap packet memiliki 
+alamat internet dari mana asalnya dan ke mana tujuannya. Alamat internet tersebut dinamakan 
+IP (Internet Protocol) address.
+
+Perangkat jaringan di internet bernama router-lah yang bertindak sebagai pengelola lalu lintas untuk 
+menjaga packet tetap bergerak melalui setiap jaringan di internet dengan lancar. Jika satu rute macet, 
+masing-masing packet dapat menempuh rute yang berbeda-beda sehingga mungkin saja tiba 
+di tujuan pada waktu yang sedikit berbeda atau bahkan tak sampai sama sekali.
+
+Intinya, internet tercipta dari ratusan ribu jaringan dan miliaran perangkat yang saling terhubung. 
+Sistem yang berbeda-beda ini bisa saling berkomunikasi dan bekerja sama berkat standar yang disepakati 
+tentang bagaimana data dikirim di internet.
+
+Perangkat komputasi atau router di sepanjang internet membantu semua packet agar mampu mencapai tujuan. 
+Ini terjadi miliaran kali setiap harinya, misal saat Anda atau orang lain mengirim email, 
+mengunjungi halaman web, melakukan video call, menggunakan aplikasi seluler, atau 
+ketika perangkat di internet berkomunikasi satu sama lain.
