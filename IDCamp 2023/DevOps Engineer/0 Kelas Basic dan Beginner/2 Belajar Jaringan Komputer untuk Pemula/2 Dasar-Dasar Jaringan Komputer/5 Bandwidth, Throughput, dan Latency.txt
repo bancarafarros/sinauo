@@ -1,0 +1,91 @@
+> Bandwidth
+kapasitas transmisi maksimum dari sebuah perangkat. Bandwidth diukur dengan bit rate, 
+yakni jumlah bit yang dapat kita kirim selama periode waktu tertentu, biasanya diukur dalam detik, 
+seperti Kbps (Kilobit per second), Mbps (Megabit per second), atau Gbps (Gigabit per second).
+
+bit dan byte itu berbeda ya. 
+8 bit adalah 1 byte.
+1024 byte adalah 1 kilobyte.
+1024 kilobyte adalah 1 megabyte.
+1024 megabyte adalah 1 gigabyte.
+
+Bit disimbolkan dengan huruf b kecil (misal Kb atau Kbps), sementara 
+byte dengan huruf b besar (misal KB atau KBps).
+
+Apabila sebuah jaringan memiliki bandwidth tinggi, itu berarti jumlah data yang dapat dikirim dan 
+diterima bisa lebih banyak. Namun, bandwidth tinggi tidak selalu menjamin kinerja jaringan yang optimal. 
+Misalnya, bila jaringan Anda dipengaruhi oleh banyak faktor, seperti packet loss, jitter, 
+dan latency maka jaringan Anda kemungkinan akan mengalami perlambatan meskipun 
+memiliki ketersediaan bandwidth yang tinggi.
+
+Bandwidth sejatinya mengukur kapasitas, bukan kecepatan.
+
+jika bandwidth Anda meningkat, satu-satunya perbedaan adalah kapasitas maksimum dari jumlah data yang 
+dapat ditransmisikan pada waktu tertentu.
+
+Meskipun kemampuan untuk mengirimkan data menjadi lebih banyak dan mungkin saja 
+meningkatkan kecepatan jaringan, tetapi peningkatan bandwidth tidak selalu berarti 
+meningkatkan kecepatan transmisi data. Pada kenyataannya, bandwidth hanyalah salah satu 
+dari sekian banyak faktor yang berkontribusi pada kecepatan jaringan.
+
+> Throughput
+jumlah aktual data yang berhasil dikirim atau diterima melalui jaringan. Throughput disajikan 
+dalam satuan Kbps, Mbps, atau Gbps. Jumlah data pada throughput dapat berbeda dari bandwidth 
+karena berbagai masalah teknis, termasuk packet loss, jitter, latency, dan lainnya.
+
+Jika bandwidth diibaratkan sebagai pipa, maka throughput adalah air yang mengalir melalui pipa. 
+Semakin besar pipa (bandwidth), semakin banyak air yang dapat mengalir pada waktu tertentu (throughput).
+
+Dalam jaringan, bandwidth menentukan jumlah maksimum data yang dapat dikirim dan diterima selama 
+periode waktu tertentu, sementara throughput memberi tahu Anda jumlah data yang sebenarnya 
+dikirim dan diterima. Karena itu, throughput jauh lebih penting daripada bandwidth dalam hal mengukur 
+kinerja jaringan.
+
+memantau throughput pada jaringan akan membantu mendapatkan visibilitas kinerja jaringan secara 
+real-time dan meningkatkan wawasan mengenai kecepatan pengiriman data.
+
+> Latency
+jumlah waktu yang dibutuhkan data untuk berpindah dari titik asal ke titik tujuan dan kembali lagi
+ke titik asal (dikenal juga sebagai round trip atau perjalanan bolak-balik). Latensi sering kali 
+dipakai untuk mengukur delay (penundaan) pada komunikasi client dan server.
+
+Katakanlah seorang pengguna di Ambon melakukan suatu permintaan ke server Dicoding yang 
+berada di Jakarta. Dalam kasus ini, waktu yang perlu ditempuh oleh permintaan (request) pengguna 
+untuk sampai di server Dicoding adalah 748 milidetik, sedangkan waktu yang ditempuh oleh 
+server Dicoding untuk mengirimkan respons ke pengguna adalah 653 milidetik. 
+Itu berarti, besarnya latensi pada proses komunikasi tersebut ialah 1401 milidetik atau 1,4 detik. 
+Ketahuilah, makin besar latensi pada jaringan Anda, makin lama pula waktu yang dibutuhkan 
+menyelesaikan suatu permintaan.
+
+bandwidth mengacu pada kapasitas jaringan dan jumlah data yang dapat ditransmisikan selama 
+periode waktu tertentu. Di sisi lain, latensi merujuk pada berapa lama waktu yang dibutuhkan data 
+untuk menyelesaikan perjalanan bolak-baliknya (dari lokasi pengguna ke server, dilanjut dari server 
+ke pengguna kembali).
+
+Anggaplah bandwidth sebagai pipa. Semakin besar kapasitas pipa, maka semakin tinggi bandwidth. 
+Sementara itu, latensi mengukur berapa lama waktu yang dibutuhkan untuk air di dalam pipa 
+(diibaratkan throughput) mencapai tujuannya.
+
+Semakin rendah throughput (walau bandwidth Anda besar), semakin banyak waktu yang dibutuhkan data 
+untuk mencapai tujuan–sehingga dapat menyebabkan latensi yang lebih tinggi. Demikian pula, 
+semakin tinggi throughput (didukung dengan bandwidth yang besar), semakin cepat data akan 
+melakukan perjalanannya–sehingga dapat menghasilkan latensi yang lebih rendah.
+
+Bandwidth bisa kita anggap sebagai lebar jalur di jalan tol. Semakin lebar jalurnya, maka 
+semakin banyak pula kendaraan yang bisa lewat. Bandingkan saja, jalur di jalan tol yang memiliki 
+lima lajur tentunya punya kapasitas mobil lebih banyak ketimbang satu lajur saja.
+
+Jadi, ketika jalur dengan satu lajur mengalami kemacetan, langkah yang tepat adalah menambah 
+lebih banyak lajur (meningkatkan bandwidth) agar semakin banyak kendaraan (data) yang bisa 
+melalui jalur tersebut. Namun, tetap saja, apabila setiap kendaraan hanya bisa melaju dengan 
+kecepatan maksimum 50 km/j, itu tak akan berpengaruh meski ada 6, 10, atau 30 lajur sekalipun. 
+
+Maka dari itu, kecepatan masing-masing kendaraan (throughput) lah yang perlu ditingkatkan. 
+Ingat! Meski jalur sudah lebar dan laju kendaraan (data) kencang, perlambatan akan selalu ada. 
+Entah itu karena kemacetan di jam sibuk, batas kecepatan, lubang, dan kendaraan yang ugal-ugalan; 
+semua faktor tersebut dapat mencegah Anda untuk sampai ke tujuan dengan cepat.
+
+latency bisa kita ibaratkan sebagai berapa lama waktu yang dibutuhkan untuk setiap 
+kendaraan (data) menempuh perjalanan pulang pergi atau bolak-balik, misal dari Bandung-Jakarta-Bandung.
+Jika waktu tempuh (latency) kendaraan terasa lebih lama, maka itu menandakan ada yang tidak beres 
+dan perlu dievaluasi.
