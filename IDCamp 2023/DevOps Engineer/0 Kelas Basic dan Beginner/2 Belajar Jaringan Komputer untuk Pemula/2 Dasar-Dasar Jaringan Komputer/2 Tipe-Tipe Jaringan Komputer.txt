@@ -1,0 +1,64 @@
+> Personal Area Network (PAN)
+tipe jaringan dengan cakupan terkecil dan sangat pribadi bagi penggunanya.
+PAN menghubungkan perangkat elektronik yang berada dalam jangkauan pengguna. 
+Ukuran konektivitas PAN berkisar dari sekian sentimeter hingga umumnya hingga 10 meter.
+
+Koneksi jaringan PAN dapat berupa kabel atau nirkabel. Metode koneksi kabel termasuk USB dan FireWire, 
+sedangkan metode koneksi nirkabel termasuk Bluetooth, WiFi, IrDA, dan Zigbee.
+
+> Local Area Network (LAN)
+jaringan komputer yang memiliki cakupan area geografis yang relatif kecil. Pada tipe jaringan ini, 
+jarak komputer satu sama lain cukup berdekatan, seperti di dalam satu kantor atau gedung yang sama.
+
+Jumlah komputer yang terhubung dalam LAN mulai dari hitungan jari, belasan, atau bahkan ratusan
+selama komputer-komputer tersebut masih berada di satu wilayah yang bisa dijangkau oleh 
+peralatan jaringan Anda.
+
+Contoh dari jaringan LAN adalah barisan komputer di laboratorium sekolah, 
+kumpulan komputer pegawai di suatu perusahaan, atau warung internet (warnet).
+
+LAN hampir selalu menggunakan Ethernet, WiFi, atau keduanya untuk menghubungkan perangkat dalam jaringan. 
+Ethernet adalah protokol untuk koneksi jaringan fisik yang memerlukan penggunaan kabel Ethernet, 
+sedangkan WiFi adalah protokol untuk menghubungkan ke jaringan melalui gelombang radio.
+berbagai perangkat dapat terhubung ke LAN.
+
+> Metropolitan Area Network (MAN)
+jaringan komputer yang menghubungkan komputer dalam satu kota besar, beberapa kota besar dan kecil, 
+atau area luas tertentu dengan banyak bangunan.
+
+jaringan MAN sering kali digunakan untuk menghubungkan dua atau lebih jaringan LAN dalam satu kota 
+yang sama yang jaraknya cukup jauh dan tidak dapat dihubungkan melalui kabel 
+sederhana atau koneksi nirkabel.
+
+Salah satu produk atau solusi yang bisa digunakan untuk memiliki jaringan MAN adalah Metro Ethernet. 
+Metro Ethernet alias Metropolitan-area Ethernet adalah layanan yang disediakan oleh ISP 
+yang memungkinkan penggunanya untuk memiliki jaringan (MAN) berbasis standar Ethernet yang 
+jangkauannya lebih luas.
+
+mempunyai fungsi untuk memenuhi kebutuhan internet pada sebuah perusahaan atau organisasi. 
+Jaringan MAN akan mempermudah pembagian dan penerimaan data maupun informasi. Terlebih lagi, 
+pemusatan data pada MAN akan lebih mudah dilakukan.
+
+Melalui jaringan MAN, sebuah perusahaan dapat melakukan kegiatan bertukar informasi, 
+baik melalui video conference, email, maupun chat secara real time memakai koneksi lokal.
+
+memerlukan jaringan MAN, antara lain [2]:
+Institusi pemerintahan yang membutuhkan koneksi tepercaya untuk support kebutuhan data dan sistem.
+Institusi pendidikan yang membutuhkan koneksi untuk mendukung program sekolah online.
+ISP yang memerlukan koneksi dari atau ke IIX (Indonesia Internet Exchange).
+Perusahaan yang memerlukan koneksi berkapasitas besar dari atau ke DC (Data Center) dan DRC (Disaster Recovery Center).
+Perusahaan yang memerlukan koneksi antara Kantor Pusat dengan Kantor Cabang.
+Perusahaan yang memerlukan koneksi untuk sistem data cadangan atau untuk keperluan integrasi sistem IT antar departemen.
+
+> Wide Area Network (WAN)
+mencakup wilayah geografis yang sungguh luas hingga mampu menjangkau lintas provinsi, 
+lintas negara, bahkan lintas benua; dan umumnya digunakan untuk menghubungkan dua atau 
+lebih LAN yang jaraknya relatif berjauhan.
+
+WAN kerap dimanfaatkan oleh perusahaan besar untuk menghubungkan semua jaringan kantor mereka, 
+di mana setiap kantor biasanya memiliki jaringan LAN sendiri, dan LAN tersebut terhubung melalui WAN. 
+Misal, perusahaan dapat memanfaatkan jaringan WAN untuk menghubungkan kantor cabang mereka yang 
+berada di Jakarta dengan kantor pusat yang ada di Sydney.
+
+secara teknis setiap jaringan yang besar dan tersebar di wilayah geografis yang luas adalah WAN. 
+Internet itu sendiri dapat dikatakan sebagai WAN–ini sekaligus menjawab pertanyaan di awal submodul.
