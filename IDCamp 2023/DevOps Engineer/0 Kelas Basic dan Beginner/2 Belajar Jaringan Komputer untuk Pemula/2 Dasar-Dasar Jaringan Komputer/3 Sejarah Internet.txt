@@ -1,0 +1,47 @@
+Internet bermula dari jaringan kecil yang disebut ARPANET (Advanced Research Project Agency Network), 
+dibangun oleh Departemen Pertahanan (Department of Defense) Amerika Serikat pada tahun 1969 untuk 
+menghubungkan instalasi pertahanan.
+
+ARPANET kemudian segera diperluas untuk mencakup tidak hanya instalasi pertahanan, melainkan juga 
+universitas. Di bawah ini adalah gambar yang menunjukkan lokasi ARPANET pertama yang terhubung pada 
+bulan Desember di tahun 1969, yakni UCLA, SRI, UCSB , dan University of Utah.
+
+Pada tahun 1973, protokol jaringan yang dipakai dari awal, yakni NCP (Network Control Protocol), 
+digadang-gadang akan digantikan oleh TCP/IP (Transmission Control Protocol/Internet Protocol). 
+NCP hendak diganti karena ia hanya mendukung komunikasi host-to-host (perangkat ke perangkat) 
+dalam jaringan yang sama. Tentu saja itu tidak memenuhi kebutuhan yang pada saat itu 
+menginginkan jaringan yang dinamis, terbuka, dan andal.
+
+Kemudian, TCP/IP distandardisasi dari tahun 1978 sampai 1981. Hingga akhirnya, pada tanggal 
+1 Januari 1983 (dikenal sebagai “flag day”), NCP secara resmi dianggap usang dan ARPANET 
+mengubah protokol jaringan intinya dari NCP ke TCP/IP protocol suite yang lebih fleksibel dan kuat.
+
+Dalam tahun yang sama, ARPANET dipecah menjadi dua jaringan: MILNET (untuk penggunaan militer, 
+dilindungi oleh keamanan yang kuat seperti enkripsi dan kontrol akses yang terbatas) dan 
+ARPANET yang asli (untuk penggunaan nonmiliter seperti riset dan penelitian). 
+Istilah “Internet” mulanya diciptakan sebagai cara mudah untuk merujuk pada kombinasi kedua 
+jaringan tersebut, yakni “internetworking”.
+
+Selanjutnya, pada pertengahan 1980-an, ARPANET banyak digunakan oleh para researcher (peneliti) dan developer (pengembang).
+
+Tak selang berapa lama, ARPANET mulai mencapai batas kemampuannya. Lantas, masuklah 
+National Science Foundation (NSF) mendirikan jaringan nasional yang dirancang untuk menyediakan akses 
+ke superkomputer besar (digunakan untuk menemukan bilangan prima baru dan menghitung orbit galaksi 
+nan jauh di sana).
+
+Superkomputer memang tidak banyak digunakan kala itu, tetapi jaringan yang dipakai untuk mendukung 
+superkomputer–NSFNET–aktif digunakan. NSFNET sudah mulai menggunakan ARPANET sebagai 
+tulang punggungnya sejak tahun 1984. Akan tetapi, pada tahun 1988, NSF telah memulai komersialisasi dan 
+privatisasi internet dengan mempromosikan pengembangan jaringan yang "private" (pribadi) dan 
+"long-haul” (jarak jauh). Peran dari private network alias jaringan pribadi ini adalah untuk membangun 
+jaringan baru atau memelihara jaringan lokal/regional yang sudah ada, selagi memberikan akses ke 
+seluruh internet kepada penggunanya.
+
+ARPANET secara resmi dinonaktifkan pada tahun 1990. Sementara itu, pada tahun 1995, NSFNET ditutup 
+dan internet secara efektif diprivatisasi. Kala itu, jaringan telah menjadi “Internet”, 
+yakni galaksi komunikasi baru yang siap untuk dieksplorasi dan dihuni sepenuhnya.
+
+Internet kian berkembang, tetapi sayangnya jumlah komputer di internet tak bertambah di awal 1990-an.
+Akan tetapi, sekitar Agustus 1995, ada sekitar 10 juta host di internet. Lima tahun berselang, 
+tahun 2000-an, terjadi ledakan pada jumlah komputer yang begitu fenomenal di internet, 
+yakni lebih dari 100 juta host.
