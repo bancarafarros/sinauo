@@ -1,0 +1,277 @@
+model OSI bersifat teoretis, sedangkan model TCP/IP lebih praktis.
+
+TCP/IP merupakan bahasa dari internet. Jadi, bila Anda ingin memahami bagaimana internet dan
+jaringan lainnya bekerja, Anda haruslah paham model TCP/IP.
+
+Kumpulan standar atau aturan yang harus diikuti oleh komputer agar dapat berkomunikasi 
+dengan benar disebut protokol.
+
+Jaringan komputer memastikan bahwa setiap komputer dapat mendengar satu sama lain, 
+saling berkomunikasi melalui protokol yang komputer lain juga mengerti, 
+jika diperlukan mengulangi pesan yang tidak terkirim secara utuh, dan berbagai hal lainnya.
+
+> Application Layer
+layer paling atas dalam model TCP/IP. Layer ini memungkinkan pengguna 
+untuk berinteraksi dengan aplikasi.
+
+- HTTP dan HTTPS
+Hypertext Transfer Protocol (HTTP) adalah fondasi dari WWW, yakni internet yang berinteraksi dengan 
+pengguna di seluruh dunia. HTTP digunakan untuk mentransfer data antarperangkat. 
+Protokol ini berada di application layer karena ia menempatkan data ke dalam format yang aplikasi 
+(misalnya browser) gunakan secara langsung tanpa interpretasi lebih lanjut.
+
+Namun, apa yang dimaksud dengan Hypertext? Hypertext adalah sistem dokumentasi yang terkelola 
+dengan baik menggunakan hyperlink (pranala) untuk menghubungkan halaman-halaman dalam dokumen teks.
+
+Ketika pengguna ingin mengakses halaman HTTP apa pun di internet, komputer client akan memulai koneksi 
+TCP ke server pada port 80 atau port 443 untuk HTTPS. Ketika server menerima permintaan client, 
+client berwenang untuk mengakses halaman web.
+
+HTTP adalah protokol stateless, yang berarti server tidak menyimpan informasi 
+dari client tentang permintaan sebelumnya.
+
+Masalah dengan HTTP adalah bahwa ia tak terenkripsi sehingga hacker bisa saja mencegat 
+HTTP message dan membacanya. Muncullah HTTPS (HTTP Secure) untuk menyelesaikan masalah 
+tersebut dengan mengenkripsi pesan HTTP.
+
+HTTPS merupakan gabungan antara HTTP dan TLS. Transport Layer Security (TLS) adalah 
+protokol yang digunakan HTTPS untuk proses enkripsi pesan HTTP. 
+TLS dahulu disebut Secure Sockets Layer (SSL). Jadi, jika Anda pernah melihat TLS ataupun SSL, 
+keduanya sama kok.
+
+- SMTP
+Simple Mail Transfer Protocol digunakan untuk mentransfer email dari satu pengguna ke pengguna lainnya. 
+Tugas ini dilakukan melalui email client software (Mail User Agent) yang digunakan pengguna. 
+User Agent membantu pengguna untuk mengetik dan memformat email serta menyimpannya 
+sampai internet tersedia. 
+
+Ketika email dikirim, proses pengiriman akan ditangani oleh Message Transfer Agent yang biasanya 
+disertakan dalam email client software. Message Transfer Agent menggunakan SMTP untuk 
+meneruskan email ke Message Transfer Agent yang lain (sisi server).
+
+- DNS
+Domain Name System adalah sistem penamaan yang memetakan nama domain (misal google.com) ke 
+IP address (misal 216.239.38.120). 
+
+IP address memang digunakan untuk mengidentifikasi koneksi komputer ke jaringan secara unik. 
+Akan tetapi, ketimbang mengingat rangkaian angka, tentu saja manusia akan lebih mudah mengingat nama. 
+Seperti contoh sebelumnya, Anda tentu saja akan lebih hafal google.com ketimbang 216.239.38.120, bukan? 
+Oleh karena itu, DNS hadir untuk menyelesaikan masalah tersebut.
+
+- FTP
+File Transfer Protocol adalah sebuah protokol internet yang digunakan untuk 
+mengirim file melalui jaringan dari satu komputer ke komputer lain.
+
+Saat client melakukan permintaan ke server untuk meminta file, server kemudian akan menerima 
+permintaan tersebut, membuka koneksi TCP, lantas mentransfer file. Setelah proses transfer selesai, 
+server pun menutup koneksi.
+
+- SSH
+SSH atau Secure Shell adalah sebuah protokol jaringan kriptografi untuk komunikasi data yang aman, 
+login dan eksekusi perintah jarak jauh, serta layanan jaringan lainnya antara dua jaringan komputer.
+
+SSH dapat digunakan dalam beberapa metodologi. Yang paling sederhana, 
+kedua komputer (client dan server) menggunakan public-private key pairs 
+(pasangan kunci publik-privat) yang dibuat secara otomatis untuk 
+mengenkripsi koneksi jaringan dan kemudian menggunakan kata sandi untuk mengautentikasi pengguna.
+
+> Transport layer 
+bertanggung jawab atas keandalan, kontrol aliran, dan koreksi data yang dikirim melalui jaringan. 
+Dua protokol yang digunakan pada layer ini adalah TCP dan UDP.
+
+- TCP
+Transmission Control Protocol adalah protokol yang connection-oriented alias berorientasi koneksi. 
+Artinya, TCP akan memastikan bahwa setiap packet dikirimkan–jika memungkinkan–dengan 
+membuat koneksi ke perangkat penerima. Jika sebuah paket tidak tiba di tujuan, TCP akan 
+mengirim ulang paket tersebut. Koneksi akan ditutup hanya setelah paket berhasil dikirim dengan 
+sukses atau terjadi kondisi kesalahan yang tidak dapat dipulihkan. Dengan demikian, TCP termasuk 
+protokol yang andal.
+
+TCP selalu digunakan untuk komunikasi satu komputer ke satu komputer lainnya. 
+TCP tidak digunakan untuk mem-broadcast (menyiarkan) pesan ke beberapa penerima sekaligus. 
+
+Banyak protokol pada application layer yang mengandalkan TCP. Misalnya, 
+ketika pengguna menjalankan browser dan membuka suatu halaman web, browser tersebut menggunakan 
+HTTP untuk mengirim permintaan melalui TCP ke web server.
+
+Untuk memulai proses komunikasi antara dua komputer, TCP menggunakan segment 
+untuk menentukan apakah komputer penerima siap menerima data. Ketika komputer pengirim 
+ingin menjalin koneksi, TCP di sisi pengirim akan mengirimkan segment yang disebut 
+SYN (Synchronize) ke protokol TCP di sisi penerima. Kemudian, TCP penerima mengembalikan 
+segment yang disebut SYN/ACK (Synchronize/Acknowledge) untuk menyatakan kesiapannya dalam menerima data. 
+Lalu, TCP pengirim mengirimkan segment ACK (Acknowledge) dan melanjutkan untuk mengirim data. 
+Pertukaran informasi ini disebut sebagai three-way handshake.
+
+- UDP
+User Datagram Protocol adalah protokol yang bersifat connectionless (tanpa koneksi). 
+Maksudnya, UDP tidak memverifikasi koneksi antara komputer pengirim dan komputer penerima. 
+Setelah UDP menerima dan memproses packet, ia kemudian akan melupakannya. UDP juga tidak 
+menjamin bahwa packet tadi akan tiba di tujuannya.
+
+Berbeda dengan TCP, UDP tidak ada konsep three-way handshake untuk menjalin koneksi.
+Saat menggunakan UDP, kita hanya perlu mengatur port tujuan dan mengirim packet.
+Sebagian besar aplikasi yang menggunakan UDP memiliki prinsip fire and forget. 
+Dalam artian, aplikasi hanya akan mengirim packet ke tujuan dan tidak peduli apakah packet 
+tersebut benar-benar sampai atau tidak. Apabila nyatanya packet itu hilang di tengah jalan, 
+UDP tak akan mengirimkan ulang. UDP hanya akan fokus ke pengiriman packet selanjutnya.
+
+Protokol pada application layer yang menggunakan UDP adalah Domain Name System (DNS). 
+Saat aplikasi perlu mengakses nama domain (seperti google.com), DNS akan mengirimkan 
+paket UDP ke server DNS untuk mencari domain. Ketika server menemukan domain, ia mengembalikan 
+jawaban sebagai IP address dari domain yang dicari dalam bentuk UDP packet.
+
+UDP adalah alternatif yang lebih cepat ketimbang TCP, tetapi kurang dapat diandalkan.
+Protokol ini kerap digunakan dalam layanan seperti streaming video dan game, di mana pengiriman data 
+yang cepat adalah faktor terpenting.
+
+> Network Layer
+menerima dan mengirim packet melalui jaringan. Protokol di layer ini mencakup 
+IP (Internet Protocol), ARP (Address Resolution Protocol), 
+dan Internet Control Message Protocol (ICMP).
+
+- IP
+Internet Protocol adalah protokol yang bertanggung jawab untuk mengirimkan packet ke perangkat jaringan. 
+Protokol ini menggunakan IP address ketimbang alamat fisik (MAC) untuk merujuk ke perangkat individu. 
+ARP-lah yang menangani tugas mengubah IP address ke MAC address.
+
+IP address merupakan rangkaian angka pengidentifikasi unik yang dinyatakan dalam 
+bentuk 4 oktet yang masing-masing berisi angka desimal mulai dari 0 hingga 255, setiap oktet 
+mewakili 8 bit dan dipisahkan oleh titik, dan total panjang seluruh alamat adalah 32 bit. 
+Contoh dari IP address adalah 192.168.100.1. Selain itu, IP juga memiliki kemampuan untuk 
+merutekan packet. Ketika packet dikirim melalui jaringan yang sama, 
+maka itu dikenal sebagai direct delivery (pengiriman langsung). Akan tetapi, saat sumber dan 
+tujuan berada di jaringan yang berbeda, maka packet akan dikirim secara tidak langsung. 
+Ini dapat dicapai dengan merutekan packet melalui berbagai perangkat jaringan seperti router. 
+Nanti kita akan bahas lebih jauh di beberapa modul mendatang.
+
+- ARP
+Address Resolution Protocol bertugas untuk membantu IP dalam mengarahkan packet ke komputer penerima
+yang sesuai dengan memetakan MAC address ke IP address.
+
+Untuk mengetahui MAC address komputer lain pada sebuah segmen jaringan, komputer yang ingin memulai 
+komunikasi akan mengirimkan broadcast message ARP atau ARP Request 
+dengan menanyakan, "Siapa pemilik IP address ini?" Karena merupakan broadcast message, semua 
+komputer di segmen jaringan akan menerima ARP packet dan memprosesnya 
+(ARP packet berisi IP address komputer tujuan). Ketika sebuah komputer menerima ARP packet 
+yang ditujukan untuk dirinya, ia lantas membalasnya dengan MAC address-nya sendiri (ARP Reply). 
+Setelah komputer pengirim sukses mendapatkan MAC address tujuan, ia akhirnya dapat berkomunikasi 
+dengan komputer penerima menggunakan protokol di data link layer. 
+Pemetaan MAC address ke IP address ini selanjutnya disimpan ke dalam ARP cache 
+(penyimpanan data ARP untuk sementara) di komputer pengirim dan penerima. 
+Lain kali, jika perlu berkomunikasi kembali, mereka dapat langsung merujuk ke ARP cache masing-masing.
+
+- ICMP
+Internet Control Message Protocol bertanggung jawab untuk mendiagnosis dan melaporkan kondisi 
+jaringan sekaligus menyediakan pembaruan status. Misalnya, jika router, sebagai perantara jaringan, 
+tidak dapat mengirimkan paket ke suatu komputer, ia akan mengirim pesan ICMP kembali ke sumber paket.
+
+ICMP melaporkan hal-hal berikut:
+Dropped packet: Packet yang datang terlalu cepat untuk diproses. 
+Connectivity failure: Sistem tujuan tidak dapat dijangkau. 
+Redirection: Mengarahkan komputer pengirim untuk menggunakan router lain.
+
+> Data Link Layer
+Data link layer bertugas untuk mengidentifikasi jenis protokol jaringan pada packet. 
+Layer ini juga menyediakan error control (kontrol kesalahan) dan framing (pembuatan frame). 
+
+Berikut beberapa contoh protokol, standar, dan implementasi pada data link layer:
+- Ethernet
+merupakan keluarga teknologi jaringan komputer kabel yang biasa digunakan di LAN, MAN, dan WAN.
+
+Teknologi ini diperkenalkan secara komersial pada tahun 1980 dan pertama kali distandardisasi 
+pada tahun 1983 sebagai IEEE 802.3. Ethernet telah disempurnakan untuk mendukung kecepatan 
+bit yang lebih tinggi, jumlah komputer yang lebih banyak, dan jarak tautan yang lebih jauh.
+
+Ethernet banyak digunakan di rumah dan industri. Terlebih lagi, Ethernet mampu bekerja sama 
+dengan teknologi nirkabel seperti Wi-Fi. Bahkan, Ethernet dianggap sebagai salah satu 
+teknologi utama yang membentuk Internet.
+
+- Frame Relay
+teknologi WAN standar yang menentukan physical layer dan data link layer dari 
+saluran telekomunikasi digital menggunakan metodologi packet switching. Awalnya dirancang untuk 
+transportasi melintasi Integrated Service Digital Network (ISDN), kini dapat digunakan untuk 
+banyak antarmuka jaringan lainnya.
+
+Dengan munculnya Ethernet melalui fiber optic, MPLS (Multiprotocol Label Switching), 
+VPN (Virtual Private Network), dan layanan broadband khusus seperti modem kabel 
+dan DSL (Digital Subscriber Line), Frame Relay menjadi kurang populer dalam beberapa tahun terakhir.
+
+- Token Ring
+teknologi jaringan komputer yang pada masanya digunakan untuk membangun LAN. 
+Token Ring diperkenalkan oleh IBM pada tahun 1984 dan distandardisasi pada tahun 1989 
+sebagai IEEE 802.5.
+
+Token Ring merupakan teknologi yang sukses, terutama di lingkungan perusahaan. 
+Akan tetapi, secara bertahap dikalahkan oleh versi Ethernet yang lebih baru.
+
+- IEEE 802.11
+bagian dari standar IEEE 802 yang menetapkan kumpulan protokol dari MAC dan physical layer untuk 
+mengimplementasikan komunikasi komputer Wireless Local Area Network (WLAN).
+
+Standar ini memberikan dasar untuk produk jaringan nirkabel yang menggunakan merek Wi-Fi dan 
+merupakan standar jaringan komputer nirkabel yang paling banyak digunakan di dunia.
+
+IEEE 802.11 digunakan di sebagian besar jaringan rumah dan kantor untuk 
+memungkinkan laptop, printer, smartphone, dan perangkat lain berkomunikasi satu sama lain 
+dan mengakses internet tanpa menghubungkan kabel (nirkabel).
+
+IEEE 802.11 menggunakan berbagai frekuensi, termasuk frequency band 2,4 GHz, 5 GHz, 6 GHz, dan 60 GHz.
+Protokol ini biasanya digunakan bersama dengan 
+IEEE 802.2 (standar yang mendefinisikan LLC atau Logical Link Control) dan dirancang untuk 
+saling bekerja sama dengan Ethernet.
+
+- PPP
+Point-to-Point Protocol adalah protokol yang digunakan untuk menghubungkan satu sistem komputer ke 
+sistem komputer lainnya. Komputer menggunakan PPP untuk berkomunikasi melalui jaringan telepon 
+atau internet.
+
+PPP memungkinkan beberapa protokol komunikasi jaringan untuk menggunakan jalur 
+komunikasi fisik yang sama. PPP digunakan pada banyak jenis jaringan fisik, termasuk kabel serial, 
+saluran telepon, telepon seluler, ISDN, dan tautan serat optik seperti SONET.
+
+
+> Physical Layer
+memiliki tanggung jawab untuk menentukan karakteristik perangkat keras yang akan 
+digunakan untuk jaringan. Layer ini menjelaskan standar perangkat keras seperti 
+IEEE 802.3 (spesifikasi untuk media jaringan Ethernet) dan 
+RS-232 (spesifikasi untuk konektor pin standar).
+
+Layer ini paling erat hubungannya dengan koneksi fisik antarperangkat, yakni 
+dengan menyediakan antarmuka listrik, mekanik, dan prosedural ke media transmisi. 
+Selain itu, bentuk dan sifat dari konektor listrik, frekuensi siaran, dan 
+kode saluran yang digunakan, ditentukan oleh physical layer.
+
+Berikut beberapa teknologi yang menyediakan layanan pada physical layer:
+- Bluetooth physical layer
+standar teknologi komunikasi jarak pendek yang memungkinkan perangkat seperti ponsel, komputer, 
+dan periferal untuk mengirimkan data atau suara secara nirkabel melalui jarak pendek.
+
+Tujuan diciptakannya Bluetooth ini adalah untuk mengganti kabel yang biasanya menghubungkan perangkat, 
+seraya tetap menjaga komunikasi tetap aman.
+
+- DSL physical layer
+Digital Subscriber Line merupakan teknologi yang digunakan untuk mengirimkan data digital 
+melalui saluran telepon. Dalam pemasaran telekomunikasi, istilah DSL secara luas dipahami 
+sebagai Asymmetric Digital Subscriber Line (ADSL), yakni teknologi DSL yang paling umum dipasang 
+untuk akses Internet.
+
+- Ethernet physical layer
+fungsionalitas physical layer dari famili Ethernet yang diterbitkan oleh 
+Institute of Electrical and Electronics Engineers (IEEE).
+
+Ada banyak standar Ethernet yang tersedia saat ini, seperti 100BASE-TX, 10BASE-T, 
+1000BASE-T, 100BASE-T, dll.
+
+SONET dan SDH physical layer
+- Synchronous optical networking (SONET) dan Synchronous Digital Hierarchy adalah 
+protokol standar untuk mentransfer beberapa aliran bit digital secara sinkron melalui 
+fiber optic (serat optik) menggunakan laser atau cahaya yang sangat koheren dari LED.
+
+- Modem physical layer
+modulator-demodulator adalah sebuah perangkat keras komputer untuk mengubah 
+data dari format digital ke dalam bentuk yang sesuai untuk analog, seperti telepon atau radio.
+
+- USB physical layer
+Universal Serial Bus adalah standar industri yang memungkinkan komputer untuk berkomunikasi dengan 
+periferal (printer, mouse, dan keyboard) atau perangkat lain. Ada banyak variasi rentetan 
+perangkat keras USB, USB-C adalah yang paling terkini.
