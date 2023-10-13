@@ -1,0 +1,228 @@
+Terdapat dua model jaringan yang acap dijadikan referensi oleh seluruh dunia, 
+yakni Model OSI dan Model TCP/IP.
+
+Protokol adalah seperangkat aturan yang menentukan bagaimana data ditransmisikan antara perangkat 
+yang berbeda dalam jaringan.
+
+Model jaringan sejatinya menjelaskan tentang arsitektur, komponen, dan desain yang digunakan 
+untuk membangun komunikasi antara sistem sumber dan tujuan. Model jaringan (networking model) juga 
+kerap disebut sebagai protocol stacks, protocol suites, atau network stacks.
+
+Protocol Stack                       Vendor
+Systems Network Architecture (SNA) - IBM
+AppleTalk                           - Apple
+Netware                             - Novell
+Open System Interconnection (OSI) - ISO dan ITU
+
+sebagian besar model jaringan tersebut kini telah lenyap dan usang karena popularitas model TCP/IP.
+TCP/IP merupakan Transmission Control Protocol/Internet Protocol, ia mewakili 
+rangkaian protokol yang digunakan pada hampir semua sistem komunikasi modern.
+
+> Model OSI (Open Systems Interconnection)
+model jaringan teoretis yang diusulkan untuk menstandardisasi komunikasi antara perangkat melalui 
+jaringan. Yang dimaksud teoritis adalah model ini tidak ada implementasi praktis. 
+Ia hanyalah model konseptual yang menjelaskan bagaimana aplikasi dapat bekerja melalui jaringan.
+
+Model OSI memiliki 7 layer yang menggambarkan bagaimana perangkat berkomunikasi satu sama lain. 
+Saat seseorang mengirim data, data tersebut akan berjalan dari layer ketujuh (application layer) 
+sampai layer pertama (physical layer).
+
+Di sisi penerima data, data yang tadi dikirim akan masuk dari lapisan pertama (physical layer) 
+dan berjalan sampai ke lapisan ketujuh (application layer), hingga akhirnya diterima sang penerima.
+
+- Application Layer (Layer 7)
+merupakan satu-satunya layer yang berinteraksi langsung dengan data dari pengguna. 
+Sebagai contoh, saat Anda membuka situs web www.dicoding.com, application layer-lah yang 
+bertanggung jawab untuk menyiapkan permintaan yang akan dikirim melalui jaringan.
+aplikasi bukan termasuk bagian dari application layer. Jadi, dalam hal ini, browser yang digunakan 
+untuk membuka sebuah website bukanlah bagian dari application layer.
+Application layer hanyalah hal-hal yang diandalkan oleh sebuah aplikasi untuk membuat data dapat tersaji 
+dengan baik. Misalnya, HTTP header dan cookie adalah bagian dari application layer; 
+sementara aplikasi bukan. Protokol yang biasanya beroperasi pada layer ini adalah HTTP, FTP, SMTP, dll.
+
+- Presentation Layer (Layer 6)
+bertanggung jawab untuk mengonversi data agar sistem yang menggunakan format data yang berbeda 
+dapat bertukar informasi.
+Di sisi pengirim data, layer ini bertugas untuk hal-hal seperti enkripsi, kompresi, dan 
+pengodean (encoding) data. Sementara itu, di sisi penerima, layer ini bertugas untuk 
+hal-hal semacam dekripsi, dekompres atau membalikkan kompresi (decompression),
+dan dekode (decoding) data.
+
+Session Layer (Layer 5)
+bertanggung jawab untuk membuka, menjaga, dan menutup sesi komunikasi alias session. 
+Session adalah pertukaran informasi sementara dan interaktif antara dua atau lebih perangkat 
+(atau antara komputer dan pengguna) yang saling berkomunikasi.
+Layer ini membantu implementasi autentikasi, otorisasi, dan sinkronisasi bekerja dengan baik. 
+Misalnya, saat login ke website Dicoding, Anda akan tetap dalam status login sampai akhirnya Anda 
+melakukan logout. Contoh lain, saat Anda menonton video di Youtube, session layer memastikan 
+timestamp dari audio dan video yang diterima dalam urutan yang sesuai.
+Layer ini juga bertanggung jawab atas checkpoint. Sebagai contoh, jika Anda mengirim file berukuran 
+500 MB, session layer mungkin akan menetapkan checkpoint setiap 10 megabyte. 
+Apabila session tetiba terhenti, session tersebut dapat dilanjutkan dari checkpoint terakhir. 
+Jadi, alih-alih mengirim seluruh file lagi dari awal, data akan dikirim dari checkpoint terakhir, 
+misal dari 300 MB sehingga bisa menghemat waktu.
+
+Transport Layer (Layer 4)
+tempat di mana data dipecah menjadi bagian-bagian yang lebih kecil, disebut juga sebagai segment.
+Transport layer memiliki tanggung jawab untuk memastikan keandalan pengiriman segment data di jaringan. 
+Data yang dikirim mestilah terkirim tanpa corrupt (rusak). Jika tidak, data tersebut akan dikirim ulang.
+Selain itu, layer ini juga bertugas untuk menetapkan port sumber (source port) dan 
+port tujuan (destination port) ke setiap segment. Port dalam kasus ini dapat dianggap sebagai 
+beberapa input ke saluran jaringan (network channel) yang sama.
+Protokol yang beroperasi pada transport layer adalah TCP dan UDP.
+
+Network Layer (Layer 3)
+Network layer bertugas untuk memecah segment ke dalam paket (packet).
+Sebuah packet memiliki dua bagian:
+    Header: Berisi informasi tentang paket itu sendiri.
+    Body: Data aktual yang sedang dikirim.
+Di network layer, perangkat lunak jaringan akan menyertakan header (IP header) ke 
+setiap packet saat dikirim melalui Internet. Di sisi penerima, perangkat lunak jaringan dapat 
+menggunakan header ini untuk memahami bagaimana cara menangani packet tersebut.
+Header berisi informasi tentang konten, sumber, dan tujuan dari setiap packet 
+(mirip seperti menstempel amplop dengan alamat pengirim dan tujuan). Informasi-informasi tersebut 
+antara lain: IP address tujuan, ukuran total packet, indikasi apakah paket telah 
+terfragmentasi (dipecah menjadi bagian yang lebih kecil lagi) dalam perjalanan, dan hitungan 
+berapa banyak jaringan yang telah dilalui packet.
+Sebagai informasi, IP address sederhananya adalah suatu alamat yang digunakan untuk mengidentifikasi 
+koneksi komputer ke jaringan secara unik. Sederhananya, Anda bisa menganggap IP address 
+sebagai alamat rumah.
+Ketika Anda ingin mengirim surat kepada kawan lama, tentu poin penting yang perlu dicantumkan adalah 
+alamat rumahnya, bukan? Dengan begitu, petugas pos akan semakin mudah dalam memproses surat Anda 
+dan memastikan bahwa surat terkirim ke alamat yang sesuai.
+
+Data Link Layer (Layer 2)
+bertanggung jawab untuk memecah packet ke dalam frame.
+Selain itu, data link layer juga akan menetapkan source MAC address dan destination MAC address
+ke masing-masing frame.
+Bagi Anda yang belum familier, MAC (Media Access Control) address adalah pengidentifikasi unik 
+yang tertanam dalam network card atau network interface control untuk digunakan sebagai alamat jaringan. 
+MAC address juga akrab dikenal sebagai alamat fisik dari perangkat jaringan. Tentu jelas berbeda dengan
+IP address yang mengidentifikasi koneksi perangkat di jaringan.
+Jika pada analogi sebelumnya IP address adalah alamat rumah, dalam kasus ini MAC address adalah 
+nama lengkap Anda. Dengan begitu, petugas pos akan mengirim ke alamat yang benar dan orang yang tepat.
+
+Physical Layer (Layer 1)
+yang melibatkan semua perangkat keras, seperti router, kabel, dan switch. 
+Di layer ini, frame diubah menjadi aliran bit (1 dan 0) dan kemudian dikirim ke penerima.
+
+Katakanlah Anda mengirim pesan di sebuah aplikasi perpesanan, Slack misalnya.
+1. Ketika Anda menekan Enter atau klik tombol kirim, Slack akan meneruskan pesan tersebut ke application layer. 
+    Kemudian, Application layer akan memilih protokol HTTP dan menyiapkan request sesuai yang diperlukan. 
+2. Selanjutnya, data tersebut akan dikirim ke presentation layer. Di layer inilah data akan dikemas 
+    dalam format yang sesuai (misal dienkripsi dan dikompres) untuk nantinya dikirim melintasi jaringan.
+3. Kemudian, data akan diteruskan ke session layer. Session layer akan mengatur sesi dan meneruskan data 
+    ke transport layer.
+4. Transport layer kemudian akan memecah data menjadi segment yang lebih kecil dan menetapkan port 
+    untuk masing-masing segment. 
+5. Segment tersebut selanjutnya akan dipecah menjadi packet di network layer. Setiap paket juga akan 
+    diberikan source IP dan destination IP.
+6. Setelah itu, data link layer akan memecah packet ke dalam frame dan menetapkan 
+    MAC address ke masing-masing frame.
+7. Akhirnya, data akan sampai ke physical layer di mana frame akan diubah menjadi bit (1 dan 0).
+
+pada titik ini, proses di sisi pengirim telah selesai dan data akan diteruskan ke sisi penerima. 
+Data tersebut kemudian akan masuk dengan urutan sebaliknya dari physical layer.
+
+1. Di physical layer, aliran bit (1 dan 0) akan dikonversi ke frame, lalu diberikan ke data link layer.
+2. Selepas itu, data link layer akan mengubah frame menjadi packet dan memberikannya ke network layer.
+3. Network layer kemudian akan mengubah packet menjadi segment dan memberikannya ke transport layer.
+4. Selanjutnya, transport layer akan merakit kembali segment untuk dijadikan data utuh dan 
+    memberikannya ke session layer.
+5. Lalu, session layer akan menutup sesi jika diperlukan dan meneruskan data ke presentation layer.
+6. Presentation layer akan melakukan dekripsi dan dekompres data, lantas memberikannya 
+    ke application layer.
+7. application layer akan memasukkan data ke dalam aplikasi dan kemudian akan ditampilkan kepada pengguna.
+
+> Model TCP/IP
+diusulkan pertama kali untuk menstandardisasi komunikasi antarperangkat di jaringan. 
+model OSI merupakan model teoretis dan tidak memiliki implementasi praktis, sementara model TCP/IP 
+lebih praktis dan digunakan hingga saat ini. Perbedaan lainnya adalah model OSI memiliki 7 layer, 
+sedangkan model TCP/IP hanya memiliki 5 layer.
+
+Di beberapa sumber, mungkin Anda akan menemukan adanya model TCP/IP yang memiliki 4 layer. 
+Model TCP/IP dengan 4 layer (kerap juga disebut sebagai original TCP/IP model) dikembangkan 
+oleh Departemen Pertahanan Amerika Serikat. Model ini memiliki 4 layer dan didefinisikan 
+di dalam RFC 1122 yang dirilis kala itu pada tahun 1989. 
+Layer yang dimilikinya: application layer, transport layer, internet layer, dan link layer.
+
+Model TCP/IP terbaru ini memecah layer paling bawah (link layer) menjadi dua, 
+yakni data link layer dan physical layer. Model ini juga mengubah nama internet layer 
+menjadi network layer. Jadi, kelima layer tersebut 
+adalah application layer, transport layer, network layer, data link layer, dan physical layer.
+
+Pada masa itu, kita tidak memiliki banyak opsi untuk terkoneksi ke jaringan, mentok-mentok hanya 
+kabel dengan spesifikasi tertentu saja. Hal itu membuat tidak masuk akal untuk memecah 
+koneksi fisik (physical connection) dari pengiriman data (data delivery). 
+Bandingkan dengan masa kini, kita memiliki Ethernet, Wi-Fi, Fiber optic, dll. Oleh sebab itu, 
+sekarang kita memecahnya menjadi 2 layer (data link layer dan physical layer) 
+alih-alih 1 (hanya link layer).
+
+- Application layer (Layer 5)
+menggabungkan sebagian besar fungsi yang dilakukan oleh session layer dan presentation layer 
+dari model OSI. 
+Ada banyak protokol yang hadir di layer ini, seperti HTTP (Hypertext Transfer Protocol) yang 
+memungkinkan Anda menjelajahi web, SMTP (Simple Mail Transfer Protocol) untuk mengirim 
+dan menerima email, FTP (File Transfer Protocol) untuk pengiriman file, 
+SSH (Secure Shell) untuk remote login, DNS (Domain Name System) untuk sistem penamaan website, 
+DHCP (Dynamic Host Configuration Protocol) untuk pemberian alamat IP otomatis, dll.
+
+- Transport layer (Layer 4)
+Perangkat lunak jaringan biasanya dibagi menjadi kategori client dan server. 
+Aplikasi client memulai request (permintaan) data dan perangkat lunak server 
+melakukan response (menjawab) atas permintaan tersebut melalui jaringan.
+
+Sebuah komputer bisa jadi menjalankan beberapa aplikasi client secara bersamaan, 
+misal menjalankan program email dan web browser di satu PC yang sama. Di sisi lain, satu komputer 
+juga bisa menjalankan beberapa layanan server sekaligus, contohnya mungkin menjalankan 
+email server dan web server di komputer server yang sama.
+
+Kendati demikian, sebuah email akan berakhir di aplikasi email dan halaman web akan berakhir di browser. 
+Hal ini bisa terjadi salah satunya berkat peran transport layer.
+
+Transport layer bertanggung jawab untuk memilah program client dan server mana 
+yang seharusnya mendapatkan data. Protokol yang digunakan di layer ini 
+adalah TCP (Transmission Control Protocol) dan UDP (User Datagram Protocol).
+
+Perbedaan besar antara keduanya adalah TCP menyediakan mekanisme untuk memastikan bahwa 
+data dikirimkan dengan andal, sementara UDP tidak. Ini karena TCP adalah protokol 
+berorientasi koneksi (connection-oriented) yang oleh karenanya ia menyediakan pengiriman data 
+yang andal (reliable data delivery). Di sisi lain, UDP merupakan protokol yang tidak memiliki 
+koneksi (connectionless) sehingga pengiriman datanya tak dapat diandalkan (unreliable data delivery). 
+
+Intinya, baik TCP maupun UDP, keduanya bertanggung jawab untuk memastikan bahwa 
+data sampai ke aplikasi yang tepat yang berjalan di komputer yang sesuai.
+
+- Network layer (Layer 3)
+memungkinkan jaringan yang berbeda untuk berkomunikasi satu sama lain melalui perangkat 
+yang dikenal sebagai router. Layer ini bertanggung jawab untuk mengirimkan data ke 
+seluruh kumpulan jaringan.
+
+Pikirkan ketika perangkat di jaringan rumah Anda terhubung dengan server di internet. 
+Layer inilah yang membantu untuk mendapatkan data di antara dua lokasi tersebut.
+Protokol yang paling umum digunakan pada lapisan ini dikenal sebagai IP atau Internet Protocol. 
+IP adalah jantung dari internet dan hampir semua jaringan di seluruh dunia.
+ 
+- Data link layer (Layer 2)
+bertanggung jawab untuk mendefinisikan cara umum untuk menafsirkan sinyal sehingga 
+perangkat jaringan dapat berkomunikasi satu sama lain.
+
+Banyak protokol yang hadir di layer ini, tetapi yang paling umum dikenal sebagai Ethernet dan WiFi.
+
+- Physical layer (Layer 1)
+Serupa dengan namanya, layer ini mewakili perangkat fisik yang menghubungkan komputer di jaringan, 
+termasuk spesifikasi untuk kabel jaringan dan konektor yang menghubungkan perangkat, serta 
+spesifikasi yang menjelaskan bagaimana sinyal dikirim melalui koneksi tersebut. 
+Contohnya adalah 10 Base T (standar untuk mengimplementasikan jaringan berbasis teknologi Ethernet) 
+dan 802.11 (standar jaringan wireless atau Wi-Fi).
+
+Jika Anda masih kebingungan soal layer yang ada di model TCP/IP, anggaplah layer itu seperti 
+aspek-aspek yang ada di proses pengiriman paket. 
+
+Berikut uraiannya:
+    Physical layer adalah truk pengiriman dan jalan raya.
+    Data link layer membantu truk pengiriman berpindah dari satu persimpangan ke persimpangan berikutnya.
+    Network layer mengidentifikasi jalan mana yang perlu diambil untuk pergi dari alamat A ke alamat B. 
+    Transport layer memastikan bahwa petugas pengiriman tahu pintu mana yang harus diketuk 
+    sehingga paket terkirim ke penerima yang tepat.
+    Application layer adalah isi dari paket itu sendiri.
