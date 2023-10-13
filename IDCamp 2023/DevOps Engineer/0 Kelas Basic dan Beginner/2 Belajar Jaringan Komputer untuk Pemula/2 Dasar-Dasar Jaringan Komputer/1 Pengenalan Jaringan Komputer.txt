@@ -1,0 +1,35 @@
+internet adalah manifestasi dari jaringan komputer dalam skala yang besar. 
+Namun, pada dasarnya, jaringan komputer–atau bisa disebut jaringan saja–adalah 
+kumpulan (umumnya terdiri dari dua atau lebih) komputer atau perangkat keras lain 
+yang saling terhubung, baik melalui kabel maupun nirkabel, sehingga memungkinkan mereka 
+untuk bertukar informasi [1].
+
+keuntungan atau manfaat terkait hadirnya jaringan komputer:
+    Konektivitas dan komunikasi
+    Saat komputer terhubung dengan suatu jaringan, pengguna komputer tersebut dapat berkomunikasi 
+    satu sama lain menggunakan teknologi seperti surel (email), perpesanan (messaging), atau 
+    platform komunikasi lainnya. Hal ini membuat transmisi informasi bisnis (atau nonbisnis) lebih mudah, 
+    lebih efisien, dan lebih murah ketimbang tanpa jaringan komputer.
+
+    Berbagi data
+    Berkat hadirnya jaringan komputer, kini ribuan karyawan bisa berbagi data dengan lebih mudah dan cepat. 
+    Malah lebih dari itu, jaringan komputer juga memungkinkan sebuah aplikasi dipakai oleh banyak orang 
+    untuk mengakses dan berbagi data yang sama, seperti database contohnya.
+
+    Akses internet
+    Internet sendiri adalah sebuah wujud jaringan yang cakupannya sangat besar, yakni seluruh dunia. 
+    Jadi, setiap kali mengakses internet, sebenarnya Anda sedang menggunakan jaringan komputer. 
+    Bayangkan, apabila jaringan komputer tidak ditemukan saat itu, maka takkan ada istilah internet.
+
+    Pengelolaan dan keamanan data
+    Dalam lingkup bisnis, jaringan komputer memungkinkan sang administrator untuk mengelola data 
+    penting perusahaan dengan lebih baik. Alih-alih menyebarkan data ke lusinan atau bahkan ratusan 
+    komputer secara serampangan, administrator bisa memusatkan data pada sebuah server bersama.
+
+server adalah sebuah sistem yang dapat menyediakan sumber daya berupa data, layanan, atau 
+program untuk disajikan ke komputer lain. Server bertugas untuk melayani sebuah layanan (services).
+Salah satunya adalah web server.
+
+Web server melayani sebuah aplikasi atau website yang dapat diakses oleh client melalui internet 
+maupun intranet. Sebagai contoh, Dicoding memiliki web server yang menjalankan 
+website dicoding.com sehingga semua orang bisa mengaksesnya kapan saja dan di mana saja.
