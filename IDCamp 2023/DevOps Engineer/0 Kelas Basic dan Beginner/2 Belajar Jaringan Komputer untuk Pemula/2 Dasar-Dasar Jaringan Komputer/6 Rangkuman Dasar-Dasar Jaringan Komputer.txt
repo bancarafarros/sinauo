@@ -1,0 +1,137 @@
+> Pengenalan Jaringan Komputer
+kumpulan (umumnya terdiri dari dua atau lebih) komputer atau perangkat keras lain yang saling terhubung, 
+baik melalui kabel maupun nirkabel, sehingga memungkinkan mereka untuk bertukar informasi.
+
+keuntungan atau manfaat terkait hadirnya jaringan komputer:
+    Konektivitas dan komunikasi 
+    Berbagi data
+    Akses internet
+    Pengelolaan dan keamanan data
+
+> Tipe-Tipe Jaringan Komputer
+PAN
+Personal Area Network adalah tipe jaringan dengan cakupan terkecil dan sangat pribadi bagi penggunanya. 
+PAN menghubungkan perangkat elektronik yang berada dalam jangkauan pengguna. 
+Ukuran konektivitas PAN berkisar dari sekian sentimeter hingga umumnya hingga 10 meter.
+
+LAN
+jaringan komputer yang memiliki cakupan area geografis yang relatif kecil. Pada tipe jaringan ini, 
+jarak komputer satu sama lain cukup berdekatan, seperti halnya di dalam satu kantor atau gedung yang sama.
+Jumlah komputer yang terhubung dalam LAN dapat bervariasi, mulai dari hitungan jari ratusan unit
+selama komputer-komputer tersebut masih bisa dijangkau oleh peralatan jaringan Anda.
+
+MAN
+jaringan komputer yang menghubungkan komputer dalam area metropolitan, bisa berupa satu kota besar, 
+beberapa kota besar dan kecil, atau area luas tertentu dengan banyak bangunan.
+
+Cakupan MAN lebih besar dari LAN, tetapi lebih kecil dari WAN. tipe jaringan ini tidaklah mesti 
+berada di perkotaan.
+
+jaringan MAN sering kali digunakan untuk menghubungkan dua atau lebih jaringan LAN dalam satu kota 
+yang sama yang jaraknya cukup jauh dan tidak dapat dihubungkan melalui kabel sederhana atau koneksi nirkabel.
+
+beberapa perusahaan dan organisasi yang sekiranya memerlukan jaringan MAN, antara lain:
+Institusi pemerintahan yang membutuhkan koneksi tepercaya untuk support kebutuhan data dan sistem.
+Institusi pendidikan yang membutuhkan koneksi untuk mendukung program sekolah online.
+ISP (Internet Service Provider) atau Penyedia Layanan Internet yang memerlukan koneksi dari atau ke IIX (Indonesia Internet Exchange).
+Perusahaan yang memerlukan koneksi berkapasitas besar dari atau ke DC (Data Center) dan DRC (Disaster Recovery Center).
+Perusahaan yang memerlukan koneksi dari atau ke Kantor Pusat dengan Kantor Cabang.
+Perusahaan yang memerlukan koneksi untuk sistem data cadangan atau untuk keperluan integrasi sistem IT antar departemen.
+
+WAN
+mencakup wilayah geografis yang sungguh luas hingga mampu menjangkau lintas provinsi, lintas negara, 
+bahkan lintas benua; dan umumnya digunakan untuk menghubungkan dua atau lebih LAN yang jaraknya 
+relatif berjauhan.
+
+WAN kerap dimanfaatkan oleh perusahaan besar untuk menghubungkan semua jaringan kantor mereka, 
+di mana setiap kantor biasanya memiliki jaringan LAN sendiri, dan LAN tersebut terhubung melalui WAN. 
+Misal, perusahaan dapat memanfaatkan jaringan WAN untuk menghubungkan kantor cabang mereka yang 
+berada di Jakarta dengan kantor pusat yang ada di Sydney.
+
+> Sejarah Internet
+Internet bermula dari jaringan kecil yang disebut ARPANET (Advanced Research Project Agency Network), 
+dibangun oleh Departemen Pertahanan (Department of Defense) Amerika Serikat pada tahun 1969 untuk 
+menghubungkan instalasi pertahanan. 
+
+Pada tahun 1973, protokol jaringan yang dipakai dari awal, yakni NCP (Network Control Protocol), 
+digadang-gadang akan digantikan oleh TCP/IP (Transmission Control Protocol/Internet Protocol). 
+NCP hendak diganti karena ia hanya mendukung komunikasi host-to-host (perangkat ke perangkat) 
+dalam jaringan yang sama. Tentu saja itu tidak memenuhi kebutuhan yang pada saat itu 
+menginginkan jaringan yang dinamis, terbuka, dan andal. Pada tahun 1974, makin banyak jaringan 
+yang terhubung dengan ARPANET.
+
+Kemudian, TCP/IP distandardisasi dari tahun 1978 sampai 1981. Hingga akhirnya, pada tanggal 
+1 Januari 1983 (dikenal sebagai “flag day”), NCP secara resmi dianggap usang dan ARPANET 
+mengubah protokol jaringan intinya dari NCP ke TCP/IP protocol suite yang lebih fleksibel dan kuat.
+
+Selanjutnya, pada pertengahan 1980-an, ARPANET banyak digunakan oleh para researcher 
+dan developer (pengembang). Namun, tak ayal, banyak komunitas dan organisasi dengan berbagai 
+macam latar belakang pun ikut berperan, berpartisipasi, dan bergabung ke ARPANET.
+
+Tak selang berapa lama, ARPANET mulai mencapai batas kemampuannya. Lantas, masuklah 
+National Science Foundation (NSF) mendirikan jaringan nasional yang dirancang untuk menyediakan akses 
+ke superkomputer besar (digunakan untuk menemukan bilangan prima baru dan menghitung 
+orbit galaksi nan jauh di sana).
+
+ARPANET secara resmi dinonaktifkan pada tahun 1990. Sementara itu, pada tahun 1995, 
+NSFNET ditutup dan internet secara efektif diprivatisasi. Kala itu, jaringan telah menjadi 
+“Internet”, yakni galaksi komunikasi baru yang siap untuk dieksplorasi dan dihuni sepenuhnya.
+
+Internet kian berkembang, tetapi sayangnya jumlah komputer di internet tak bertambah di awal 1990-an.
+ekitar Agustus 1995, ada sekitar 10 juta host di internet. 
+Lima tahun berselang, tahun 2000-an, terjadi ledakan pada jumlah komputer yang begitu fenomenal 
+di internet, yakni lebih dari 100 juta host.
+
+> Cara Kerja Internet
+
+- Internet di Balik Layar
+internet adalah kumpulan jaringan yang luas dan terhubung satu sama lain. Istilah "Internet" 
+bisa dikatakan berasal dari konsep interconnected network (jaringan yang saling berhubungan).
+
+Di internet, satu komputer terhubung dengan komputer yang lain dalam suatu jaringan, begitu pula 
+satu jaringan terhubung dengan jaringan yang lain. Dengan demikian, sebuah komputer dapat 
+berkomunikasi dengan komputer lain di jaringan yang jauh jaraknya berkat internet.
+
+Data yang dikirim via internet dari komputer pengirim ke komputer tujuan akan bergerak melalui 
+satu router ke router lainnya. Data dalam dunia komputer berbentuk bit. 
+Bit merujuk pada sebuah digit dalam sistem angka biner yang ditunjukkan dengan nilai angka 1 dan 0.
+
+- Konsep Distributed Networking
+sistem jaringan yang saling berhubungan, tetapi independen, dan umumnya 
+tersebar di beberapa lokasi geografis.
+
+Internet itu terbentuk dari jaringan independen dengan jumlah yang luar biasa banyak. 
+Hal yang menarik tentang sistem ini adalah internet sepenuhnya terdistribusi. 
+Sistem seperti ini disebut juga sebagai Distributed Networking.
+
+internet tidak bergantung pada mesin individu mana pun. Semua komputer atau perangkat yang 
+dapat mengirim dan menerima data dengan cara yang benar 
+(misal menggunakan protokol jaringan yang benar) bisa menjadi bagian dari internet.
+
+- Proses Pengiriman Data
+jalur yang ditempuh tak mesti tetap. Jalur data dapat berubah di tengah proses 
+komunikasi antarkomputer berlangsung.
+
+Data di internet berpindah dari satu komputer ke komputer lain dalam bentuk packet dan
+ia bergerak layaknya kita mengendarai mobil. Tergantung pada kemacetan lalu lintas atau 
+kondisi jalan, kita mungkin akan memilih–atau terpaksa–mengambil rute yang berbeda setiap 
+kali bepergian ke tempat yang sama.
+
+> Bandwidth, Throughput, dan Latency
+
+- Bandwidth
+kapasitas transmisi maksimum dari sebuah perangkat. Bandwidth diukur dengan bit rate, 
+yakni jumlah bit yang dapat kita kirim selama periode waktu tertentu, biasanya diukur dalam 
+detik, seperti Kbps (Kilobit per second), Mbps (Megabit per second), atau Gbps (Gigabit per second).
+
+- Throughput
+jumlah aktual data yang berhasil dikirim atau diterima melalui jaringan. Throughput disajikan 
+dalam satuan Kbps, Mbps, atau Gbps. Jumlah data pada throughput dapat berbeda dari 
+bandwidth karena berbagai masalah teknis, termasuk packet loss, jitter, latency, dan lainnya.
+
+- Latency
+jumlah waktu yang dibutuhkan data untuk berpindah dari titik asal ke titik tujuan dan 
+kembali lagi ke titik asal (dikenal juga sebagai round trip atau perjalanan bolak-balik). 
+Latensi sering kali dipakai untuk mengukur delay (penundaan) pada komunikasi client dan server.
+
+https://youtu.be/5Bd-4KSrd08
