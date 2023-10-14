@@ -1,0 +1,204 @@
+> Pengenalan Model Jaringan
+
+- Model OSI
+Open Systems Interconnection adalah model jaringan teoretis yang diusulkan untuk menstandardisasi 
+komunikasi antara perangkat melalui jaringan.
+
+Application Layer (Layer 7)
+satu-satunya layer yang berinteraksi langsung dengan data dari pengguna. 
+Sebagai contoh, saat Anda membuka www.dicoding.com, application layer-lah bertanggung jawab untuk 
+menyiapkan HTTP request yang akan dikirim melalui jaringan, misal menambahkan header dan cookie yang 
+diperlukan.
+
+Presentation Layer (Layer 6)
+bertanggung jawab untuk mengonversi data agar sistem yang menggunakan format data yang berbeda 
+dapat bertukar informasi.
+
+Session Layer (Layer 5)
+bertanggung jawab untuk membuka, menjaga, dan menutup sesi komunikasi alias session. 
+Session adalah durasi koneksi antara pengirim dan penerima tetap terbuka.
+
+Transport Layer (Layer 4)
+tempat di mana data dipecah menjadi bagian-bagian yang lebih kecil, disebut juga sebagai segment. 
+Transport layer memiliki tanggung jawab untuk memastikan keandalan pengiriman segment data di jaringan. 
+Data yang dikirim mestilah terkirim tanpa corrupt (rusak). Jika tidak, data tersebut akan dikirim ulang.
+
+Network Layer (Layer 3)
+bertugas untuk memecah segment ke dalam paket (packet). Layer ini juga menetapkan alamat 
+IP sumber (source IP address) dan alamat IP tujuan (destination IP address) untuk masing-masing packet.
+
+Data Link Layer (Layer 2)
+bertanggung jawab untuk memecah packet ke dalam frame. Selain itu, data link layer juga akan 
+menetapkan source MAC address dan destination MAC address ke masing-masing frame.
+
+Physical Layer (Layer 1)
+yang melibatkan semua perangkat keras, seperti router, kabel, dan switch. Di layer ini, 
+frame diubah menjadi aliran bit (1 dan 0) dan kemudian dikirim ke penerima.
+
+- Model TCP/IP
+Application layer (Layer 5)
+menggabungkan sebagian besar fungsi yang dilakukan oleh session layer dan presentation layer 
+dari model OSI.
+
+Transport layer (Layer 4)
+bertanggung jawab untuk memilah program client dan server mana yang seharusnya mendapatkan data. 
+Protokol yang digunakan di layer ini adalah TCP (Transmission Control Protocol) dan 
+UDP (User Datagram Protocol).
+
+Network layer (Layer 3)
+memungkinkan jaringan yang berbeda untuk berkomunikasi satu sama lain melalui perangkat yang 
+dikenal sebagai router. Layer ini bertanggung jawab untuk mengirimkan data ke seluruh kumpulan jaringan.
+
+Data link layer (Layer 2)
+bertanggung jawab untuk mendefinisikan cara umum untuk menafsirkan sinyal sehingga perangkat 
+jaringan dapat berkomunikasi satu sama lain.
+
+Physical layer (Layer 1)
+layer ini mewakili perangkat fisik yang menghubungkan komputer di jaringan, termasuk spesifikasi 
+untuk kabel jaringan dan konektor yang menghubungkan perangkat, serta spesifikasi yang 
+menjelaskan bagaimana sinyal dikirim melalui koneksi tersebut.
+
+> Mengenal Protokol Jaringan pada Model TCP/IP
+Kumpulan standar atau aturan yang ditetapkan dan harus diikuti oleh komputer agar dapat berkomunikasi 
+dengan benar disebut protokol.
+
+Application Layer: HTTP, HTTPS, SMTP, DNS, FTP, dan Telnet.
+Layer ini memungkinkan pengguna untuk berinteraksi dengan aplikasi.
+
+Transport Layer: TCP dan UDP
+bertanggung jawab atas keandalan, kontrol aliran, dan koreksi data yang dikirim melalui jaringan. 
+
+TCP
+Transmission Control Protocol, protokol yang connection-oriented alias berorientasi koneksi. 
+Artinya, TCP akan memastikan bahwa setiap packet dikirimkan–jika memungkinkan–dengan membuat koneksi 
+ke perangkat penerima. Jika sebuah paket tidak tiba di tujuan, TCP akan mengirim ulang paket tersebut. 
+Koneksi akan ditutup hanya setelah paket berhasil dikirim dengan sukses atau terjadi kondisi 
+kesalahan yang tidak dapat dipulihkan. Dengan demikian, TCP termasuk protokol yang andal.
+
+UDP (User Datagram Protocol)
+protokol yang bersifat connectionless (tanpa koneksi). Maksudnya, UDP tidak memverifikasi koneksi antara 
+komputer pengirim dan komputer penerima. Setelah UDP menerima dan memproses packet, ia kemudian akan 
+melupakannya. UDP juga tidak menjamin bahwa packet tadi akan tiba di tujuannya.
+
+Network Layer: IP, ARP, dan ICMP
+Tanggung jawab utama dari network layer adalah menerima dan mengirim packet melalui jaringan. 
+
+IP (Internet Protocol)
+protokol yang bertanggung jawab untuk mengirimkan packet ke perangkat jaringan. 
+Protokol ini menggunakan IP address ketimbang alamat fisik (MAC) untuk merujuk ke perangkat individu. 
+ARP-lah yang menangani tugas mengubah IP address ke MAC address.
+
+ARP (Address Resolution Protocol)
+bertugas untuk membantu IP dalam mengarahkan packet ke komputer penerima yang sesuai dengan 
+memetakan MAC address ke IP address.
+
+ICMP (Internet Control Message Protocol)
+bertanggung jawab untuk mendeteksi dan melaporkan kesalahan jaringan sekaligus menyediakan 
+pembaruan status. Misalnya, jika router tidak dapat mengirimkan paket, ia akan mengirim 
+pesan ICMP kembali ke sumber paket.
+
+Data Link Layer
+bertugas untuk mengidentifikasi jenis protokol jaringan pada packet. Layer ini juga menyediakan 
+error control (kontrol kesalahan) dan framing (pembuatan frame). Berikut beberapa contoh protokol
+
+Ethernet
+merupakan keluarga teknologi jaringan komputer kabel yang biasa digunakan di LAN, MAN, dan WAN.
+
+Frame Relay
+WAN standar yang menentukan physical layer dan data link layer dari saluran telekomunikasi 
+digital menggunakan metodologi packet switching. Awalnya dirancang untuk transportasi melintasi 
+Integrated Service Digital Network (ISDN), kini dapat digunakan untuk banyak antarmuka jaringan lainnya.
+
+Token Ring
+teknologi jaringan komputer yang digunakan untuk membangun LAN.
+
+IEEE 802.11
+bagian dari standar IEEE 802 yang menetapkan kumpulan protokol dari MAC dan physical layer untuk 
+mengimplementasikan komunikasi komputer Wireless Local Area Network (WLAN).
+
+PPP (Point-to-Point Protocol)
+protokol yang digunakan untuk menghubungkan satu sistem komputer ke sistem komputer lainnya. 
+Komputer menggunakan PPP untuk berkomunikasi melalui jaringan telepon atau internet.
+
+Physical Layer
+tanggung jawab untuk menentukan karakteristik perangkat keras yang akan digunakan untuk jaringan. 
+Layer ini menjelaskan standar perangkat keras seperti IEEE 802.3 
+(spesifikasi untuk media jaringan Ethernet) dan RS-232 (spesifikasi untuk konektor pin standar).
+Berikut beberapa teknologi yang menyediakan layanan pada physical layer:
+
+Bluetooth physical layer
+standar teknologi nirkabel jarak pendek yang digunakan untuk pertukaran data antarperangkat menggunakan 
+gelombang radio UHF di ISM band dari 2,402 GHz hingga 2,48 GHz. Dengan bluetooth, artinya Anda sudah 
+bisa membangun PAN
+
+DSL physical layer (Digital Subscriber Line)
+merupakan teknologi yang digunakan untuk mengirimkan data digital melalui saluran telepon. 
+Dalam pemasaran telekomunikasi, istilah DSL secara luas dipahami sebagai 
+Asymmetric Digital Subscriber Line (ADSL), yakni teknologi DSL yang paling umum dipasang untuk akses 
+Internet.
+
+Ethernet physical layer
+fungsionalitas physical layer dari famili Ethernet yang diterbitkan oleh 
+Institute of Electrical and Electronics Engineers (IEEE).
+
+SONET dan SDH physical layer
+Synchronous optical networking dan Synchronous Digital Hierarchy adalah protokol standar untuk 
+mentransfer beberapa aliran bit digital secara sinkron melalui fiber optic menggunakan laser atau 
+cahaya yang sangat koheren dari LED (light-emitting diode).
+
+Modem physical layer (modulator-demodulator)
+sebuah perangkat keras komputer untuk mengubah data dari format digital ke dalam bentuk yang sesuai 
+untuk analog, seperti telepon atau radio.
+
+USB physical layer (Universal Serial Bus)
+standar industri yang menetapkan spesifikasi kabel, konektor, dan protokol untuk koneksi, komunikasi, 
+dan catu daya antara komputer, periferal, dan komputer lain. Ada banyak variasi rentetan 
+perangkat keras USB, USB-C adalah yang paling terkini.
+
+> Komunikasi Data pada Model TCP/IP
+Katakanlah kita ingin membuka website www.dicoding.com melalui web browser yang sudah terhubung ke 
+jaringan (dalam hal ini adalah internet). Itu berarti, web browser berada di sisi client, 
+sementara web server milik Dicoding ada di sisi server. Ini dinamakan komunikasi client-server.
+
+Application layer
+Layer ini mendefinisikan komunikasi antara aplikasi yang ada di komputer pengirim (client) dan 
+aplikasi di komputer penerima (server).
+
+Transport Layer
+tanggung jawab untuk memecah data (message) yang diterima menjadi potongan yang lebih kecil yang 
+disebut segment (jika menggunakan TCP) atau datagram (jika menggunakan UDP).
+
+Katakanlah web server dicoding memiliki proses yang berjalan pada port 80. 
+Ketika client menyiapkan HTTP request, ia akan menambahkan TCP header. TCP header berisi banyak hal, 
+sekian di antaranya adalah source port (port sumber) dan destination port (port tujuan). 
+Anggap saja source port dalam skenario kita adalah port 7268, sedangkan source destination-nya 
+adalah port 80.
+
+Network Layer
+Di sini, data (segment) akan dipecah menjadi potongan yang lebih kecil yang disebut packet. 
+Packet yang dihasilkan bisa jadi satu atau mungkin banyak, tergantung pada berapa banyak data yang ada.
+
+Tugasnya memastikan bahwa data dari satu komputer (client) dapat menemukan jalan ke 
+komputer tujuan (server). Untuk melakukan itu, sebuah IP header yang berisi 
+source IP (IP sumber) dan destination IP (IP tujuan) ditambahkan ke setiap packet.
+
+Jalur dari client ke server mungkin saja melintasi banyak jaringan. Oleh karenanya, packet 
+membutuhkan peran dari perangkat jaringan router untuk berpindah dari satu jaringan ke jaringan yang lain.
+
+Data Link Layer
+bertanggung jawab untuk pengiriman lalu lintas pada satu segmen jaringan atau LAN, 
+dalam istilah TCP/IP berarti pengiriman dalam satu subnet. Data (packet) dari 
+layer sebelumnya akan dipecah menjadi bagian yang lebih kecil yang disebut frame.
+
+Kemudian, frame tersebut akan ditambahkan sebuah header yang berisi 
+source MAC address (MAC address sumber) dan destination MAC address (MAC address tujuan). 
+Bagi Anda yang belum familier, MAC address adalah alamat yang ditetapkan dan dimiliki oleh 
+setiap perangkat fisik.
+
+Physical Layer
+bertanggung jawab untuk mengirim dan menerima data secara fisik. Ada banyak caranya, 
+bisa melalui gelombang radio (Wi-Fi), sinyal cahaya (Fiber optic), dan lain-lain. 
+Data yang tadi dikirim dari data link layer kemudian di-encode (dikodekan) ke dalam bit (1 dan 0), 
+lalu ditransmisikan melalui media fisik.
+
+https://youtu.be/9QMXf4mh3hQ
