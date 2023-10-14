@@ -1,0 +1,6 @@
+Wireshark adalah sebuah tools jaringan yang berguna untuk menangkap dan menganalisis packet jaringan. 
+Tools ini dapat mengidentifikasi dan mengekstrak muatan data (payload) dari transfer file 
+melalui protokol seperti SMB (Server Message Block) atau HTTP (Hypertext Transfer Protocol). 
+Kita bahkan bisa menggunakan filter untuk menyaring lalu lintas jaringan yang ditangkap guna 
+menemukan HTTP request dengan kata-kata tertentu di suatu URL.
+
