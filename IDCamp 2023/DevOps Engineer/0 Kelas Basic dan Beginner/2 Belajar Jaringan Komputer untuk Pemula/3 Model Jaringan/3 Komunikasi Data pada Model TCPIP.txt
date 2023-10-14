@@ -1,0 +1,90 @@
+Katakanlah kita ingin membuka website www.dicoding.com melalui web browser yang sudah terhubung ke 
+jaringan (dalam hal ini adalah internet). Itu berarti, web browser berada di sisi client, 
+sementara web server milik Dicoding ada di sisi server. Ini dinamakan komunikasi client-server.
+
+> Application Layer
+Layer pertama yang akan berinteraksi dengan browser adalah application layer. Layer ini mendefinisikan 
+komunikasi antara aplikasi yang ada di komputer pengirim (client) dan aplikasi di 
+komputer penerima (server).
+
+Protokol yang akan digunakan pada layer ini (pada kasus ini) adalah HTTP.
+
+Application layer akan bertanggung jawab untuk hal-hal semacam mendapatkan data dari aplikasi dan 
+menyiapkannya dalam format yang akan ditransfer melalui jaringan. Berlaku sebaliknya.
+
+> Transport Layer
+memiliki tanggung jawab untuk memecah data (message) yang diterima menjadi potongan yang lebih kecil 
+yang disebut segment (jika menggunakan TCP) atau datagram (jika menggunakan UDP).
+
+Setiap aplikasi atau layanan yang ada di komputer, mereka memiliki nomor port tertentu.
+
+Email masuk ke port yang berbeda dari halaman web, meskipun keduanya mencapai komputer melalui koneksi 
+Internet yang sama. Ini dilakukan dengan bantuan multiplexer 
+(sirkuit yang menerima banyak input, tetapi hanya menghasilkan satu output) dan 
+demultiplexer (sirkuit yang menerima hanya satu input, tetapi dapat menyajikan banyak output).
+
+Anggaplah IP address sebagai alamat dari sebuah apartemen, sementara port adalah 
+nomor kamar di dalam apartemen tersebut. 
+
+Semua itu persis seperti saat kita mengakses 10.1.1.100:80 untuk berkomunikasi dengan web service, 
+di mana kita menuju ke alamat (IP address) 10.1.1.100. Kemudian, setelah tiba di komputer tersebut, 
+kita akan menuju pintu (port) 80 untuk mengakses layanan web.
+
+Katakanlah web server dicoding memiliki proses yang berjalan pada port 80. 
+Ketika client menyiapkan HTTP request, ia akan menambahkan TCP header. 
+TCP header berisi banyak hal, sekian di antaranya adalah source port (port sumber) dan 
+destination port (port tujuan). Anggap saja source port dalam skenario kita adalah port 7268, 
+sedangkan destination port-nya adalah port 80.
+
+> Network Layer
+Di sini, data (segment) akan dipecah menjadi potongan yang lebih kecil yang disebut packet.
+
+Tugas dari layer ini memastikan data dari satu komputer (client) dapat menemukan jalan ke 
+komputer tujuan (server). Untuk melakukan itu, sebuah IP header yang berisi source IP (IP sumber) 
+dan destination IP (IP tujuan) ditambahkan ke setiap packet.
+
+Jalur dari client ke server mungkin saja melintasi banyak jaringan. 
+Oleh karenanya, packet membutuhkan peran dari perangkat jaringan router untuk berpindah dari 
+satu jaringan ke jaringan yang lain.
+
+> Data Link Layer
+bertanggung jawab untuk pengiriman lalu lintas pada satu segmen jaringan atau LAN, 
+dalam istilah TCP/IP berarti pengiriman dalam satu subnet. 
+Data (packet) dari layer sebelumnya akan dipecah menjadi bagian yang lebih kecil yang disebut frame. 
+
+Kemudian, frame tersebut akan ditambahkan sebuah header yang berisi source MAC address 
+(MAC address sumber) dan destination MAC address (MAC address tujuan).
+
+Apabila kedua komputer berada dalam subnet yang sama, pengiriman datanya akan sederhana yaitu 
+satu komputer langsung mengirimkan data ke komputer lain.
+
+Namun, jika kedua komputer berada di subnet yang berbeda, kita membutuhkan perangkat router. 
+Itu artinya, destination MAC address-nya akan menjadi MAC address dari perangkat router (perantara jaringan) itu.
+
+ketika frame mencapai router, router akan melihat destination IP di IP header, 
+kemudian router akan mengatur sendiri MAC address sebagai sumber dan 
+perangkat berikutnya sebagai tujuan. Bila terdapat beberapa router di jalur, 
+MAC address yang ada di frame akan ditulis ulang beberapa kali di sepanjang jalan.
+
+> Physical Layer
+bertanggung jawab untuk mengirim dan menerima data secara fisik. 
+Ada banyak caranya, bisa melalui gelombang radio (Wi-Fi), sinyal cahaya (Fiber optic), dan lain-lain. 
+
+Data (frame) yang tadi dikirim dari data link layer kemudian di-encode (dikodekan) 
+ke dalam bit (1 dan 0), lalu ditransmisikan melalui media fisik.
+
+Ketika data tiba di komputer penerima, data tersebut akan melalui proses 
+pada model TCP/IP dalam urutan terbalik. Setiap protokol pada komputer penerima akan 
+menghapus informasi header yang terlampir di packet. Inilah proses yang akan terjadi: 
+
+1. Physical layer menerima data dalam bentuk bit, lalu menerjemahkannya, dan meneruskannya 
+    ke data link layer.
+2. Data link layer memverifikasi dan kemudian menghapus informasi pada header frame. 
+    Usai itu, data link layer mengirimkan frame ke network layer.
+3. Network layer membaca informasi di header untuk mengidentifikasi transmisi. 
+    Jika transmisi terfragmentasi, network layer akan menyusun kembali ke dalam packet. 
+    Setelahnya, network layer menghapus IP header dan meneruskannya ke transport layer. 
+4. Transport layer lalu membaca header untuk menentukan protokol pada application layer mana 
+    yang harus menerima data. Lanjut, transport layer akan menghapus header yang terkait dan 
+    mengirim pesan atau melakukan streaming ke aplikasi penerima. 
+5. application layer menerima pesan dan melakukan operasi yang diminta oleh komputer pengirim.
