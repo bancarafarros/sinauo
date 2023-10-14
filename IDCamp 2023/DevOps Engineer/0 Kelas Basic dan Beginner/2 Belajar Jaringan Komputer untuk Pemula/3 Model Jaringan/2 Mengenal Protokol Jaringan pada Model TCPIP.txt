@@ -10,7 +10,7 @@ Jaringan komputer memastikan bahwa setiap komputer dapat mendengar satu sama lai
 saling berkomunikasi melalui protokol yang komputer lain juga mengerti, 
 jika diperlukan mengulangi pesan yang tidak terkirim secara utuh, dan berbagai hal lainnya.
 
-> Application Layer
+> Application Layer: HTTP dan HTTPS, SMTP, DNS, FTP, dan SSH
 layer paling atas dalam model TCP/IP. Layer ini memungkinkan pengguna 
 untuk berinteraksi dengan aplikasi.
 
@@ -20,8 +20,8 @@ pengguna di seluruh dunia. HTTP digunakan untuk mentransfer data antarperangkat.
 Protokol ini berada di application layer karena ia menempatkan data ke dalam format yang aplikasi 
 (misalnya browser) gunakan secara langsung tanpa interpretasi lebih lanjut.
 
-Namun, apa yang dimaksud dengan Hypertext? Hypertext adalah sistem dokumentasi yang terkelola 
-dengan baik menggunakan hyperlink (pranala) untuk menghubungkan halaman-halaman dalam dokumen teks.
+Hypertext adalah sistem dokumentasi yang terkelola dengan baik menggunakan hyperlink (pranala) 
+untuk menghubungkan halaman-halaman dalam dokumen teks.
 
 Ketika pengguna ingin mengakses halaman HTTP apa pun di internet, komputer client akan memulai koneksi 
 TCP ke server pada port 80 atau port 443 untuk HTTPS. Ketika server menerima permintaan client, 
@@ -75,7 +75,7 @@ kedua komputer (client dan server) menggunakan public-private key pairs
 (pasangan kunci publik-privat) yang dibuat secara otomatis untuk 
 mengenkripsi koneksi jaringan dan kemudian menggunakan kata sandi untuk mengautentikasi pengguna.
 
-> Transport layer 
+> Transport layer: TCP dan UDP
 bertanggung jawab atas keandalan, kontrol aliran, dan koreksi data yang dikirim melalui jaringan. 
 Dua protokol yang digunakan pada layer ini adalah TCP dan UDP.
 
@@ -124,7 +124,7 @@ UDP adalah alternatif yang lebih cepat ketimbang TCP, tetapi kurang dapat dianda
 Protokol ini kerap digunakan dalam layanan seperti streaming video dan game, di mana pengiriman data 
 yang cepat adalah faktor terpenting.
 
-> Network Layer
+> Network Layer: IP, ARP, dan ICMP
 menerima dan mengirim packet melalui jaringan. Protokol di layer ini mencakup 
 IP (Internet Protocol), ARP (Address Resolution Protocol), 
 dan Internet Control Message Protocol (ICMP).
@@ -170,7 +170,7 @@ Dropped packet: Packet yang datang terlalu cepat untuk diproses.
 Connectivity failure: Sistem tujuan tidak dapat dijangkau. 
 Redirection: Mengarahkan komputer pengirim untuk menggunakan router lain.
 
-> Data Link Layer
+> Data Link Layer: Ethernet, Frame Relay, Token Ring,- IEEE 802.11, dan PPP 
 Data link layer bertugas untuk mengidentifikasi jenis protokol jaringan pada packet. 
 Layer ini juga menyediakan error control (kontrol kesalahan) dan framing (pembuatan frame). 
 
@@ -230,7 +230,7 @@ komunikasi fisik yang sama. PPP digunakan pada banyak jenis jaringan fisik, term
 saluran telepon, telepon seluler, ISDN, dan tautan serat optik seperti SONET.
 
 
-> Physical Layer
+> Physical Layer: 
 memiliki tanggung jawab untuk menentukan karakteristik perangkat keras yang akan 
 digunakan untuk jaringan. Layer ini menjelaskan standar perangkat keras seperti 
 IEEE 802.3 (spesifikasi untuk media jaringan Ethernet) dan 
