@@ -1,0 +1,20 @@
+IPv4 address memiliki panjang 32 bit. Artinya, ia hanya memiliki 232 atau sekitar 4 miliar IP address.
+
+IP address dikelola secara global oleh Internet Assigned Numbers Authority (IANA) dan juga oleh 
+lima Regional Internet Registries (RIR).
+
+African Network Information Center (AFRINIC) yang melayani wilayah Afrika.
+American Registry for Internet Numbers (ARIN) yang melayani wilayah Antarktika, Kanada, sebagian Karibia, dan Amerika Serikat.
+Asia-Pacific Network Information Centre (APNIC) yang melayani wilayah Asia Timur, Oceania, Asia Selatan, dan Asia Tenggara.
+Latin America and Caribbean Network Information Centre (LACNIC) yang melayani wilayah sebagian besar Karibia dan seluruh Amerika Latin.
+Réseaux IP Européens Network Coordination Centre (RIPE NCC) yang melayani wilayah Eropa, Asia Tengah, Rusia, and Asia Barat.
+
+masalah kehabisan IPv4 address dimulai pada 31 Januari 2011.
+
+Tak selang lama kemudian, Number Resource Organization (NRO) mengumumkan bahwa 
+kumpulan IPv4 address sudah sepenuhnya habis.
+
+Setelah itu, lambat laun akhirnya semua RIR pun kehabisan kumpulan IPv4 address, 
+kecuali yang disimpan untuk transisi ke IPv6. 
+Peristiwa ini terjadi pada 15 April 2011 untuk APNIC, 10 Juni 2014 untuk LACNIC, 
+24 September 2015 untuk ARIN, 21 April 2017 untuk AFRINIC, dan 25 November 2019 untuk RIPE NCC.
