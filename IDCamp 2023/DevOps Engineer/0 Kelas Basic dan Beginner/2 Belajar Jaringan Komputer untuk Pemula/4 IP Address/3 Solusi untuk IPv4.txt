@@ -1,0 +1,123 @@
+> Solusi 1: CIDR
+Classless Inter-Domain Routing adalah metode untuk mengalokasikan IP address dan untuk perutean IP. 
+Sebuah organisasi bernama Internet Engineering Task Force (IETF) memperkenalkan CIDR pada tahun 1993, 
+di mana salah satu tujuannya adalah untuk membantu memperlambat masalah kehabisan IPv4, 
+dan itu berhasil!
+
+Selain itu, pengadopsian CIDR ini juga dimaksudkan untuk menggantikan metode pengalamatan sebelumnya, 
+yakni classful addressing.
+
+- Sekilas tentang Classful
+telah digunakan dari tahun 1981–1993 (sampai CIDR diperkenalkan). 
+Dari masa classful addressing, IP address terdiri dari dua bagian, yakni: 
+    Network ID: Mengidentifikasi keseluruhan jaringan atau segmen jaringan (subnet).
+    Host ID: Menentukan host (perangkat) pada jaringan tersebut.
+Pembagian ini digunakan sebagai dasar perutean lalu lintas antarjaringan dan untuk 
+kebijakan alokasi IP address.
+
+Supaya tidak bingung, mari kita ambil contoh IP address 9.100.100.100. 
+Dari contoh tersebut, oktet pertama adalah network ID; 
+sedangkan oktet kedua, ketiga, dan keempat adalah host ID.
+
+Classful addressing membagi IP address menjadi 5 kelas: 
+class A, class B, class C, class D, dan class E. Namun, hanya class A, B, dan C saja yang 
+digunakan untuk umum (class D digunakan untuk multicasting dan class E untuk pengujian).
+
+IP address disebut class A apabila oktet pertamanya digunakan untuk network ID, 
+sedangkan tiga oktet terakhir untuk host ID. dari keseluruhan 32 bit panjang IP address, 
+8 bit adalah network ID dan 24 bit adalah host ID.
+
+IP address disebut class B apabila dua oktet pertama digunakan untuk network ID, 
+sedangkan dua oktet terakhir untuk host ID. dari keseluruhan 32 bit panjang IP address, 
+16 bit adalah network ID dan 16 bit adalah host ID.
+IP address disebut class C apabila tiga oktet pertama digunakan untuk network, 
+sedangkan oktet keempat untuk host ID. dari keseluruhan 32 bit panjang IP address, 
+24 bit adalah network ID dan 8 bit adalah host ID.
+
+Setiap kelas pada classful addressing sebenarnya mewakili sebuah network atau jaringan 
+dengan ukuran yang berbeda-beda. Misalnya, karena class A memiliki total 24 bit untuk host ID, 
+jadinya ia menghasilkan 224 atau setara 16.777.216 alamat.
+
+- Classless Inter-Domain Routing
+Dengan classful addressing, network ID akan selalu tetap: 8 bit untuk class A, 16 bit untuk class B,
+dan 24 bit untuk class C. Variasi ukuran network atau jaringan yang seperti itu 
+sayangnya terlalu kaku dan tidak selalu sesuai dengan kebutuhan sebagian besar bisnis.
+
+CIDR merupakan pendekatan yang lebih fleksibel untuk mendeskripsikan rentang IP address.
+
+IP address 9.100.100.100. Katakanlah IP address ini memiliki subnet mask 255.255.255.0. 
+Nah, berkat CIDR notation, IP address tersebut kini dapat ditulis sebagai 9.100.100.100/24.
+
+berarti network ID-nya adalah 9.100.100.x, sedangkan host ID-nya adalah x.x.x.100.
+
+Praktik ini memungkinkan pengguna untuk mengatur ukuran jaringan yang lebih fleksibel & sesuai kebutuhan.
+
+> Solusi 2: NAT (Network Address Translation)
+teknik di mana satu IP address diterjemahkan ke IP address yang lain.
+
+telah digunakan untuk perlindungan keamanan hingga membantu memperlambat masalah kehabisan IPv4 address.
+
+Katakanlah kita memiliki dua jaringan. Jaringan A memiliki blok IP 10.1.1.0/24 dan di 
+dalamnya terdapat komputer dengan IP address 10.1.1.100. 
+Di sisi lain, Jaringan B memiliki blok IP 192.168.1.0/24 dan 
+di dalamnya terdapat sebuah web server dengan IP address 192.168.1.100. 
+Di antara dua jaringan tersebut, terdapat sebuah router yang memiliki dua network interface 
+satu di jaringan A dengan IP 10.1.1.1 dan satu lagi di jaringan B dengan IP 192.168.1.1.
+
+komputer 1 ingin berkomunikasi dengan web server. komputer 1 akan membuat packet yang sesuai di 
+semua layer dan mengirimkannya ke gateway utama (router) yang berada di antara dua jaringan tersebut.
+Karena router ini mendukung NAT, router akan menulis ulang source IP address, dalam hal ini menjadi 
+IP router di Jaringan B alias 192.168.1.1. Ketika packet sampai ke web server, nantinya ia akan 
+terlihat seperti berasal dari router, bukan dari komputer 1.
+
+Kemudian, setelah web server menyusun respons dan mengirimkannya kembali ke router, 
+router akan mengetahui bahwa packet ini sebenarnya ditujukan untuk komputer 1, 
+lalu ia akan menulis ulang destination IP sebelum meneruskannya.
+
+NAT menerjemahkan private IP address ke public IP address. 
+Dengan demikian, meski kita memiliki banyak perangkat di rumah dan semua terhubung ke internet 
+(misal melalui Wi-Fi), mereka hanya akan memiliki satu public IP address.
+
+private IP address adalah rentang IP address yang dimaksudkan untuk tujuan pribadi
+atau lokal sehingga tidak dapat dirutekan di internet alias non-routable address space.
+
+Private IP address didefinisikan di dalam RFC 1918 pada tahun 1996. 
+RFC 1918 mendefinisikan 3 rentang IP address yang merupakan private IP address atau 
+non-routable address space, yakni:
+10.0.0.0/8
+172.16.0.0/12
+192.168.0.0/16
+
+Karena ketiga rentang tersebut terpisah dari lalu lintas internet, 
+maka semua orang berhak memakainya untuk jaringan lokal mereka. Selain itu, karena router di internet 
+tak akan merutekan atau meneruskan lalu lintas dari private IP address, maka tak akan ada 
+overlapping atau tumpang tindih IP address secara global, meski beberapa orang di belahan dunia 
+lain menggunakan rentang yang sama.
+
+Public IP address adalah IP address di luar non-routable address space yang bisa dipakai untuk 
+berkomunikasi di internet (umumnya diberikan oleh ISP).
+
+> Solusi 3: IPv6
+IPv5 adalah protokol eksperimental yang memperkenalkan konsep connection (koneksi). 
+IPv5 tidak pernah benar-benar diadopsi secara luas karena konsep “koneksi” tersebut justru 
+ditangani lebih baik oleh transport layer pada model TCP/IP.
+
+IPv4 address memiliki total 32 bit, yang artinya ada sekitar 4 miliar IP address yang bisa digunakan.
+IPv6 address berukuran 128 bit.2^128 berarti menghasilkan 39 digit. Rentang angka ini disebut Undecillion.
+
+IPv6 address berukuran 128 bit, biasanya ditulis dalam 8 grup, 
+masing-masing grup berukuran 16 bit, dan setiap grup tersebut terdiri dari 4 bilangan heksadesimal. 
+
+Seperti inilah bentuk IPv6 address secara lengkap. 2001:0db8:0000:0000:0000:ff00:0012:3456
+
+Setiap IPv6 address yang dimulai dengan 2001:0db8 merupakan alamat yang memang ditujukan untuk 
+dokumentasi, pendidikan, buku, atau kursus; seperti materi Dicoding ini.
+
+Ada dua aturan untuk meringkas IPv6 address:
+Pertama, Anda dapat menghapus angka nol yang ada di depan dari setiap grup.
+Kedua, sejumlah grup berurutan yang hanya terdiri dari angka nol dapat diganti dengan 
+dua tanda titik dua (::).
+
+IPv6 address tetap memiliki pembagian network ID dan host ID. 
+64 bit pertama dari IPv6 address adalah network ID, 
+sedangkan 64 bit kedua merupakan host ID.
