@@ -1,0 +1,55 @@
+Katakanlah Anda bekerja pada perusahaan rintisan X. Perusahaan ini memiliki sebuah private network 
+(jaringan pribadi) dengan blok IP 192.168.1.0/24. Dari blok IP tersebut, 
+perusahaan meminta Anda untuk mencari tahu beberapa hal berikut:
+
+1. Berapa subnet mask-nya?
+2. Mana bagian network ID dan host ID-nya?
+3. Berapa subnet yang bisa dibuat?
+4. Berapa jumlah host yang bisa dipakai per subnet?
+
+1. Subnet Mask
+Dengan melihat blok IP 192.168.1.0/24, kita bisa fokus pada CIDR notation-nya, yakni /24. 
+ada 24 angka “1” dalam bilangan biner. subnet mask-nya adalah 11111111.11111111.11111111.00000000.
+
+2. Network ID dan Host ID
+Setelah mengetahui subnet mask, kini kita bisa mengidentifikasi mana bagian network ID dan 
+mana bagian host ID. dalam kasus ini, setiap oktet pada IP address yang selaras dengan angka 1 pada 
+subnet mask dalam biner adalah network address (network ID), sisanya host ID.
+
+192.168.1.0
+11111111.11111111.11111111.00000000
+
+Jadi, 192.168.1.x adalah network ID, dan x.x.x.0 adalah host ID.
+
+3. Jumlah Subnet
+Untuk menghitung jumlah subnet, kita bisa menggunakan rumus 2^x 
+(di mana x adalah banyaknya angka 1 dalam oktet terakhir di subnet mask). Mari kita hitung.
+
+Dari subnet mask 11111111.11111111.11111111.00000000, oktet terakhirnya adalah 0000000. 
+Karena tidak ada angka 1 di sana, berarti 2^0 = 1. Jadi, dalam kasus kita, subnet yang bisa 
+dibuat hanyalah 1.
+
+Contoh lain, apabila subnet mask-nya adalah /27 atau 11111111.11111111.11111111.11100000, 
+maka 2^3 = 8 subnet.
+
+4 Jumlah Host per Subnet
+Jumlah host per subnet bisa kita ketahui melalui rumus (2^y)-2 
+(di mana y adalah banyaknya angka 0 dalam oktet terakhir di subnet mask).
+
+Dari subnet mask 11111111.11111111.11111111.00000000, oktet terakhirnya adalah 0000000. 
+Itu artinya, (2^8)-2 = 256-2 = 254 host per subnet.
+
+Apabila subnet mask-nya adalah /27 atau 11111111.11111111.11111111.11100000, 
+maka (2^5)-2 = 32-2 = 30 host per subnet.
+
+Kenapa harus dikurangi 2?. Jawabannya karena ada 2 IP address yang tidak bisa dipakai oleh host, 
+yakni network address dan broadcast address.
+
+Dalam kasus 192.168.1.0/24, network address-nya adalah 192.168.1.0 dan 
+broadcast address-nya adalah 192.168.1.255.
+
+Jadi, rentang IP address yang valid untuk host adalah 192.168.1.1–192.168.1.254.
+
+Catatan: Di beberapa kasus, rumus menghitung host per subnet tidak selalu dikurangi 2, 
+bisa jadi dikurangi 3, 4, bahkan 5. Ini karena beberapa IP address dari host ID 
+digunakan untuk gateway router, DNS server, atau bahkan disimpan untuk penggunaan di masa mendatang.
