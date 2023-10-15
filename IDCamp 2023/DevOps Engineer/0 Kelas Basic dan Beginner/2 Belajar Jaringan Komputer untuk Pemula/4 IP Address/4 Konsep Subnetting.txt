@@ -1,0 +1,4 @@
+subnetting adalah proses membagi jaringan besar menjadi beberapa jaringan yang lebih kecil yang 
+disebut segmen jaringan atau subnetwork/subnet.
+
+subnet 172.16.1.0/24 merupakan bagian dari Jaringan A 172.16.0.0/16. Itulah mengapa disebut subnet.
