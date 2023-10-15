@@ -1,0 +1,30 @@
+internet adalah sebuah jaringan yang terdiri dari banyak jaringan lain yang berbeda-beda.
+
+Salah satu protokol terpenting yang digunakan dalam komunikasi di internet adalah 
+IP (Internet Protocol) dan alamat komputer disebut IP address.
+
+Saat Anda mengunjungi sebuah situs web, proses yang terjadi sebenarnya adalah komputer Anda 
+meminta informasi ke komputer lain. Komputer Anda mengirim pesan ke IP address milik komputer lain 
+sekaligus mencantumkan IP address dirinya sendiri agar komputer lain tahu ke mana harus 
+mengirimkan respons.
+
+Bentuk IP address IPv4 memiliki panjang 32 bit yang terdiri dari 4 oktet,
+di mana setiap oktet biasanya dituliskan dalam angka desimal. 
+8 bit data (atau satu oktet) mewakili angka desimal dari 0 hingga 255. 
+
+Misalnya, 12.34.56.78 merupakan IPv4 address yang valid, 
+sementara 123.456.789.100 tidak. Pasalnya, 123.456.789.100 memiliki angka yang lebih besar 
+daripada yang dapat diwakili oleh 8 bit. 
+
+Penting untuk Anda ketahui bahwa IP address sejatinya adalah milik jaringan, 
+bukan milik perangkat fisik yang terhubung ke jaringan. Jadi, laptop atau ponsel yang 
+Anda gunakan saat ini bisa jadi akan memiliki IP address yang berbeda-beda setiap kali 
+terhubung ke jaringan yang berbeda.
+
+Anda dapat dengan mudah menghubungkan perangkat baru dan langsung mendapatkan IP address 
+secara otomatis melalui teknologi yang dikenal sebagai Dynamic Host Configuration Protocol. 
+IP address yang ditetapkan melalui metode ini dikenal sebagai dynamic IP address. 
+Kebalikannya adalah static IP address, di mana kita perlu mengonfigurasi komputer secara manual.
+
+static IP address kerap dipakai untuk server dan perangkat jaringan, 
+sedangkan dynamic IP address sering kali diterapkan untuk client.
