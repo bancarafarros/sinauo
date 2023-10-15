@@ -1,0 +1,44 @@
+setiap komputer di jaringan dapat memiliki static IP address 
+(IP address akan selalu sama dari waktu ke waktu) atau dynamic IP address 
+(IP address dapat berubah sewaktu-waktu).
+
+DHCP adalah protokol application layer yang bertugas untuk mengotomatiskan proses konfigurasi 
+host (perangkat) di suatu jaringan. Dengan DHCP, host dapat meminta IP address ke DHCP server 
+saat terhubung ke jaringan dan kemudian menerima semua konfigurasi jaringan yang diperlukan.
+
+Untuk server atau peralatan jaringan seperti router, static IP address diperlukan agar 
+host mengetahui IP mereka setiap saat sehingga bisa berkomunikasi tanpa gangguan.
+
+dengan menggunakan DHCP, Anda dapat mengonfigurasi rentang IP address yang diperlukan 
+untuk perangkat client tersebut. Ini memastikan bahwa setiap perangkat client dapat 
+memperoleh IP address saat mereka membutuhkannya.
+
+Ada beberapa metode bagaimana DHCP beroperasi:
+- Dynamic allocation
+Metode yang paling umum. rentang IP address akan ditetapkan untuk perangkat client. 
+Nantinya, salah satu IP address tersebut akan diberikan jika ada client yang memintanya. 
+Dengan dynamic allocation, IP address untuk masing-masing komputer bisa berbeda-beda setiap kali 
+terhubung ke jaringan.
+
+- Automatic allocation
+rentang IP address ditetapkan untuk nantinya diberikan ke client. dalam met
+ode automatic allocation DHCP server diminta untuk melacak IP address mana yang ditetapkan untuk 
+perangkat client tertentu di masa lalu. Dengan menggunakan informasi tersebut, 
+DHCP server akan menetapkan IP address yang sama ke client yang sama setiap kali diminta.
+
+- Fixed allocation
+Jika ingin menggunakan metode fixed allocation, kita perlu membuat daftar 
+MAC address setiap perangkat beserta IP address yang sesuai secara manual.
+
+Saat client meminta IP address, DHCP server akan mencari MAC address si client di dalam tabel. 
+Jika ketemu, DHCP server kemudian memberikan IP address yang cocok/sesuai.
+
+apabila MAC address tidak ditemukan, DHCP server akan menggunakan metode dynamic atau 
+automatic allocation. Bahkan, mungkin saja tidak memberikan IP address sama sekali. 
+Dengan begitu, metode ini bisa digunakan untuk meningkatkan keamanan dengan memastikan bahwa 
+hanya perangkat yang memiliki MAC address terdaftar saja yang akan memperoleh IP address dan 
+berkomunikasi di jaringan.
+
+DHCP juga dapat digunakan untuk menetapkan NTP server. 
+NTP merupakan singkatan dari Network Time Protocol yang dirancang untuk 
+menyinkronkan jam komputer melalui jaringan.
