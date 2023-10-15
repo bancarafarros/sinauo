@@ -1,0 +1,15 @@
+Subnet mask adalah angka yang menyerupai IP address, tetapi dengan fungsi yang berbeda. 
+Subnet mask menjelaskan berapa banyak bit dalam IP address yang digunakan untuk network ID 
+dengan menutupi bagian network ID itu sendiri.
+
+Contoh, IP address 192.168.1.0 dengan subnet mask 255.255.255.0 menerangkan bahwa 
+network ID pada IP address tersebut adalah 192.168.1.x.
+
+IP address dan subnet mask itu terdiri dari 32 bit, dibagi ke dalam 4 oktet, 
+dan masing-masing oktet terdiri dari 8 bit. Di setiap oktetnya, kita bisa tetapkan 
+angka desimal dari 0–255 (256 nilai).
+
+subnet mask dapat ditulis menggunakan cara yang lebih pendek yang disebut CIDR notation. 
+Ini dilakukan dengan menulis garis miring diikuti total bilangan biner “1” yang ada di subnet mask. 
+Misalnya, pada contoh IP address dan subnet mask sebelumnya (192.168.1.0 dan 255.255.255.0), 
+kita bisa tuliskan secara lebih singkat sebagai 192.168.1.0/24.
