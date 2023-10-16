@@ -1,0 +1,77 @@
+Agar client (browser yang kita gunakan) bisa berkomunikasi dengan server Dicoding dan 
+membuka halaman dicoding.com, ia harus mencari tahu dulu berapa 
+IP address dari server Dicoding tersebut. Nah, proses ini disebut DNS resolution, 
+singkatnya adalah proses menemukan IP address dari suatu nama domain.
+
+1. Saat Anda menuliskan dicoding.com di browser dan menekan tombol Enter, hal pertama yang akan dilakukan browser adalah mengecek browser cache (cache adalah tempat penyimpanan data sementara) untuk melihat apakah di sana tersimpan IP address dari website dicoding.com karena siapa tahu sudah dikunjungi baru-baru ini.
+
+Apabila tidak ditemukan di browser cache, maka browser akan mengecek 
+DNS cache (cache ini dikelola oleh sistem operasi) untuk melihat apakah di sana 
+tersimpan IP address dari dicoding.com.
+Jika tidak ada juga, browser akan mengecek Hosts file 
+(berisi mapping atau pemetaan dari nama domain ke IP address) yang ada di sistem operasi untuk 
+melihat apakah di sana terdapat pemetaan untuk dicoding.com.
+
+Kalau browser bisa menemukan IP address-nya, ia akan menghubungi server Dicoding dan 
+memuat website saat itu juga. Namun, bila tidak ada sama sekali, langkah selanjutnya adalah 
+menghubungi Recursive DNS Server.
+
+2. Recursive DNS Server berlaku bak pustakawan yang kita suruh/minta untuk 
+pergi mencari buku tertentu di suatu tempat di perpustakaan.
+
+server ini bertindak sebagai perantara yang akan membantu client untuk mendapatkan informasi DNS, 
+baik dari cache yang ada pada dirinya sendiri maupun dari DNS server lainnya.
+Recursive DNS Server ini biasanya dikelola oleh ISP.
+
+jika Recursive DNS Server memiliki informasi IP address untuk dicoding.com di dalam cache miliknya 
+(siapa tahu baru-baru ini sudah dikunjungi oleh pengguna lain di ISP tersebut), ia akan langsung 
+memberikan informasi tersebut ke client dan takkan lanjut ke langkah berikutnya. 
+bila tidak ada di sana, Recursive DNS Server akan meneruskan permintaan ke Root DNS Server.
+
+3. Root DNS Server layaknya sebuah indeks atau katalog di perpustakaan yang menunjuk ke rak buku tertentu.
+
+Di internet, Root DNS Server adalah server yang beroperasi di level teratas/tertinggi pada hierarki DNS. 
+Server ini menyimpan informasi dari setiap TLD, seperti di mana lokasinya dan apa IP address-nya.
+
+Root DNS Server tidak memiliki informasi IP address untuk nama domain. 
+Ia hanya memiliki informasi tentang TLD. Jadi, karena dalam kasus dicoding.com TLD-nya adalah .com, 
+Root DNS Server akan memberikan informasi tentang TLD Server yang sesuai (yakni .com TLD Server) ke 
+Recursive DNS Server.
+
+Setelah mendapatkan informasi tentang TLD Server dari Root DNS Server, 
+sekarang Recursive DNS Server akan menghubungi TLD Server tersebut.
+
+4. TLD Server bisa dianggap seperti rak buku di perpustakaan yang berisi berbagai jenis buku.
+
+TLD Server menyimpan informasi semua nama domain yang memiliki TLD tertentu. Misalnya, .com 
+TLD Server berisi informasi semua website yang memiliki akhiran .com.
+
+Sayangnya, TLD Server yang kita tuju (.com TLD Server) juga tidak tahu apa IP address dari 
+dicoding.com. Akan tetapi, ia tahu tempat di mana mungkin informasi tersebut berada, yakni 
+Authoritative Name Server.
+
+TLD Server kemudian memberikan informasi yang berkenaan dengan Authoritative Name Server yang sesuai
+ke Recursive DNS Server.
+
+Setelah mendapatkan informasi tersebut, Recursive DNS Server pun langsung 
+menghubungi Authoritative Name Server.
+
+5. Authoritative Name Server ibarat kamus di rak buku, di mana sebuah kata dapat diterjemahkan ke 
+dalam suatu definisi (dalam kasus kita berarti menerjemahkan nama domain ke IP address).
+
+Authoritative Name Server merupakan pemberhentian terakhir dalam proses DNS resolution. 
+Server ini berisi informasi nama domain tertentu yang ia layani. 
+Di sinilah kita bisa menemukan IP address dari nama domain dicoding.com.
+
+Authoritative Name Server pun kemudian memberikan IP address dari 
+nama domain yang diminta (dicoding.com) ke Recursive DNS Server.
+
+6. IP address yang diterima oleh Recursive DNS Server akan disimpan ke dalam cache miliknya 
+untuk kurun waktu tertentu. Sehingga bila nanti datang permintaan yang sama dari client, 
+ia tak perlu melakukan DNS resolution secara penuh lagi. 
+Setelah itu, Recursive DNS Server memberikan IP address tadi ke client (browser).
+
+browser kemudian mengirimkan permintaan untuk dicoding.com ke server Dicoding melalui 
+IP address tersebut. Server Dicoding pun memproses dan mengembalikan respons berupa 
+halaman web untuk dicoding.com ke browser. Browser lantas memuat halaman 
+dicoding.com ke hadapan pengguna.
