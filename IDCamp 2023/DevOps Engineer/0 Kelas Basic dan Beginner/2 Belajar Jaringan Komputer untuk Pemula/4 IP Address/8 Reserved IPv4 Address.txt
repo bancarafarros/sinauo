@@ -1,0 +1,79 @@
+Ada beberapa IPv4 address yang disisihkan oleh IETF (Internet Engineering Task Force) dan 
+IANA (Internet Assigned Numbers Authority) untuk tujuan khusus dan tidak dapat digunakan di internet. 
+Alamat-alamat ini disebut reserved IPv4 address.
+
+> Network address
+Network address menunjukkan mana bagian network ID dan mana host ID.
+
+Network address kerap dipakai untuk menunjukkan rentang IP address pada suatu network (jaringan) atau 
+subnet (segmen jaringan). Sebagai contoh, jika suatu jaringan memiliki blok IP 192.168.10.0/24, 
+itu artinya ia bisa menampung host mulai dari 192.168.10.1 hingga 192.168.10.254, 
+di mana 192.168.10.0 adalah network address dan 192.168.10.255 adalah broadcast address
+
+network address tidak bisa Anda pakai untuk perangkat jaringan karena ia merujuk pada rentang 
+IP address pada network atau subnet itu sendiri dan digunakan untuk tujuan routing (perutean).
+
+> Private IP Address
+Beberapa IP address yang termasuk dalam kategori private IP address tidak dapat dirutekan oleh 
+router di internet. Ia hanya bisa digunakan untuk jaringan pribadi, kampus, perusahaan, atau 
+jaringan apa pun yang tidak terhubung ke internet.
+
+Untuk berkomunikasi dengan dunia luar (internet), private IP address haruslah diterjemahkan 
+ke public IP address menggunakan proses NAT.
+
+Block IPv4 address	Rentang Alamat
+10.0.0.0/8          10.0.0.0–10.255.255.255
+172.16.0.0/12       172.16.0.0–172.31.255.255      
+192.168.0.0/16      192.168.0.0–192.168.255.255
+
+Tujuan hadirnya private IP address ini adalah untuk mengontrol jumlah IPv4 address yang sudah terbatas.
+
+> Loopback IP Address
+Blok IP address 127.0.0.0/8 (atau jika ditulis dalam rentang IP address berarti 
+127.0.0.0–127.255.255.255) ditujukan untuk loopback, yaitu alamat dirinya sendiri. 
+Loopback IP address juga dikenal sebagai localhost address.
+
+Loopback IP address dikelola sepenuhnya oleh dan di dalam sistem operasi. 
+Loopback address memungkinkan proses server dan client pada satu sistem untuk berkomunikasi 
+satu sama lain. Jadi, ketika suatu proses membuat sebuah packet jaringan dengan alamat 
+tujuan loopback address, sistem operasi akan mengirimkan packet tersebut ke dirinya sendiri tanpa 
+intervensi NIC (Network Interface Card). Data yang dikirim pada loopback akan diteruskan oleh 
+sistem operasi ke antarmuka jaringan virtual (virtual network interface) dalam sistem operasi.
+
+> Link-local Address
+Bagaimana jika ternyata sebuah host tidak memperoleh IP address dari DHCP server dan 
+belum diberikan IP address apa pun secara manual?”
+
+Jadi, host dapat menetapkan IP address sendiri dari rentang Link-local address yang berkisar 
+dari 169.254.0.0–169.254.255.255 (169.254.0.0/16).
+
+terdapat sebuah segmen jaringan (subnet), di mana semua client atau host dikonfigurasi untuk memperoleh 
+IP address dari DHCP server. Jika DHCP server tersebut sewaktu-waktu tidak tersedia, sudah pasti 
+tidak akan ada client yang dapat berkomunikasi satu sama lain. Dengan absennya DHCP server, 
+setiap client secara acak akan memilih IP address dari rentang link-local address yang 
+disebutkan di atas. Setelah semua client menggunakan link-local address dengan rentang yang sama, 
+mereka dapat berkomunikasi satu sama lain. 
+
+IP address ini tidak dapat membantu client untuk berkomunikasi jika mereka tidak berada dalam 
+segmen jaringan (subnet) yang sama. Terlebih lagi, IP address ini tidak bisa dirutekan oleh 
+router di internet.
+
+> Broadcast Address
+IP address yang memungkinkan data atau pesan dikirim secara bersamaan ke semua host pada 
+segmen jaringan (subnet) tertentu daripada ke satu host saja. Ada dua jenis broadcast address pada IPv4:
+
+Limited broadcast
+Contoh limited broadcast address adalah 255.255.255.255. Disebut "limited”
+karena IP address ini tidak pernah dirutekan atau diteruskan oleh router.
+
+Directed broadcast
+Contoh directed broadcast address dari 192.0.2.0/24 adalah 192.0.2.255 
+(bagian host ID diatur menjadi semua “1” dalam biner atau semua 255 dalam desimal). 
+Directed broadcast adalah sebuah pesan siaran (broadcast) yang dikirim ke 
+semua perangkat yang ada di suatu jaringan.
+
+> Default Route Address
+rute yang berlaku ketika tidak ada rute lain yang tersedia untuk alamat tujuan IP. 
+Default route di IPv4 dituliskan sebagai 0.0.0.0/0. 
+Semua angka nol pada IP address (network ID) dan CIDR notation tersebut memiliki arti 
+“semua jaringan” dan “semua host”.
