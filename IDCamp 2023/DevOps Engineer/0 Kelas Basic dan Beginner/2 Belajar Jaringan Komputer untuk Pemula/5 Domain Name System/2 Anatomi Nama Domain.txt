@@ -1,0 +1,31 @@
+setiap nama domain atau domain name memiliki tiga bagian utama, 
+yang mana masing-masing melayani tujuan tertentu.
+
+nama domain www.dicoding.com memiliki tiga bagian yang seharusnya mudah dikenali 
+lantaran masing-masing dipisahkan oleh titik, 
+yakni www (subdomain), dicoding (domain), dan com (top level domain).
+
+Subdomain
+www dari www.dicoding.com dikenal sebagai subdomain. 
+Secara teknis, Anda dapat memiliki banyak subdomain, 
+contohnya sub.sub.subdomain.domain.com. 
+itu valid. DNS dapat mendukung hingga 127 level domain secara total untuk satu nama domain.
+
+Domain
+merupakan nama yang kerap digunakan untuk merujuk ke bagian kedua dari struktur nama domain. 
+Dari contoh tadi, yang disebut domain adalah dicoding.
+
+Top-Level Domain (TLD)
+bagian terakhir dari sebuah nama domain. Dari contoh tadi,.com merupakan TLD.
+Mulanya, jumlah TLD yang tersedia begitu terbatas.
+
+administrasi dan definisi dari TLD ditangani oleh organisasi nonprofit yang dikenal sebagai 
+ICANN (Internet Corporation for Assigned Names and Numbers). Organisasi ini merupakan saudara dari IANA
+mereka bersama-sama menentukan dan mengontrol jumlah IP address dan sistem DNS secara global.
+
+Saat Anda menggabungkan ketiga bagian di atas 
+(Subdomain + Domain + TLD), itulah yang disebut dengan Fully Qualified Domain Name (FQDN).
+
+Pendaftaran domain biasanya berada di bawah kendali Registrar atau Domain name registrar, 
+yakni sebuah organisasi atau badan komersial yang bertugas menjadi tempat 
+pendaftaran nama domain yang sudah diakreditasi oleh ICANN.
