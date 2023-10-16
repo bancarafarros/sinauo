@@ -1,0 +1,87 @@
+DNS record adalah instruksi yang memberikan informasi tentang domain, 
+termasuk IP address apa yang terkait dengan suatu domain dan 
+bagaimana cara menangani permintaan untuk domain tersebut.
+
+Apabila suatu saat Anda ingin membeli atau mengonfigurasi sebuah domain, 
+kemungkinan besar pasti Anda akan berurusan dengan DNS record.
+
+- A record atau Address record adalah sebuah record yang menyimpan IP address dari suatu domain. 
+
+    Berikut adalah contoh A record dari nama domain example.com.
+    Type	Host	Value	            TTL (detik)
+    A       @       185.199.108.100     14400
+    A       blog    185.199.108.101     14400
+
+    Kolom Type : menunjukkan tipe DNS record yang digunakan. Dalam kasus ini, menggunakan A record.
+
+    Kolom Host : menunjukkan nama domain atau subdomain yang digunakan. 
+                “@” pada tabel di atas mengindikasikan root domain, yang berarti example.com. 
+                Di baris berikutnya juga terdapat kata “blog” yang berarti 
+                subdomain dari example.com (sehingga menjadi blog.example.com) 
+                dengan nilai IP address yang berbeda.
+
+    Kolom Value : menunjukkan IP address dari server. server Dicoding yang memuat halaman dicoding.com. 
+
+    Kolom TTL : menunjukkan nilai TTL (time to live), yakni berapa lama waktu 
+                caching (penyimpanan sementara) untuk record ini dalam satuan detik. 
+                Dalam kata lain, IP address tersebut dapat di-cache atau disimpan sementara di 
+                perangkat client atau lokasi lain untuk jangka waktu 14400 detik (240 menit).
+
+- AAAA record
+    berisi IPv6 address untuk suatu domain (kebalikan dari A record yang berisi IPv4 address).
+    Berikut adalah contoh AAAA record dari nama domain example.com.
+
+    Type	Host	Value                       TTL (detik)
+    AAAA    @       2001:0db8:85a3:0000:    
+                    0000:8a2e:0370:7334         14400
+
+    Tipe record ini hanya digunakan saat domain memiliki IPv6 address selain IPv4 address, 
+    juga saat perangkat client yang bersangkutan dikonfigurasi untuk menggunakan IPv6.
+
+- CNAME record (canonical name) 
+    record yang memungkinkan kita untuk mengarahkan suatu domain atau subdomain ke domain lain. 
+    kerap disebut alias record.
+
+    misal “blog.example.com” memiliki CNAME record dengan nilai “example.com” (tanpa 'blog'). 
+    kita membuka halaman blog.example.com dan DNS resolution pun berlangsung. 
+    Alih-alih mendapatkan IP address, proses DNS resolution akan menghasilkan domain example.com. 
+    Itu artinya, akan dilakukan DNS resolution sekali lagi 
+    hingga akhirnya mengembalikan IP address dari example.com melalui A record.
+
+    Dalam contoh tadi, example.com adalah canonical name atau nama sebenarnya dari blog.example.com.
+
+    Type	Host	Value	        TTL (detik)
+    CNAME   blog    example.com     32600
+
+    blog.example.com mengarah ke example.com. Bila kita tarik kembali contoh pada A record untuk 
+    example.com di atas, maka CNAME record ini pada akhirnya akan mendapatkan IP address 185.199.108.100.
+
+- MX record (mail exchange) record
+    suatu record yang mengarahkan email ke mail server (server email) tertentu. 
+    MX record mengindikasikan bagaimana pesan email harus ditangani sesuai dengan 
+    SMTP (Simple Mail Transfer Protocol), yakni protokol standar untuk semua email. 
+    Layaknya CNAME record, MX record juga mesti selalu mengarah ke domain lain.
+
+    Berikut adalah contoh dari MX record untuk example.com.
+    Type	Host	Priority	Value                   TTL (detik)
+    MX      @       10          mailhost1.example.com   45000
+    MX      @       20          mailhost2.example.com   45000
+
+    Prioritas yang Anda tetapkan saat menambahkan MX record akan menentukan urutan 
+    mail server yang menerima email. Nilai yang lebih kecil menunjukkan prioritas yang lebih tinggi.
+
+    setiap email yang dikirim ke “@” alias domain example.com (misal johndoe@example.com), 
+    maka email tersebut akan ditangani oleh server di mailhost1.example.com.
+
+- NS record (nameserver)
+    record yang menyimpan informasi terkait Authoritative Name Server mana yang bertanggung jawab 
+    atas suatu domain tertentu.
+
+    NS record memberi tahu Anda lokasi Authoritative Name Server untuk mengetahui IP address 
+    dari suatu nama domain. Sebuah nama domain acap kali memiliki lebih dari satu 
+    NS record yang menunjukkan Authoritative Name Server primer dan sekunder untuk domain tersebut. 
+    Tanpa mengonfigurasi NS record dengan benar, pengguna tak akan bisa memuat website atau aplikasi.
+
+    Berikut adalah contoh dari NS record untuk example.com.
+    Type	Host	Value	                TTL (detik)
+    NS      @       ns1.exampleserver.com   21600
