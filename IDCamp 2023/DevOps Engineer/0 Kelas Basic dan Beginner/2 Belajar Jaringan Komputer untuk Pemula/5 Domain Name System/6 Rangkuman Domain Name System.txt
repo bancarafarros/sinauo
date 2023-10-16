@@ -1,0 +1,93 @@
+> Pengenalan Domain Name System
+layanan jaringan yang tugasnya menerjemahkan nama domain (seperti www.dicoding.com) menjadi IP address.
+
+> Anatomi Nama Domain
+www (subdomain), dicoding (domain), dan com (top level domain).
+
+Subdomain
+Bagian www dikenal sebagai subdomain. Anda dapat memiliki banyak subdomain, contohnya host.sub.sub.subdomain.domain.com.
+
+Domain
+nama yang kerap digunakan untuk merujuk ke bagian kedua dari struktur nama domain. 
+Dalam contoh www.dicoding.com, yang disebut domain adalah dicoding.
+
+Top-Level Domain (TLD)
+www.dicoding.com, bagian .com merupakan TLD.
+
+(Subdomain + Domain + TLD), maka itu disebut Fully Qualified Domain Name (FQDN).
+
+Pendaftaran domain berada di bawah kendali Registrar atau Domain name registrar, 
+yakni sebuah organisasi atau badan komersial yang bertugas menjadi tempat pendaftaran 
+nama domain yang sudah diakreditasi oleh ICANN.
+
+> Cara Kerja DNS
+proses DNS resolution saat kita membuka dicoding.com di browser.
+
+1. Saat Anda membuka dicoding.com di browser, hal pertama yang akan dilakukan browser adalah 
+    mengecek browser cache untuk melihat apakah di sana tersimpan IP address dari 
+    website dicoding.com. Apabila tidak ditemukan di browser cache, maka browser akan mengecek 
+    DNS cache dan Hosts file. Bila tidak ditemukan, maka langkah selanjutnya adalah 
+    menghubungi Recursive DNS Server.
+
+2. Jika Recursive DNS Server memiliki informasi IP address untuk dicoding.com 
+    di dalam cache miliknya, ia akan langsung memberikan informasi tersebut ke client dan 
+    takkan lanjut ke langkah berikutnya. Bila tidak ada di sana, Recursive DNS Server 
+    akan meneruskan permintaan ke Root DNS Server.
+
+3. Kemudian, Root DNS Server memberikan informasi tentang TLD Server yang sesuai 
+    (yakni .com TLD Server) ke Recursive DNS Server. Setelah mendapatkan informasi 
+    tentang TLD Server dari Root DNS Server, sekarang Recursive DNS Server akan 
+    menghubungi TLD Server tersebut.
+
+4. TLD Server kemudian memberikan informasi yang berkenaan dengan 
+    Authoritative Name Server yang sesuai (dicoding.com) ke Recursive DNS Server.
+    Setelah mendapatkan informasi tersebut, Recursive DNS Server pun langsung 
+    menghubungi Authoritative Name Server.
+
+5. Authoritative Name Server berisi informasi nama domain tertentu yang ia layani. 
+    Di sinilah kita bisa menemukan IP address dari nama domain dicoding.com. 
+    Authoritative Name Server pun kemudian memberikan IP address dari nama domain 
+    yang diminta (dicoding.com) ke Recursive DNS Server.
+
+6. IP address yang diterima oleh Recursive DNS Server akan disimpan ke dalam cache 
+    untuk kurun waktu tertentu. Sehingga bila nanti datang permintaan yang sama dari client, 
+    ia tak perlu melakukan DNS resolution secara penuh lagi. 
+    Setelah itu, Recursive DNS Server memberikan IP address tadi ke client (browser).
+
+7. Usai menerima IP address, browser kemudian mengirimkan permintaan (request) untuk dicoding.com 
+    ke server Dicoding melalui IP address tersebut. Server Dicoding pun memproses dan 
+    mengembalikan respons berupa halaman web untuk dicoding.com ke browser. 
+    Browser lantas memuat/menampilkan halaman dicoding.com ke hadapan pengguna.
+
+> Tipe-Tipe DNS Record
+DNS record adalah instruksi yang memberikan informasi tentang domain, 
+termasuk IP address apa yang terkait dengan suatu domain dan bagaimana cara menangani 
+permintaan untuk domain tersebut.
+
+A record (Address record)
+sebuah record (catatan) yang menyimpan IP address dari suatu domain (berisi IPv4 address).
+
+AAAA record
+berisi IPv6 address untuk suatu domain (kebalikan dari A record yang berisi IPv4 address). 
+Tipe record yang satu ini hanya digunakan saat domain memiliki IPv6 address selain IPv4 address, 
+juga saat perangkat client yang bersangkutan dikonfigurasi untuk menggunakan IPv6.
+
+CNAME record (canonical name)
+record yang memungkinkan kita untuk mengarahkan suatu domain atau subdomain ke domain lain. 
+Tipe record ini juga kerap disebut alias record.
+
+MX record (mail exchange)
+record yang mengarahkan email ke mail server (server email) tertentu. 
+MX record mengindikasikan bagaimana pesan email harus ditangani sesuai dengan 
+SMTP (Simple Mail Transfer Protocol), yakni protokol standar untuk semua email. 
+Layaknya CNAME record, MX record juga mesti selalu mengarah ke domain lain.
+
+NS record (nameserver)
+record yang menyimpan informasi terkait Authoritative Name Server mana yang 
+bertanggung jawab atas suatu domain tertentu. Pada dasarnya, NS record memberi tahu Anda 
+lokasi Authoritative Name Server untuk mengetahui IP address dari suatu nama domain. 
+Sebuah nama domain acap kali memiliki lebih dari satu NS record yang menunjukkan 
+Authoritative Name Server primer dan sekunder untuk domain tersebut. 
+Tanpa mengonfigurasi NS record dengan benar, pengguna tak akan bisa memuat website atau aplikasi.
+
+https://youtu.be/0nuP8j2pNvI
