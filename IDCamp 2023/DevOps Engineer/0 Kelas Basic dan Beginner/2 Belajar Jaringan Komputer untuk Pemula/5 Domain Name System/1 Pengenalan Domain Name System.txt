@@ -1,0 +1,16 @@
+Domain Name System (DNS) adalah layanan jaringan yang tugasnya 
+menerjemahkan nama domain (seperti www.dicoding.com) menjadi IP address.
+
+Anda pasti setuju bahwa jauh lebih mudah mengetikkan nama domainnya–yakni www.dicoding.com–di browser 
+daripada mengingat IP address dari situs ini 75.2.21.170,
+
+IP address untuk nama domain bisa berubah sewaktu-waktu karena berbagai alasan. 
+Salah satu faktornya adalah karena server yang menangani website tersebut tumbang (down) 
+sehingga kemudian dilayani oleh server lain dengan IP address yang berbeda.
+
+Anda bisa saja mendapatkan IP address yang berbeda tergantung di mana Anda berada. 
+Anda mengakses www.dicoding.com di New York, mungkin Anda akan diarahkan ke server yang 
+berada di sekitar New York dengan IP address 162.16.24.1. 
+Anda di Jakarta, bisa jadi Anda akan diarahkan ke server di Jakarta yang memiliki IP address 64.71.222.37
+
+DNS melayani banyak tujuan dan merupakan salah satu teknologi penting.
