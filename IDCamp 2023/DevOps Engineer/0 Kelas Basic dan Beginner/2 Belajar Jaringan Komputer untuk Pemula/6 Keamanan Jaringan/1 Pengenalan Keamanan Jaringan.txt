@@ -1,0 +1,24 @@
+Keamanan jaringan merupakan praktik untuk menjaga jaringan internal terlindung dari segala 
+bentuk serangan dan pelanggaran data, yang mencakup kontrol akses, 
+pencegahan serangan siber, deteksi perangkat lunak berbahaya, dan langkah-langkah keamanan lainnya.
+
+kategori ancaman yang mampu menyerang sistem keamanan jaringan kita.
+
+- Interupsi
+ancaman keamanan yang menyerang ketersediaan sumber daya yang kita miliki. 
+Contohnya, serangan atau pembajakan terhadap server sehingga pengguna tidak bisa mengaksesnya.
+
+- Pelanggaran Privasi
+privasi pengguna dilanggar/dibobol. Akibatnya, seseorang yang tidak memiliki wewenang dapat 
+mengakses atau menyadap data yang bukan haknya.
+
+- Integritas
+Jenis ancaman ini mencakup setiap perubahan atau modifikasi dalam konteks komunikasi. 
+Penyerang mencegat dan menerima data yang dikirim oleh pengirim, kemudian memodifikasi atau 
+membuat data palsu, dan mengirimkannya ke penerima. 
+Penerima lantas menerima data tersebut dengan asumsi bahwa itu memang dikirim oleh pengirim sebenarnya, 
+padahal nyatanya bukan.
+
+-Orisinalitas
+Ancaman ini terjadi ketika penyerang atau pelanggar keamanan, menyamar sebagai orang asli dan 
+mengakses sumber daya atau berkomunikasi dengan pengguna asli lainnya.
