@@ -1,0 +1,152 @@
+Penguatan jaringan (network hardening) adalah proses untuk mengamankan jaringan
+dengan mengurangi potensi kerentanan melalui perubahan konfigurasi 
+dan mengambil langkah-langkah tertentu.
+
+> DNSSEC (DNS Security Extensions)
+untuk menangani serangan seperti DNS Cache Poisoning, langkah yang penting diambil adalah 
+dengan menerapkan DNS security, yakni praktik untuk memproteksi atau melindungi infrastruktur 
+DNS (misal DNS server) dari segala bentuk serangan dalam rangka untuk menjaganya tetap 
+berfungsi dengan cepat dan andal.
+
+strategi DNS security yang efektif adalah dengan menggabungkan sejumlah pertahanan, 
+termasuk membangun DNS server yang redundant (lebih dari satu), 
+menerapkan protokol keamanan seperti DNSSEC, dan merekam aktivitas DNS yang terjadi (DNS logging).
+
+DNSSEC merupakan protokol yang diciptakan untuk memitigasi masalah keamanan yang kerap terjadi 
+pada DNS, salah satunya ialah serangan DNS Cache Poisoning, dengan memverifikasi DNS record 
+menggunakan cryptographic signatures (“tanda tangan” kriptografi).
+
+Dengan mekanisme semacam ini, Recursive DNS Server dapat memverifikasi bahwa 
+balasan dari informasi yang diminta berasal dari Authoritative Name Server sesungguhnya, 
+bukan penjahat atau pihak tak berwenang.
+
+DNSSEC bertugas untuk melindungi proses DNS dari segala macam serangan 
+dengan “menandatangani” data secara digital guna membantu memastikan validitasnya. 
+Untuk memastikan pencarian nama domain yang aman, “penandatanganan” harus dilakukan 
+di setiap level dalam proses DNS resolution.
+
+Proses penandatanganan yang dimaksud di sini mirip dengan 
+seseorang yang menandatangani dokumen hukum dengan pena. Orang tersebut menandatangani 
+dokumen dengan tanda tangan pribadinya yang unik sehingga tidak dapat ditirukan oleh orang lain. 
+Ahli pengadilan pun dapat melihat tanda tangan orang itu dan memverifikasi bahwa 
+dokumen ini benar adanya ditandatangani oleh orang tersebut. 
+
+tanda tangan digital pun memiliki konsep serupa dengan tujuan untuk memastikan 
+bahwa data tidak dirusak, diubah, atau dimanipulasi oleh pihak yang tidak diinginkan.
+
+DNSSEC menerapkan kebijakan penandatanganan digital yang hierarkis di semua level DNS. 
+Sebagai contoh, dalam kasus pencarian nama domain “dicoding.com”, 
+Root DNS Server akan menandatangani key (kunci) untuk .com TLD Server. 
+Kemudian, .com TLD Server akan menandatangani key untuk Authoritative Name Server untuk dicoding.com.
+
+DNSKEY menyimpan public signing key untuk proses autentikasi informasi; 
+DS (Delegation Signer) memungkinkan transfer kepercayaan dari induk (misal dari Root DNS Server) 
+ke child (misal ke TLD Server). Dalam kriptografi, key (kunci) biasanya berupa 
+rangkaian bit acak yang dibuat khusus untuk mengubah data menjadi bentuk yang 
+tak terbaca (enkripsi) dan mengembalikannya ke bentuk semula (dekripsi).
+
+DNSSEC mampu mencegah berbagai serangan yang kerap terjadi pada 
+proses pencarian DNS mulai dari serangan DNS Cache Poisoning hingga Man-in-the-Middle dengan 
+membangun rantai kepercayaan (chain of trust) sampai ke level Root DNS Server. 
+Rantai kepercayaan ini memastikan bahwa DNS record yang diminta pengguna 
+benar-benar aman, tidak dirusak, diubah, atau dimanipulasi dalam perjalanan.
+
+> Proxy
+Proxy atau Proxy server adalah server perantara, baik perangkat lunak maupun perangkat keras 
+yang bertindak sebagai pintu gerbang antara client dan internet. 
+sebenarnya hampir sebagian besar permintaan web yang dikirim dari client ke server akan 
+melewati semacam proxy server. 
+
+Cara kerja proxy server ini adalah ia akan menggantikan IP address sumber dari 
+permintaan (request) dengan IP address milik proxy server, 
+kemudian meneruskan permintaan tadi ke server yang dituju. 
+Sehingga, server tujuan takkan menyadari identitas client, yang ia lihat hanyalah identitas dari 
+proxy server.
+
+Posisi proxy server di suatu jaringan menentukan apakah ia disebut itu forward proxy server atau 
+reverse proxy server.
+
+Forward proxy server diletakkan dekat dengan perangkat client. Ia bertugas untuk 
+meneruskan permintaan dari client ke internet. 
+
+reverse proxy server diletakkan dekat dengan server tujuan (server perusahaan, server web, dsb). 
+Ia bertugas untuk meneruskan permintaan yang masuk dari internet ke server tujuan. 
+Keduanya mampu menyajikan anonimitas: untuk client (bagi Forward proxy server) dan 
+untuk server (bagi Reverse proxy server).
+
+Di sebuah restoran, pelayan umumnya akan menerima pesanan Anda dan memberikannya kepada kepala koki 
+di dapur. Selanjutnya, kepala koki akan mengambil pesanan tersebut dan membagikan tugas kepada 
+semua orang (koki lain) di dapur. 
+
+Anda adalah client,
+pesanan Anda adalah permintaan atau request,
+pelayanan adalah forward proxy server,
+kepala koki adalah reverse proxy server,
+dan, koki lain yang bekerja di dapur adalah server tujuan.
+
+> Rate limit 
+merupakan sebuah strategi untuk membatasi lalu lintas jaringan. Strategi ini akan membatasi seberapa 
+sering seseorang dapat mengulangi tindakan dalam jangka waktu tertentu, misal upaya login. 
+Faktanya, rate limit mampu membantu menghentikan jenis aktivitas atau serangan berbahaya tertentu, 
+salah satunya DoS dan DDoS.
+
+Umumnya, mekanisme rate limit ini didasarkan pada pelacakan IP address sumber yang melakukan 
+permintaan (request) dan pelacakan berapa lama waktu yang berlalu antara setiap permintaan. 
+Cara ini efektif sebab IP address adalah cara utama bagaimana aplikasi dapat mengidentifikasi siapa 
+atau apa yang membuat permintaan.
+
+Mekanisme ini akan mengukur jumlah waktu antara setiap permintaan dari setiap IP address dan 
+juga mengukur jumlah permintaan dalam jangka waktu tertentu. Jika ada terlalu banyak permintaan 
+dari satu IP address dalam jangka waktu tertentu (misal 5000 request dalam 1 menit), 
+rate limit akan memblokir permintaan dari IP address tersebut untuk beberapa waktu.
+
+> Firewall adalah sebuah sistem yang bertindak sebagai penjaga keamanan dan 
+berada di antara internet dan jaringan internal (lokal/pribadi/perusahaan) Anda. 
+Ia bisa berupa firewall appliance (pada dasarnya ialah router dengan fitur firewall bawaan alias 
+firewall router) atau server (yang dipasangi perangkat lunak firewall sehingga 
+berfungsi seperti komputer firewall). Baik berbentuk router maupun server, hakikatnya firewall 
+mengemban satu tugas utama: mencegah orang-orang di luar sana untuk menjangkau atau 
+mengakses jaringan Anda. 
+
+Semua lalu lintas (packet jaringan) yang masuk dan keluar dari jaringan Anda mesti melewati 
+firewall terlebih dahulu, kemudian akan difilter/disaring olehnya apakah packet tersebut 
+berhak masuk atau tidak sesuai aturan yang Anda tetapkan.
+
+firewall akan menjaga komputer-komputer yang ada di jaringan Anda dari berbagai serangan dan 
+lalu lintas yang tak diinginkan dengan membatasi akses masuk. 
+Pembatasan akses ini ditentukan dari aturan yang Anda tetapkan. Contohnya,
+“Hanya rentang IP address 10.0.0.0/16 yang bisa mengakses Web Server, selebihnya tolak.”
+
+Aturan ini disebut juga sebagai firewall rule. Dengan menetapkan firewall rule, 
+artinya Anda bisa mengizinkan atau menolak lalu lintas jaringan tertentu yang memasuki jaringan.
+
+> HTTPS
+HTTPS merupakan gabungan dari dua protokol, yakni HTTP + TLS.
+
+data yang dikirim melalui HTTPS akan dienkripsi guna meningkatkan keamanan proses transfer data. 
+
+TLS (Transport Layer Security) adalah protokol yang digunakan untuk mengamankan data yang 
+dikirim melalui jaringan. Saat menggunakan protokol TLS, data yang dikirim akan dienkripsi sehingga 
+siapa pun yang hendak melihat data tersebut niscaya takkan bisa memahaminya. 
+
+TLS sering kali dibedakan dengan SSL (Secure Socket Layer), padahal sebenarnya mereka merujuk 
+pada protokol yang sama. SSL adalah versi pertama dari protokol TLS.  
+
+Versi pertama yang diciptakan adalah SSL 1.0 yang dibuat oleh perusahaan Netscape. 
+Sayangnya versi ini tidak pernah dirilis ke publik, terutama karena masalah keamanan. 
+Versi yang dirilis resmi pertama ialah SSL 2.0 pada tahun 1995. 
+Musabab banyaknya celah keamanan pada SSL 2.0, akhirnya dirilislah SSL 3.0 di tahun 1996 yang 
+sepenuhnya dirancang ulang. 
+
+Setelah itu, pada tahun 1999, SSL akhirnya resmi berubah nama menjadi TLS dengan versi rilis TLS 1.0 
+yang dibangun oleh IETF (Internet Engineering Task Force). Lanjut, pada tahun 2006, TLS 1.1 
+dirilis dengan menghadirkan peningkatan perlindungan terhadap serangan. 
+Selanjutnya, TLS 1.2 rilis pada tahun 2008 yang membawa peningkatan keamanan, dukungan extension, 
+dan penambahan fitur Ciphers Suites. 
+
+Terakhir, versi TLS teranyar (TLS 1.3) resmi rilis pada tahun 2018 dengan 
+mengusung banyak update, seperti peningkatan keamanan, penghilangan fitur yang tak aman, 
+dan pembaruan pada fitur Cipher Suites.
+
+Perlu Anda ketahui bahwa kini semua versi SSL dan TLS sebelum TLS 1.2 telah deprecated (usang) 
+musabab kerentanan keamanan pada masing-masing versi.
