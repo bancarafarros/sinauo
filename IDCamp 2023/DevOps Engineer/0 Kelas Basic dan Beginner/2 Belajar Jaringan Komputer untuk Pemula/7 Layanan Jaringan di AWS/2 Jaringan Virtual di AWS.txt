@@ -1,0 +1,61 @@
+AWS merupakan platform cloud yang paling komprehensif dan digunakan secara luas di dunia. 
+Ia menawarkan lebih dari 200 layanan unggulan yang lengkap dan tersedia secara global.
+
+keunggulan:
+Fungsionalitas terbanyak.
+Komunitas pelanggan dan mitra terbesar.
+Paling aman.
+Laju inovasi tercepat.
+Keahlian operasional yang paling terbukti.
+
+> Amazon VPC (Amazon Virtual Private Cloud)
+layanan jaringan virtual pribadi yang tersedia di AWS. Konsep yang berlaku 
+pada Amazon VPC mirip dengan jaringan pada umumnya, seperti router, network, subnet, 
+gateway, firewall, NAT, CIDR notation, dsb. Hanya saja, semuanya dilakukan virtual.
+
+Anda diberikan kontrol konfigurasi jaringan yang lengkap dan menyeluruh. 
+Anda bisa mengisolasi sumber daya (seperti server) dari internet untuk kebutuhan internal atau 
+justru mengeksposnya ke publik. Amazon VPC memiliki kontrol keamanan berlapis. 
+Anda dapat mengizinkan atau menolak lalu lintas tertentu, baik yang masuk maupun keluar 
+dari jaringan Anda.
+
+Amazon VPC berada di dalam suatu Region. Di AWS, Region adalah suatu wilayah yang terdiri 
+dari beberapa Availability Zone (AZ). AZ adalah lokasi yang terdiri dari satu atau lebih data center. 
+Sementara itu, data center adalah tempat di mana server, data, dan lalu lintas jaringan berada.
+Umumnya, 1 Region terdiri dari 3 AZ dan setiap AZ biasanya memiliki lebih dari 1 data center.
+
+AWS telah membangun Region di seluruh dunia agar semua lalu lintas bisnis dapat dilayani oleh 
+Region terdekat. Beberapa contoh lokasi Region adalah Paris, Tokyo, Sao Paulo, Dublin, Ohio, dan Jakarta.
+
+saat Anda membuat Amazon VPC di Region Jakarta, Anda sudah membuat jaringan yang meliputi Jakarta.
+
+(VPC): Jaringan virtual yang didedikasikan untuk akun AWS Anda. 
+        Satu VPC mewakili satu Region.
+Subnet: Rentang IP address digunakan untuk membagi jaringan di VPC Anda. 
+        Satu subnet mewakili satu Availability Zone. Terdapat dua kategori: public subnet 
+        (dapat diakses publik) dan private subnet (hanya bisa diakses oleh internal, bukan publik).
+CIDR block: Classless Inter-Domain Routing, sebuah protokol pengalokasian dan 
+            perutean IP address (sudah kita pelajari sebelumnya).
+Route table: Seperangkat aturan (yang disebut route) yang digunakan untuk menentukan ke mana 
+                lalu lintas jaringan diarahkan.
+Internet gateway: Layanan yang bertindak seperti “gerbang” yang bisa Anda lampirkan untuk 
+                    mengaktifkan akses ke internet dari VPC Anda. 
+NAT gateway: Layanan AWS yang memungkinkan server di private subnet untuk terhubung ke internet.
+Security group: Bertindak sebagai firewall virtual untuk mengontrol lalu lintas yang masuk 
+                (inbound) dan keluar (outbound) dari sumber daya AWS (misal, server).
+Network access control list (ACL): Lapisan keamanan opsional untuk VPC yang bertindak 
+                                    sebagai firewall untuk mengontrol lalu lintas masuk dan 
+                                    keluar dari subnet.
+
+AWS Management Console: Antarmuka web yang dapat Anda gunakan untuk 
+                        mengakses berbagai sumber daya AWS, salah satunya VPC.
+AWS Command Line Interface (AWS CLI): Antarmuka berbasis baris perintah untuk serangkaian luas 
+                                    layanan AWS, termasuk Amazon VPC yang dapat digunakan di 
+                                    Windows, macOS, dan Linux.
+AWS Software Development Kit (AWS SDK): API untuk bahasa pemrograman tertentu dan menangani 
+                                        banyak detail koneksi, seperti signatures (tanda tangan digital), 
+                                        request retries (percobaan ulang permintaan), dan error handling (penanganan kesalahan).
+Query API: Low-level API yang Anda panggil menggunakan HTTPS request. 
+            Ini adalah metode yang paling direct (langsung) untuk mengakses Amazon VPC, 
+            tetapi mengharuskan aplikasi Anda untuk menangani detail, 
+            seperti membuat hash untuk menandatangani permintaan dan error handling.
