@@ -1,0 +1,184 @@
+> Pengenalan Keamanan Jaringan
+Keamanan jaringan merupakan praktik untuk menjaga jaringan internal terlindung dari 
+segala bentuk serangan dan pelanggaran data, yang mencakup kontrol akses, 
+pencegahan serangan siber, deteksi perangkat lunak berbahaya, dan langkah-langkah keamanan lainnya.
+
+kategori ancaman yang mampu menyerang sistem keamanan jaringan kita.
+
+Interupsi
+ancaman keamanan yang menyerang ketersediaan sumber daya yang kita miliki. 
+Contohnya, serangan atau pembajakan terhadap server sehingga pengguna tidak bisa mengaksesnya.
+
+Pelanggaran Privasi
+privasi pengguna dilanggar/dibobol. Akibatnya, seseorang yang tidak memiliki wewenang dapat 
+mengakses atau menyadap data yang bukan haknya.
+
+Integritas
+Jenis ancaman ini mencakup setiap perubahan atau modifikasi dalam konteks komunikasi. 
+Penyerang mencegat dan menerima data yang dikirim oleh pengirim, kemudian memodifikasi atau 
+membuat data palsu, dan mengirimkannya ke penerima. 
+Penerima lantas menerima data tersebut dengan asumsi bahwa itu memang dikirim oleh 
+pengirim sebenarnya, padahal nyatanya bukan.
+
+Orisinalitas
+Ancaman ini terjadi ketika penyerang atau pelanggar keamanan, menyamar sebagai orang asli dan 
+mengakses sumber daya atau berkomunikasi dengan pengguna asli lainnya.
+
+> Kasus Umum Serangan Jaringan
+Serangan jaringan umumnya merupakan sebuah upaya untuk meraih akses ke 
+suatu jaringan (acap kali jaringan internal perusahaan) dengan tujuan melancarkan aktivitas jahat, 
+seperti mencuri data, melumpuhkan infrastruktur, dan lain-lain.
+
+contoh kasus umum terkait serangan jaringan.
+
+DNS Cache Poisoning
+tindak kejahatan siber yang beraksi dengan cara memasukkan informasi palsu ke dalam 
+Recursive DNS Server cache. Dengan demikian, saat ada permintaan DNS dari client, 
+Recursive DNS Server akan mengembalikan respons yang keliru dan pengguna pun akhirnya 
+diarahkan ke situs web yang salah (yang sudah dikendalikan oleh si penjahat).
+
+Sang penjahat “meracuni” Recursive DNS Server cache dengan berkedok sebagai Authoritative Name Server. 
+Jadi, pertama ia akan membuat request atau permintaan ke Recursive DNS Server, 
+lalu memalsukan balasan saat si Recursive DNS Server melakukan 
+proses DNS resolution (sebelum balasan resmi dari Authoritative Name Server tiba).
+
+ini terjadi karena proses DNS resolution menggunakan protokol UDP (bukan TCP) sehingga 
+tak ada mekanisme “three-way handshake” yang memverifikasi identitas perangkat.
+
+Denial-of-Service dan Distributed Denial-of-Service
+- DoS
+    Serangan ini begitu mematikan, bahkan mampu melumpuhkan infrastruktur (seperti server) Anda. 
+    DoS adalah upaya yang dilakukan secara sengaja untuk membuat website 
+    atau aplikasi menjadi tidak bekerja optimal bagi pengguna (berasal dari satu sumber).
+
+    Salah satu contoh dari serangan DoS adalah ketika seseorang membanjiri website dengan 
+    lalu lintas jaringan yang masif sehingga membuat server yang menampung website 
+    atau aplikasi tersebut kewalahan dan tak lagi mampu merespons permintaan pengguna.
+
+- DDoS
+    serangan DDoS menggunakan banyak sumber untuk melakukan serangan. 
+    Tujuannya jelas untuk membuat suatu website atau aplikasi kewalahan sehingga 
+    server yang menampungnya tak mampu lagi beroperasi. 
+    Apabila sudah seperti ini, memblokir nomor telepon atau IP address satu per satu 
+    sudah tidak lagi menjadi solusi.
+
+    Serangan ini bisa berasal dari sekelompok orang atau bahkan individu. 
+    Cara kerjanya, penyerang menggunakan beberapa komputer yang terinfeksi 
+    (juga dikenal sebagai "bot") untuk mengirimkan lalu lintas jaringan yang masif ke target.
+
+Man-in-the-Middle
+kita bisa menganggap serangan MITM sama seperti menguping atau menyadap suatu komunikasi. 
+Serangan ini dilakukan dengan menjadi orang yang berada di tengah komunikasi antara dua pihak. 
+Penyerang bisa mengetahui pesan apa yang dikirim dan diterima oleh pihak yang menjadi target.
+
+Menyadap merupakan bentuk serangan pasif karena penyerang hanya bisa memantau transaksi data yang lewat. 
+Sementara itu, MITM tak hanya memantau, melainkan juga dapat mencegat dan mengubah pesan 
+yang dikirim atau pesan yang diterima. Dengan demikian, serangan MITM dapat disebut juga 
+sebagai serangan aktif.
+
+MITM paling banyak terjadi karena korban dan penyerang berada di dalam jaringan yang sama. 
+Biasanya disebabkan oleh korban yang tidak hati-hati ketika menggunakan WiFi hotspot publik. 
+Ketika sudah berada di jaringan yang sama, penyerang dapat secara mudah menyadap 
+komunikasi korban dengan server melalui teknik IP spoofing atau ARP spoofing.
+
+Setelah korban berhasil tersadap, penyerang dapat membaca seluruh aktivitas transaksi HTTP request 
+dan response. Penyerang bisa mencuri cookie, session, access token, bahkan kredensial yang 
+hendak korban gunakan ketika login. Bahkan, akan jauh lebih parah lagi bila 
+si penyerang sudah melakukan intercepting dan fabricating 
+(meski untuk sampai tahap ini perlu implementasi yang rumit).
+
+> Penguatan jaringan (network hardening) adalah proses untuk mengamankan jaringan 
+dengan mengurangi potensi kerentanan melalui perubahan konfigurasi dan mengambil langkah-langkah tertentu. 
+
+- DNSSEC (DNS Security Extensions)
+    protokol yang diciptakan untuk memitigasi masalah keamanan yang kerap terjadi pada DNS, 
+    salah satunya ialah serangan DNS Cache Poisoning, dengan memverifikasi DNS record 
+    menggunakan cryptographic signatures (“tanda tangan” kriptografi).
+
+    Dengan mekanisme semacam ini, Recursive DNS Server dapat memverifikasi bahwa 
+    balasan dari informasi yang diminta berasal dari Authoritative Name Server sesungguhnya, 
+    bukan penjahat atau pihak tak berwenang.
+
+    DNSSEC bertugas untuk melindungi proses DNS dari segala macam serangan 
+    dengan “menandatangani” data secara digital guna membantu memastikan validitasnya. 
+    Untuk memastikan pencarian nama domain yang aman, “penandatanganan” harus dilakukan di 
+    setiap level dalam proses DNS resolution.
+
+    DNSSEC menerapkan kebijakan penandatanganan digital yang hierarkis di semua level DNS. 
+    Sebagai contoh, dalam kasus pencarian nama domain “dicoding.com”, 
+    Root DNS Server akan menandatangani key (kunci) untuk .com TLD Server. 
+    Kemudian, .com TLD Server akan menandatangani key untuk Authoritative Name Server untuk dicoding.com.
+
+    Hadirnya DNSSEC pada nyatanya mampu mencegah berbagai serangan yang kerap terjadi 
+    pada proses pencarian DNS seperti serangan DNS Cache Poisoning hingga Man-in-the-Middle 
+    dengan membangun rantai kepercayaan (chain of trust) sampai ke level Root DNS Server. 
+    Rantai kepercayaan ini memastikan bahwa DNS record yang diminta pengguna benar-benar aman; 
+    tidak dirusak, diubah, atau dimanipulasi dalam perjalanan.
+
+- Proxy atau Proxy server 
+    server perantara, baik perangkat lunak maupun perangkat keras, yang bertindak 
+    sebagai pintu gerbang antara client dan internet. 
+    sebenarnya hampir sebagian besar permintaan web yang dikirim dari client ke server akan 
+    melewati semacam proxy server. 
+
+    Cara kerja proxy server ini adalah ia akan menggantikan IP address sumber dari 
+    permintaan (request) dengan IP address milik proxy server, kemudian meneruskan 
+    permintaan tadi ke server yang dituju. Sehingga, server tujuan takkan menyadari identitas client, 
+    yang ia lihat hanyalah identitas dari proxy server.
+
+    Posisi proxy server di suatu jaringan akan menentukan apakah ia disebut itu forward proxy server 
+    atau reverse proxy server.
+
+    Forward proxy server diimplementasikan di sisi client dan berada di depan komputer client, 
+    serta meneruskan permintaan ke server tujuan. 
+    Sebaliknya, reverse proxy server diimplementasikan di sisi server dan berada di depan server tujuan. 
+    Ia bertugas untuk mengelola permintaan masuk dengan cara meneruskannya ke server tujuan. 
+    Kedua-duanya mampu menyajikan anonimitas.
+
+- Rate limit
+    sebuah strategi untuk membatasi lalu lintas jaringan. 
+    Strategi ini akan membatasi seberapa sering seseorang dapat mengulangi tindakan dalam 
+    jangka waktu tertentu, misal upaya login. Faktanya, rate limit mampu membantu 
+    menghentikan jenis aktivitas atau serangan berbahaya tertentu, 
+    salah satunya DoS dan DDoS.
+
+    Mekanisme ini akan mengukur jumlah waktu antara setiap permintaan dari setiap IP address dan 
+    juga mengukur jumlah permintaan dalam jangka waktu tertentu. 
+    Jika ada terlalu banyak permintaan dari satu IP address dalam 
+    jangka waktu tertentu (misal 5000 request dalam 1 menit), 
+    rate limit tak akan memproses permintaan IP address tersebut untuk beberapa waktu.
+
+- Firewall
+    sebuah sistem yang bertindak sebagai penjaga keamanan dan berada di antara 
+    internet dan jaringan internal (lokal/pribadi/perusahaan) Anda. 
+    Ia bisa berupa firewall appliance (pada dasarnya ialah router dengan fitur firewall bawaan 
+    alias firewall router) atau server (yang dipasangi perangkat lunak firewall sehingga 
+    berfungsi seperti komputer firewall). Baik berbentuk router maupun server, 
+    hakikatnya firewall mengemban satu tugas utama: mencegah orang-orang di luar sana untuk 
+    menjangkau atau mengakses jaringan Anda. 
+
+    Semua lalu lintas (packet jaringan) yang masuk dan keluar dari jaringan Anda mesti melewati 
+    firewall terlebih dahulu, kemudian akan difilter/disaring olehnya apakah packet tersebut 
+    berhak masuk atau tidak sesuai aturan yang Anda tetapkan.
+
+    Firewall akan menjaga komputer-komputer yang ada di jaringan Anda dari berbagai serangan 
+    dan lalu lintas yang tak diinginkan dengan membatasi akses masuk. 
+    Pembatasan akses ini ditentukan dari aturan yang Anda tetapkan.
+
+    “Hanya rentang IP address 10.0.0.0/16 yang bisa mengakses Web Server, selebihnya tolak.”
+
+    Aturan ini disebut juga sebagai firewall rule. Dengan menetapkan firewall rule, 
+    artinya Anda bisa mengizinkan atau menolak lalu lintas jaringan tertentu yang memasuki jaringan.
+
+- HTTPS 
+    telah menjadi standar bagi semua website yang ada di seluruh internet lantaran keamanannya. 
+    data yang dikirim melalui HTTPS akan dienkripsi guna meningkatkan keamanan proses transfer data. 
+    Ini sangat penting ketika pengguna mengirimkan data sensitif, seperti informasi kartu kredit, 
+    kredensial m-banking, email pribadi, atau catatan kesehatan.
+
+    HTTPS merupakan gabungan dari dua protokol, yakni HTTP + TLS (Transport Layer Security). 
+    TLS adalah protokol yang digunakan untuk mengamankan data yang dikirim melalui jaringan. 
+    Saat menggunakan protokol TLS, data yang dikirim akan dienkripsi sehingga siapa pun 
+    yang hendak melihat data tersebut niscaya takkan bisa memahaminya.
+
+https://youtu.be/4xm-soNq8JA
