@@ -1,0 +1,28 @@
+iptables, ia adalah utilitas firewall yang sangat fleksibel yang dibuat untuk sistem operasi Linux. 
+Tools ini berfungsi untuk mengamankan jaringan dengan melakukan penyaringan lalu lintas.
+
+Dengan iptables, Anda dapat mengatur lalu lintas jaringan, termasuk mengizinkan atau 
+memblokir koneksi yang masuk, keluar, atau sekedar melewati server. 
+Anda pun bisa membuat aturan pada server untuk mengelola jenis packet yang dapat diterima, 
+mengatur lalu lintas jaringan berdasarkan sumber dan tujuan data, mengelola port, dan lainnya.
+
+Cara kerja iptables adalah membandingkan lalu lintas jaringan dengan serangkaian aturan yang telah dibuat. 
+Semua packet dalam lalu lintas jaringan akan dicek olehnya.
+
+Dalam pengaturan packet, iptables memiliki beberapa tabel yang berfungsi untuk 
+menentukan arah putaran data. Setiap tabel tersebut memiliki rules atau kumpulan aturan 
+yang disebut chain. 
+
+Salah satu tabel yang ada adalah tabel FILTER, yang digunakan untuk 
+menyaring/memfilter packet jaringan yang masuk, keluar, atau sekadar lewat. 
+Anda dapat menggunakan beberapa aturan berikut.
+
+ACCEPT : Menerima packet yang masuk.
+REJECT : Menolak/memblokir packet yang masuk.
+DROP : Memutuskan koneksi packet.
+LOG : Mencatat packet.
+Tabel FILTER ini memiliki tiga chain sebagai berikut.
+
+INPUT : Chain ini menangani semua paket yang masuk ke server/komputer.
+OUTPUT : Chain ini menangani semua paket yang keluar dari server/komputer.
+FORWARD : Chain ini menangani paket yang diteruskan melalui server/komputer.
