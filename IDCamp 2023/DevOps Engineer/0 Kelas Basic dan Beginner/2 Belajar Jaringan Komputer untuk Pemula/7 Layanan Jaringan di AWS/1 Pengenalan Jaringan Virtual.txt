@@ -1,0 +1,38 @@
+jaringan virtual dimana Anda tak perlu lagi membeli kabel, router, switch, dan sebagainya 
+untuk belajar jaringan. Pasalnya, semua itu bisa diakses virtual berkat teknologi virtualisasi.
+
+Ide dasar di balik virtualisasi adalah menggunakan perangkat lunak untuk 
+menyimulasikan keberadaan perangkat keras.
+
+virtualisasi (virtualization) adalah teknologi yang memungkinkan kita untuk mengabstraksikan 
+sumber daya yang secara tradisional terikat pada perangkat keras menjadi perangkat lunak 
+yang berguna dan inovatif. Ada banyak hal yang bisa divirtualisasikan di dunia ini, 
+seperti jaringan virtual (virtual network), server/mesin virtual (virtual machine), 
+hingga diska virtual (virtual disk).
+
+Virtualisasi ini bisa terjadi sebab hadirnya hypervisor. Ia adalah suatu perangkat lunak 
+(atau bisa juga perangkat keras) yang bertugas untuk memvirtualisasikan perangkat keras, 
+umumnya berupa server. Satu perangkat server bisa dibuat hingga ribuan server virtual 
+sekaligus berkat bantuan hypervisor.
+
+Jaringan pun bisa divirtualisasikan menjadi jaringan virtual 
+dengan bantuan network hypervisor, yakni program yang menyediakan abstraksi untuk 
+perangkat keras jaringan.
+
+Proses menggabungkan perangkat keras jaringan, perangkat lunak jaringan, 
+beserta fungsionalitas jaringan menjadi satu entitas berbasis perangkat lunak 
+disebut virtualisasi jaringan atau network virtualization.
+
+Virtualisasi jaringan mampu menggabungkan beberapa jaringan fisik menjadi 
+satu jaringan virtual berbasis perangkat lunak. Atau sebaliknya, ia dapat membagi 
+satu jaringan fisik menjadi beberapa jaringan virtual yang independen. 
+Kemampuan ini memudahkan kita untuk membuat dan mengelola jaringan secara 
+terprogram melalui perangkat lunak.
+
+Jika tidak ada jaringan virtual, Anda perlu menghabiskan waktu berhari-hari atau 
+bahkan berminggu-minggu hanya untuk menyediakan infrastruktur jaringan seperti 
+kabel, router, switch, dan internet guna mendukung suatu server berjalan dengan baik dan normal.
+
+Anda tak perlu repot-repot soal pemeliharaan dan keamanan perangkat sebab semuanya 
+sudah diatur oleh pihak tersebut. Dengan demikian, nilai bisnis suatu perusahaan pun 
+dapat meningkat karena semua dilakukan dengan cepat dengan harga yang jauh lebih efisien.
