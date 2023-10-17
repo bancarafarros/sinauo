@@ -1,0 +1,121 @@
+Serangan jaringan umumnya merupakan sebuah upaya untuk meraih akses ke suatu jaringan 
+(acap kali jaringan internal perusahaan) dengan tujuan melancarkan aktivitas jahat, seperti 
+mencuri data, melumpuhkan infrastruktur, dan lain-lain.
+
+> DNS Cache Poisoning
+Awal mula diciptakan, DNS dibentuk untuk menjadi protokol komunikasi yang terbuka dan publik, 
+baik untuk pemerintah maupun lembaga pendidikan. Karena sifat terbukanya inilah yang menjadikannya 
+rentan terhadap serangan siber, salah satunya adalah DNS Cache Poisoning.
+
+DNS Cache Poisoning merupakan tindak kejahatan siber yang beraksi dengan cara 
+memasukkan informasi palsu ke dalam Recursive DNS Server cache. Dengan demikian, saat ada 
+permintaan DNS dari client, Recursive DNS Server akan mengembalikan respons yang keliru dan 
+pengguna pun akhirnya diarahkan ke situs web yang salah (yang sudah dikendalikan oleh si penjahat).
+
+IP address ibarat “nomor ruang kelas” yang memungkinkan lalu lintas jaringan tiba di tempat yang tepat. 
+Sementara itu, Recursive DNS Server adalah “peta kampus” yang menyimpan 
+informasi nama domain dan IP address. Ketika si penjahat menyimpan informasi yang salah di sana, 
+lalu lintas akan menuju ke tempat yang keliru sampai informasi yang tersimpan di cache diperbaiki.
+
+Sang penjahat menipu Recursive DNS Server cache dengan berkedok sebagai Authoritative Name Server. 
+pertama ia akan membuat request atau permintaan ke Recursive DNS Server, 
+lalu memalsukan balasan saat si Recursive DNS Server melakukan proses 
+DNS resolution (sebelum balasan resmi dari Authoritative Name Server tiba).
+
+ini terjadi karena proses DNS resolution menggunakan protokol UDP (bukan TCP) 
+sehingga tak ada mekanisme “three-way handshake”
+
+Terlepas dari celah kerentanan dalam proses DNS resolution, 
+serangan DNS Cache Poisoning sejatinya tidaklah mudah. 
+Karena Recursive DNS Server akan melakukan perjalanan ke Authoritative Name Server untuk 
+mendapatkan informasi IP address dari suatu nama domain, 
+si penjahat hanya memiliki waktu beberapa milidetik untuk mengirim balasan palsu sebelum 
+balasan resmi dari Authoritative Name Server tiba.
+
+Telah lahir ke dunia sebuah protokol DNS yang lebih aman yang disebut DNSSEC. 
+Protokol ini bertujuan untuk memecahkan beberapa masalah, termasuk DNS Cache Poisoning.
+
+> Denial-of-Service dan Distributed Denial-of-Service
+- Denial-of-Service
+    upaya yang dilakukan secara sengaja untuk membuat website atau aplikasi menjadi 
+    tidak bekerja optimal bagi pengguna (berasal dari satu sumber).
+
+    Salah satu contoh dari serangan DoS adalah ketika seseorang membanjiri website dengan 
+    lalu lintas jaringan yang masif sehingga membuat server yang menampung website atau 
+    aplikasi tersebut kewalahan dan tak lagi mampu merespons permintaan pengguna.
+
+    Jika dilihat dari sudut pandang jaringan, kita bisa memblokir permintaan yang berasal dari 
+    IP address si penyerang.
+
+- Distributed Denial-of-Service
+    Serangan ini bisa berasal dari sekelompok orang atau bahkan individu. 
+    Cara kerjanya, penyerang menggunakan beberapa komputer yang terinfeksi (juga dikenal sebagai "bot") 
+    untuk mengirimkan lalu lintas jaringan yang masif ke target.
+
+    bagaimana langkah preventifnya? Karena serangan ini berupaya untuk membanjiri server 
+    (yang menampung website atau aplikasi) dengan melakukan permintaan secara berulang-ulang, 
+    maka langkah preventif yang bisa dilakukan adalah melimitasi permintaan yang masuk ke server. 
+    Ini disebut juga sebagai request rate limit. Dengan begitu, setiap client hanya 
+    dapat melakukan sejumlah request saja selama kurun waktu tertentu.
+
+> Man-in-the-Middle (MITM)
+Serangan ini sangat berbahaya dan bisa terjadi pada bentuk komunikasi apa pun, baik di internet, 
+telepon seluler, maupun peralatan komunikasi tradisional seperti surat menyurat. 
+
+kita bisa menganggap serangan MITM sama seperti menguping atau menyadap suatu komunikasi. 
+Serangan ini dilakukan dengan menjadi orang yang berada di tengah komunikasi antara dua pihak. 
+Penyerang bisa mengetahui pesan apa yang dikirim dan diterima oleh pihak yang menjadi target.
+
+Namun, MITM bisa lebih berbahaya daripada sekadar menyadap. 
+Menyadap merupakan bentuk serangan pasif karena penyerang hanya bisa memantau transaksi data yang lewat. 
+Sementara itu, MITM tak hanya memantau, melainkan juga dapat mencegat dan mengubah pesan 
+yang dikirim atau pesan yang diterima. Dengan demikian, serangan MITM dapat disebut sebagai 
+serangan aktif.
+
+Budi alias penyerang bisa leluasa memata-matai (spying), mencegat (intercepting), 
+hingga memalsukan (fabricating) dirinya menjadi Alisa dan Bobi. 
+
+MITM paling banyak terjadi karena korban dan penyerang berada di dalam jaringan yang sama. 
+Biasanya disebabkan oleh korban yang tidak hati-hati ketika menggunakan WiFi hotspot publik. 
+Ketika sudah berada di jaringan yang sama, penyerang dapat secara mudah menyadap 
+komunikasi korban dengan server melalui teknik IP spoofing atau ARP spoofing.
+
+Setelah korban berhasil tersadap, penyerang dapat membaca seluruh aktivitas transaksi 
+HTTP request dan response. Penyerang bisa mencuri cookie, session, access token, hingga kredensial 
+yang hendak korban gunakan ketika login. Bahkan, akan jauh lebih parah lagi bila si penyerang 
+sudah melakukan intercepting dan fabricating (meski untuk sampai tahap ini perlu implementasi yang rumit).
+
+Dalam serangan MITM, penyerang sangat mengandalkan jaringan yang digunakan korban. 
+Jadi, langkah preventifnya adalah kita perlu berhati-hati ketika menggunakan jaringan publik. 
+
+Langkah preventif terhadap serangan ini tak hanya dapat dilakukan oleh Anda sebagai 
+administrator jaringan atau pengembang aplikasi, melainkan juga berlaku untuk pengguna secara umum. 
+
+- Jangan gunakan Wi-Fi publik yang tidak terproteksi
+    Tak jarang kita menemukkan beberapa Wi-Fi publik yang dapat diakses tanpa ada 
+    proteksi password sama sekali. Jangan pernah menggunakan Wi-Fi tersebut sebab Anda 
+    takkan pernah tahu siapa pemilik Wi-Fi sebenarnya. Mungkin saja, sebenarnya penyerang 
+    sedang memasang jebakan agar korban masuk ke dalam jaringan yang sama dengan dia.
+
+- Jangan pernah melakukan transaksi penting menggunakan Wi-Fi publik
+    Meskipun Wi-Fi telah terproteksi dengan password, tetapi jangan pernah melakukan 
+    transaksi penting menggunakan Wi-Fi publik, apalagi aktivitas perbankan. 
+    Jika Anda ingin bertransaksi, gunakan selalu koneksi pribadi seperti 
+    jaringan seluler agar terhindar dari penyerangan MITM.
+
+- Mengganti password Wi-Fi secara berkala
+    Jika Anda pemilik kafe dengan akses Wi-Fi publik, Anda tidak akan mengetahui apakah 
+    si penyerang berada di tengah-tengah keramaian pelanggan atau tidak. 
+    Begitu pula dengan password Wi-Fi yang digunakan, Anda tidak akan tahu apakah 
+    penyerang telah berhasil masuk ke Wi-Fi dan melakukan aksi MITM. 
+
+- Mengaktifkan Multi-Factor Authentication
+Jika aplikasi yang Anda gunakan memiliki fitur Multi-Factor Authentication (MFA), 
+pastikan fitur tersebut selalu aktif. Sebab bila penyerang berhasil memiliki kredensial Anda, 
+ia tetap harus menghadapi proteksi dari MFA.
+
+Langkah preventif terhadap serangan MITM juga dapat diterapkan pada sisi aplikasi, 
+yakni selalu menggunakan protokol yang aman seperti HTTPS. 
+Protokol HTTPS merupakan protokol gabungan antara HTTP dengan TLS atau SSL. 
+
+Transaksi data yang menggunakan protokol ini dilakukan secara aman karena terdapat proses enkripsi.
