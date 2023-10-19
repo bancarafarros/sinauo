@@ -1,0 +1,12 @@
+Branching
+Membuat Git Branch
+Membuat snapshot tanpa mengganggu jalur utama (Master Branch)
+Fitur experimental
+2 orang mengerjakan repo yang sama
+
+Recap
+Branch, Jalur development bebas dari sebuah commit
+checkout, pindah ke branch/commit lain
+pull request, meminta pemilik repo untuk mengambil perubahan yang telah dilakukan
+merge, menggabungkan 2 branch
+merge conflict, baris yang sama diubah oleh 2 branch yang berbeda
