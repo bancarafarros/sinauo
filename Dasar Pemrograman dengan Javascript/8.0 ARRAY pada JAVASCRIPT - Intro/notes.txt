@@ -1,0 +1,23 @@
+di beberapa bahasa pemrograman, ada array sebagai tipe data ada array sebagai struktur data 
+
+aray wiki
+susunan sistematis dari objek-objek yangs serupa
+
+array programming
+tipe data yang digunakan untuk mendeskripsikan kumpulan elemen (nilai atau variabel) yang
+tiap tiap elemennya memiliki index
+
+array wpu
+array ada variabel yang lebih sakti (bisa menampung lebih dari satu nilai)
+
+Kenapa array?
+- mempermudah pengelolaan nilai: penelusuran dan pencarian
+- manajemen memori
+
+karakteristik array
+- variabel jamak, mempunyai banyak elemen dan diacu dengan nama yang sama
+- kumpulan pasangan key dan nilai
+- key adalah index pada array dengan tipe data integer dimulai dari 0
+- array pada js bertipe object
+- array pada js memiliki fungsi length untuk menghitung jumlah elemen di dalamnya
+- elemen pada array boleh memiliki tipe data yang berbeda
