@@ -3,7 +3,17 @@ yaitu menggunakan keyword var, let, dan const.
 Pada versi ECMAScript 2015 (ES6) dikenalkan deklarasi variabel dengan let dan const 
 untuk menggantikan var yang dinilai kontroversial dan rawan menimbulkan bug.
 
+let lastName;
+Kode untuk mendeklarasikan variabel seperti di atas juga dikenal dengan declaration statement.
+
+
+let lastName = "Skywalker";
+Kode untuk menginisialisasikan nilai ke dalam sebuah variabel dengan (=)
+disebut dengan assignment expression.
+
+
 Const merupakan kependekan dari constant. Artinya, kita akan mendeklarasikan sebuah variabel dengan
- const ketika ingin variabel bernilai konstan dan tidak bisa diubah setelah diinisialisasi nilainya.
- Bayangkan variabel bernilai const sebagai sebuah kotak yang ditutup dan disegel setelah diisi, 
- sehingga nilainya tidak bisa diubah lagi.
+const ketika ingin variabel bernilai konstan dan tidak bisa diubah setelah diinisialisasi nilainya.
+Bayangkan variabel bernilai const sebagai sebuah kotak yang ditutup dan disegel setelah diisi, 
+sehingga nilainya tidak bisa diubah lagi.
+
