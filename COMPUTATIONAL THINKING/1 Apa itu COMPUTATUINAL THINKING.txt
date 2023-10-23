@@ -1,0 +1,41 @@
+computational thinking
+proses berpikir, yang terjadi saat kita memformulasikan persoalan dan berstrategi untuk 
+menentukan/memilih solusi yang efektif, efisien, dan optimal
+
+kemampuan untuk berpikir, dengan memanfaatkan teknologi/komputer
+sebagai alat bantunya.
+
+contoh sambel
+
+CT mendorong kita untuk mempertanyakan:
+- bisakah sebuah persoalan diselesaikan dengan lebih mudah oleh manusia atau komputer?
+- apakah ada pola antara persoalan yang dihadapi dan persoalan serupa yang sudah pernah diatasi sebelumnya?
+- bagaimana sebuah data bisa disusun sedemikian rupa untuk menyelesaikan persoalan
+etc
+
+elemen2 CT
+    decomposing
+    abstraction
+    pattern recognition
+    algorithms
+
+melatih CT
+    latihan problem solving
+    analisis data
+    modeling dan simulasi
+    programming
+
+bisa cek bebras.or.id
+
+coding challenges bisa ke
+codewars.com
+leetcode
+hackerrank
+codechef.com
+
+CT adalah kemampuan berpikir fundamental
+            proses berpikir menuju solusi
+            koseptualisasi, bukan programming
+            bisa diterapkan di semua bidang
+            literasi(membaca, menulis, dan berbicara)
+            harus dilatih
