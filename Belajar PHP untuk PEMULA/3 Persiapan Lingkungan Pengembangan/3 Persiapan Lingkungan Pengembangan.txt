@@ -1,0 +1,9 @@
+client side scripting,
+terjadi di sisi client dengan bahasa html dan css
+
+Server side scripting,
+terjadi di sisi server dengan bahasa khusus untuk server, php, java, python, dkk
+client side melakukan request ke server
+request tersebut dilakukan oleh bahasa khusus untuk server
+server pun menerima request tersebut dan memberikan feedback sesui dengan request terjadi
+bahasa server tidak bisa dilihat ketika di-isnpect
