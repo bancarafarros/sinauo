@@ -1,0 +1,27 @@
+kenapa php?
+- relatif mudah untuk pemula
+- cukup dengan html dan css
+- gratis dan open source
+- komunitas php sangat besar
+- dokumentasi yang lengkap
+- php khusus untuk web
+- pada tahun 2017 banyak webiste dibuat dengan php
+- banyak website besar dibuat dengan php
+- banyak cms yg menggunakan php
+- punya framework bagus: codeigniter, cakephp, yiiframework, laravel, symfony
+
+client side dan server side
+static website dan dynamic website
+persiapan lingkungan oengemabngan
+sintaks php
+array
+request method
+studi kasus website sederhana
+database
+crud
+login dan registrasi
+session dan cookie
+ajax
+upload file
+reporting
+web hosting
