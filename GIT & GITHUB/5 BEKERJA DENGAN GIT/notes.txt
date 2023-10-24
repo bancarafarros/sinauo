@@ -1,0 +1,2 @@
+buat checkout commit mundur
+git checkout 5digitHashTerakhir nama-file
