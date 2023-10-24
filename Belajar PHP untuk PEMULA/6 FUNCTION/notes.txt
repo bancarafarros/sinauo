@@ -1,0 +1,3 @@
+function merupakan potongan program yang dibuat untuk mempermudah pekerjaan
+
+php memiliki built in function dan user defined function
