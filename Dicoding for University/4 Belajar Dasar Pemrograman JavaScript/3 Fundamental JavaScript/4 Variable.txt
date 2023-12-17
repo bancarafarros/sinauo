@@ -1,9 +1,0 @@
-Pada JavaScript setidaknya ada tiga cara untuk mendeklarasikan sebuah variabel, 
-yaitu menggunakan keyword var, let, dan const. 
-Pada versi ECMAScript 2015 (ES6) dikenalkan deklarasi variabel dengan let dan const 
-untuk menggantikan var yang dinilai kontroversial dan rawan menimbulkan bug.
-
-Const merupakan kependekan dari constant. Artinya, kita akan mendeklarasikan sebuah variabel dengan
- const ketika ingin variabel bernilai konstan dan tidak bisa diubah setelah diinisialisasi nilainya.
- Bayangkan variabel bernilai const sebagai sebuah kotak yang ditutup dan disegel setelah diisi, 
- sehingga nilainya tidak bisa diubah lagi.
