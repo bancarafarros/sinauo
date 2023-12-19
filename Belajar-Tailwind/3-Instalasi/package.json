@@ -1,0 +1,18 @@
+{
+  "name": "Belajar-Tailwind",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "t": "npx tailwindcss -i ./src/css/input.css -o ./public/css/style.css --watch",
+    "minify": "npx tailwindcss -o ./public/css/final.css --minify"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.32",
+    "tailwindcss": "^3.3.7"
+  }
+}
