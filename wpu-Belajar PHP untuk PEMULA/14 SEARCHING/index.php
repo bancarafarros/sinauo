@@ -27,6 +27,7 @@ if (isset($_POST["cari"])) {
     <br><br>
 
     <form action="" method="post">
+        <!-- autofocus = ngarahin kursor  autocomplete="off" = matiin suggestion-->
         <input type="text" name="keyword" size="40" placeholder="Masukkan keyword pencarian" autofocus autocomplete="off">
         <button type="submit" name="cari">Cari</button>
     </form>
