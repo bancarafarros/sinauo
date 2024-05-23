@@ -1,26 +1,23 @@
-<!-- variable adalah tempat untuk menyimpan data -->
-<!-- dengan menyimpan data di variable, kita bisa menggunakannya terus-menerus hanya dengan menybutkan nama variablenya -->
-<!-- membuat variable di js bisa menggunankan var diikuti dengan nama variablenya -->
-<!-- js adalah dynamic language, artinya variable di js bisa berubah-rubah tipe datanya -->
 <!-- sebelum 2015, hanya bisa membuat variable dengan var -->
 <!-- di tahun 2015 bisa membuat variable dengan let dan const -->
 <!-- sekarang tidak direkomendasikan lagi menggunakan var -->
+<!-- let digunakan untuk menggantikan var -->
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Variable</title>
+    <title>Variable Let</title>
   </head>
   <body>
     <script>
       // -- Membuat variable --
       // deklarasi variable
-      var fullName;
-      var firstName;
-      var middleName;
-      var lastName;
+      let fullName;
+      let firstName;
+      let middleName;
+      let lastName;
 
       fullName = "Bancar Anggono Farros Santosa";
 
@@ -35,13 +32,13 @@
 
       // -- Membuat variable langsung dengan data --
       // deklarasi variable langsung dengan value
-      var fullName = "Bancar Anggono Farros Santosa";
-      var firstName = "Bancar";
-      var middleName = "Farros";
-      var lastName = "Santosa";
+      // let fullName = "Bancar Anggono Farros Santosa";
+      // let firstName = "Bancar";
+      // let middleName = "Farros";
+      // let lastName = "Santosa";
 
       // -- Mengakses variable --
-      var fullName = "Bancar Anggono Farros Santosa";
+      fullName = "Bancar Anggono Farros Santosa";
       document.writeln(fullName);
       document.writeln("<br>");
       document.writeln(fullName);
@@ -49,7 +46,7 @@
       document.writeln(fullName);
       document.writeln("<br>");
 
-      var fullName = "Gonn";
+      fullName = "Gonn";
       document.writeln(fullName);
       document.writeln("<br>");
       document.writeln(fullName);
