@@ -75,6 +75,8 @@ function updateMahasiswa($data)
 }
 
 
+// cari data berdasarkan keyword
+// data akan dicari di semua kolom bahkan tabel tergantung kebutuhan
 function cari($keyword)
 {
     $query = "SELECT * FROM mahasiswa WHERE nama LIKE '%$keyword%' OR
