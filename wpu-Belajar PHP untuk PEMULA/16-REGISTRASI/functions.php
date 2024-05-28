@@ -99,6 +99,8 @@ function updateMahasiswa($data)
 {
     global $conn;
 
+    // TODO: add delete foto di direktori
+
     // ambil data dari tiap elemen dalam form
     // htmlspecialchars anti script
     $id = htmlspecialchars($data["id"]);
