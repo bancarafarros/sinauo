@@ -32,7 +32,7 @@ function tambahMahasiswa($data)
     // kalo $gambar kosong, return false;
     $gambar = upload();
     if (!$gambar) {
-        return false; // bikin tambahMahasisa() jadi 0 dan masuk kondisi else Data gagal ditambahkan
+        return false; // bikin tambahMahasisa() jadi kurang dari 0 dan masuk kondisi else Data gagal ditambahkan
     }
 
     // query insert data
