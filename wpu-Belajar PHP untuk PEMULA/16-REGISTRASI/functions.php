@@ -140,3 +140,36 @@ function cari($keyword)
     jurusan LIKE '%$keyword%'";
     return query($query);
 }
+
+// function registrasi() dengan parameter $data yang berasal dari $_POST di halaman registrasi.php
+function registrasi($data)
+{
+    global $conn; // menghubungkan ke database
+
+    // memasukkan data dari $_POST atau $data ke dalam variabel terpisah
+    $username = strtolower(stripslashes($data["username"]));
+    $password = mysqli_real_escape_string($conn, $data["password"]);
+    $confirmPassword = mysqli_real_escape_string($conn, $data["confirmPassword"]);
+
+    // validasi username sudah ada atau belum
+    $result = mysqli_query($conn, "SELECT username FROM users WHERE username = '$username'");
+    if (mysqli_fetch_assoc($result)) {
+        echo "<script>alert('Username sudah ada, mohon gunakan username lain')</script>";
+        return false;
+    }
+
+    // validasi password sama atau tidak dengan konfirmasi password
+    if ($password !== $confirmPassword) {
+        echo "<script>alert('Password belum sama');</script>";
+        return false;
+    }
+
+    // enkripsi password
+    $encryptPassword = password_hash($password, PASSWORD_DEFAULT);
+
+    // query insert data
+    $query = "INSERT INTO users (username, password) VALUES ('$username', '$encryptPassword')";
+    mysqli_query($conn, $query);
+
+    return mysqli_affected_rows($conn);
+}
