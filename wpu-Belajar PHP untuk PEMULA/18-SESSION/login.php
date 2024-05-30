@@ -1,23 +1,40 @@
 <?php
+session_start();
+
+// validasi user sudah atau belum untuk mencegah function digunakan non user
+if (isset($_SESSION["login"])) {
+    header("Location: index.php"); // jika sudah login diarahkan ke index.php
+    exit;
+}
+
+// import functions.php
 require 'functions.php';
 
-// 
+// ambil data dari form login via $_POST
 if (isset($_POST['login'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
+    // cek username dulu, kalo ada lanjut cek password kalo gk ada skip
+
+    // cek table users di database, apakah ada username yang sama
     $result = mysqli_query($conn, "SELECT * FROM users WHERE username = '$username'");
 
-    // cek username
+    // kalo ada username yang sama, pasti hasilnya 1
     if (mysqli_num_rows($result) === 1) {
-        // cek password
+        // cek password dari username yang sama
         $row = mysqli_fetch_assoc($result);
         if (password_verify($password, $row['password'])) {
+
+            // set session
+            $_SESSION["login"] = true;
+
             header("Location: index.php");
             exit;
         }
     }
 
+    // kalo username gk ketemu masuk ke sini, $error buat display error message di login page
     $error = true;
 }
 ?>

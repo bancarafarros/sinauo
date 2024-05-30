@@ -1,6 +1,9 @@
 <?php
 require 'functions.php';
 
+// TODO: 1. add validasi login, jika sudah login diarahkan ke index.php
+// TODO: 2. berikan pesan anda sudah login, silahkan logout dulu
+
 // ketika tombol register submit ditekan maka data user baru akan divalidasi dan diinput ke database
 if (isset($_POST["register"])) {
 
@@ -10,6 +13,10 @@ if (isset($_POST["register"])) {
         echo mysqli_error($conn);
     }
 }
+
+// TODO: 3. selesai registrasi destroy session
+// TODO: 4. arahkan ke halaman login
+// TODO: 5. berikan pesan silahkan login dengan akun yang sudah dibuat
 ?>
 
 <!DOCTYPE html>
