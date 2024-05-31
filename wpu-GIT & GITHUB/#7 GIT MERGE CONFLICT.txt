@@ -1,0 +1,15 @@
+<<< HEAD (Current change)
+xxxxxxxxxxxxxx
+====
+yyyyyyyyyyyyyy
+>>> <namabranch> (Incoming change)
+
+// bisa pilih current change atau incoming change atau bisa pilih keduanya dengan cara dipilih yang perlu dan hapu yang tidak perlu
+
+// menjalankan add dan commit secara bersamaan
+git commit -am ""
+
+// checkout ke commit tertentu
+git checkout <commit hash 7 digit>
+
+// bisa bikin branch dari commit hash
