@@ -1,0 +1,24 @@
+// untuk checkout ke branch lain
+branch <nama-branch>
+
+// buat alias perintah untuk melihat git graph
+alias graph="git log --all --decorate --oneline --graph"
+
+// untuk checkout ke branch lain
+checkout <nama-branch>
+
+// untuk merge dengan branch lain
+// harus pindah ke branch master / main baru bisa merging
+merge <nama-branch>
+
+// cari tahu branch yang baru saja dilakukan merging
+branch --merged
+
+// hapus branch dengan konfirmasi branch tersebut sudah dilakukan merging atau belum
+branch -d <nama-branch>
+
+// hapus branch tanpa konfirmasi branch tersebut sudah dilakukan merging atau belum
+branch -D <nama-branch>
+
+// membatalkan atau menghapus commit terakhir
+git reset --hard HEAD^
