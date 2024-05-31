@@ -1,4 +1,5 @@
 <?php
+// session adalah informasi yang disimpan di sisi server
 session_start();
 
 // validasi user sudah atau belum untuk mencegah function digunakan non user
