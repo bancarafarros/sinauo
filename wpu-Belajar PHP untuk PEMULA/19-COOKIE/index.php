@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-// validasi user sudah atau belum untuk mencegah function digunakan non user
+// validasi user sudah login atau belum untuk mencegah function digunakan non user
 if (!isset($_SESSION["login"])) {
     header("Location: login.php"); // jika belum login diarahkan ke login.php
     exit;

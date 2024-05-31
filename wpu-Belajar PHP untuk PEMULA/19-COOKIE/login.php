@@ -1,15 +1,36 @@
 <?php
+// import functions.php
+require 'functions.php';
+
 // session adalah informasi yang disimpan di sisi server
 session_start();
 
-// validasi user sudah atau belum untuk mencegah function digunakan non user
+// cookie disimpan di sisi client
+// cookie bisa digunakan untuk mengenali user, shopping cart, dan personalisasi: ads
+// cookie bisa disalahgunakan
+// baiknya cookie disimpan di dalam database
+
+// validasi cookie dilakukan pertama supaya memudahkan user yang sudah pernah login 
+if (isset($_COOKIE['id']) && isset($_COOKIE['key'])) { // cek cookie dari id dan username (key)
+    // simpan ke dalam variabel terpisah
+    $id = $_COOKIE['id'];
+    $key = $_COOKIE['key'];
+
+    // ambil username berdasarkan id dari cookie
+    $result = mysqli_query($conn, "SELECT username from users WHERE id = '$id'");
+    $row = mysqli_fetch_assoc($result); // menyimpan data user satu baris
+
+    // validasi username yang ada di cookie (key) dengan username di database
+    if ($key === hash('sha256', $row['username'])) {
+        $_SESSION["login"] = true; // set session true supaya user bisa langsung masuk
+    }
+}
+
+// validasi user sudah login atau belum
 if (isset($_SESSION["login"])) {
     header("Location: index.php"); // jika sudah login diarahkan ke index.php
     exit;
 }
-
-// import functions.php
-require 'functions.php';
 
 // ambil data dari form login via $_POST
 if (isset($_POST['login'])) {
@@ -24,12 +45,21 @@ if (isset($_POST['login'])) {
     // kalo ada username yang sama, pasti hasilnya 1
     if (mysqli_num_rows($result) === 1) {
         // cek password dari username yang sama
-        $row = mysqli_fetch_assoc($result);
-        if (password_verify($password, $row['password'])) {
+        $row = mysqli_fetch_assoc($result); // menyimpan data user satu baris
+        if (password_verify($password, $row['password'])) { // validasi password dari form login dengan password dari database
 
             // set session
             $_SESSION["login"] = true;
 
+            // validasi remember me dicentang atau tidak
+            if (isset($_POST["remember"])) {
+
+                // jika dicentang maka buat cookie
+                setcookie('id', $row["id"], time() + 60); // id dari username yang diambil dari database
+                setcookie('key', hash('sha256', $row["username"]), time() + 60); // username yang diambil dari database dan dienkripsi
+            }
+
+            // diarahkan ke index.php
             header("Location: index.php");
             exit;
         }
@@ -68,6 +98,11 @@ if (isset($_POST['login'])) {
                 <label for="password">Password: </label>
                 <input type="password" name="password" id="password">
             </li><br>
+
+            <li>
+                <input type="checkbox" name="remember" id="remember">
+                <label for="remember">Remember Me</label>
+            </li>
 
             <li>
                 <button type="submit" name="login">Login</button>
