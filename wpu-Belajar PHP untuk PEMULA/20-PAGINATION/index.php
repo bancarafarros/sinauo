@@ -10,9 +10,31 @@ if (!isset($_SESSION["login"])) {
 // menggunakan file functions.php
 require 'functions.php';
 
+// pagination
+$jumlahDataPerHalaman = 2; // data yang ditampilkan tiap halaman
+
+// ambil seluruh data dari database dan hitung jumlah data yang berhasil diambil dengan function count
+$jumlahData = count(query("SELECT * FROM mahasiswa"));
+
+// membagi $jumlahData dengan $jumlahDataPerHalaman dan membulatkannya ke atas dengan ceil() untuk mengetahui $jumlahHalaman yang diperlukan 
+$jumlahHalaman = ceil($jumlahData / $jumlahDataPerHalaman);
+
+// untuk menandai user sedang berada di halaman ke berapa
+// jika ada parameter "halaman" di URL terisi, maka digunakan
+// jika tidak, maka diisi nelai default 1 (digunakan ketika baru masuk ke index.php pertama kali)
+$halamanAktif = (isset($_GET["halaman"])) ? $_GET["halaman"] : 1;
+
+// $awalData untuk menentukan data yang ditampilkan mulai dari index ke berapa
+$awalData = ($jumlahDataPerHalaman * $halamanAktif) - $jumlahDataPerHalaman;
+
+// menampilkan data dengan LIMIT
+// $awalData untuk titik mulai data ditampilkan
+// $jumlahDataPerHalaman untuk berapa banyak data yang ditampilkan dalam satu halaman (dalam sekali fungsi tersebut dijalankan)
+$mahasiswa = query("SELECT * FROM mahasiswa LIMIT $awalData, $jumlahDataPerHalaman");
+
 // menggunakan function query() dari file functions.php
 // function query diisi dengan sintaks SQL
-$mahasiswa = query("SELECT * FROM mahasiswa");
+// $mahasiswa = query("SELECT * FROM mahasiswa");
 
 if (isset($_POST["cari"])) {
     $mahasiswa = cari($_POST["keyword"]);
@@ -41,6 +63,24 @@ if (isset($_POST["cari"])) {
         <input type="text" name="keyword" size="40" placeholder="Masukkan keyword pencarian" autofocus autocomplete="off">
         <button type="submit" name="cari">Cari</button>
     </form>
+    <br><br>
+
+    <!-- navigasi halaman -->
+    <?php if ($halamanAktif > 1) : ?>
+        <a href="?halaman=<?= $halamanAktif - 1; ?>">&laquo;</a> <!-- tombol << -->
+    <?php endif; ?>
+
+    <?php for ($i = 1; $i <= $jumlahHalaman; $i++) : ?>
+        <?php if ($i == $halamanAktif) : ?>
+            <a href="?halaman=<?= $i; ?>" style="font-weight: bold; color: red;"><?= $i; ?></a> <!-- menandakan halaman yang sedang aktif -->
+        <?php else : ?>
+            <a href="?halaman=<?= $i; ?>"><?= $i; ?></a> <!-- menampilkan halaman lain -->
+        <?php endif; ?>
+    <?php endfor; ?>
+
+    <?php if ($halamanAktif < $jumlahHalaman) : ?>
+        <a href="?halaman=<?= $halamanAktif + 1; ?>">&raquo;</a> <!-- tombol >> -->
+    <?php endif; ?>
     <br><br>
 
     <table border="1" cellpadding="10" cellspacing="0">
