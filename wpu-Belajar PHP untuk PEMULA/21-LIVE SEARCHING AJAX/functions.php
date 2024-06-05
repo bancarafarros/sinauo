@@ -5,15 +5,17 @@ $conn = mysqli_connect("localhost", "root", "", "phpdasar");
 // ambil data dari tabel mahasiswa / query data mahasiswa
 function query($query)
 {
-    global $conn;
-    $result = mysqli_query($conn, $query);
-    $rows = [];
+    global $conn; // impor $conn
 
+    $result = mysqli_query($conn, $query); // menjalankan query sql dari parameter $query di mysqli_query() dan menyimpan hasilnya di $result
+    $rows = []; // deklarasi array kosong untuk nantinya diisi dengan hasil query
+
+    // mysqli_fetch_assoc() mengambil satu baris hasil query dalam bentuk array asosiatif dan menyimpan ke $row
     while ($row = mysqli_fetch_assoc($result)) {
-        $rows[] = $row;
+        $rows[] = $row; // setiap baris tadi disimpan ke dalam array $rows[]
     }
 
-    return $rows;
+    return $rows; // mengembalikan array asosiatif yang berisi data dari database
 }
 
 function tambahMahasiswa($data)
