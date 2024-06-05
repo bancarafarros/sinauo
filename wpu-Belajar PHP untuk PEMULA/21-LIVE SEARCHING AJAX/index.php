@@ -38,42 +38,45 @@ if (isset($_POST["cari"])) {
 
     <form action="" method="post">
         <!-- autofocus = ngarahin kursor  autocomplete="off" = matiin suggestion-->
-        <input type="text" name="keyword" size="40" placeholder="Masukkan keyword pencarian" autofocus autocomplete="off">
-        <button type="submit" name="cari">Cari</button>
+        <!-- input id keyword untuk digunakan di ajax -->
+        <input type="text" name="keyword" size="40" placeholder="Masukkan keyword pencarian" autofocus autocomplete="off" id="keyword">
+        <button type="submit" name="cari" id="tombol-cari">Cari</button> <!-- button id tombol-cari untuk digunakan di ajax -->
     </form>
     <br><br>
 
-    <table border="1" cellpadding="10" cellspacing="0">
-        <tr>
-            <th>No.</th>
-            <th>Nama</th>
-            <th>NIM</th>
-            <th>Email</th>
-            <th>Jurusan</th>
-            <th>Gambar</th>
-            <th colspan="2">Aksi</th>
-        </tr>
-
-        <?php $no = 1; ?>
-        <!-- Menggunakan foreach untuk menampilkan data -->
-        <?php foreach ($mahasiswa as $row) : ?>
+    <div id="container"> <!-- div dengan id container untuk menampilkan data dengan ajax -->
+        <table border="1" cellpadding="10" cellspacing="0">
             <tr>
-                <td><?= $no; ?></td>
-                <td><?= $row["nama"]; ?></td>
-                <td><?= $row["nim"]; ?></td>
-                <td><?= $row["email"]; ?></td>
-                <td><?= $row["jurusan"]; ?></td>
-                <td><img src="img/<?= $row["gambar"]; ?>" alt="" width="100"></td>
-                <td>
-                    <a href="update.php?id=<?= $row["id"]; ?>">Ubah</a>
-                </td>
-                <td>
-                    <a href="hapus.php?id=<?= $row["id"]; ?>" onclick="return confirm('Yakin ingin hapus data?');">Hapus</a>
-                </td>
+                <th>No.</th>
+                <th>Nama</th>
+                <th>NIM</th>
+                <th>Email</th>
+                <th>Jurusan</th>
+                <th>Gambar</th>
+                <th colspan="2">Aksi</th>
             </tr>
-            <?php $no++; ?>
-        <?php endforeach; ?>
-    </table>
+
+            <?php $no = 1; ?>
+            <!-- Menggunakan foreach untuk menampilkan data -->
+            <?php foreach ($mahasiswa as $row) : ?>
+                <tr>
+                    <td><?= $no; ?></td>
+                    <td><?= $row["nama"]; ?></td>
+                    <td><?= $row["nim"]; ?></td>
+                    <td><?= $row["email"]; ?></td>
+                    <td><?= $row["jurusan"]; ?></td>
+                    <td><img src="img/<?= $row["gambar"]; ?>" alt="" width="100"></td>
+                    <td>
+                        <a href="update.php?id=<?= $row["id"]; ?>">Ubah</a>
+                    </td>
+                    <td>
+                        <a href="hapus.php?id=<?= $row["id"]; ?>" onclick="return confirm('Yakin ingin hapus data?');">Hapus</a>
+                    </td>
+                </tr>
+                <?php $no++; ?>
+            <?php endforeach; ?>
+        </table>
+    </div>
 
     <script src="js/script.js"></script>
 </body>
