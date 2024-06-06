@@ -1,19 +1,20 @@
-// mengambil elemen uang digunakan dengan id
-var keyword = document.getElementById("keyword");
-var tombolCari = document.getElementById("tombol-cari");
-var container = document.getElementById("container");
+// memastiakn seluruh halaman html sudah siap
+$(document).ready(function () {
+  $("#tombol-cari").hide(); // menyembunyikan tombol cari
 
-keyword.addEventListener("keyup", function () { // ketika selesai mengetik (keyup) di input "keyword"
-  var xhr = new XMLHttpRequest(); //   buat object ajax
+  // event ketika user melakukan pemcarian
+  $("#keyword").on("keyup", function () {
+    $(".loader").show(); // menampilkan icon loader
 
-  xhr.onreadystatechange = function () { // cek kesiapan ajax
-    if (xhr.readyState == 4 && xhr.status == 200) { // 4 jika state siap 200 jika status ok
-      container.innerHTML = xhr.responseText; //  isi dari elemen container akan dimanipulasi dengan hasil dari xhr.responseText yang mengambil isi mahasiswa.php
-    }
-  };
+    // membuat permintaan HTTP GET ke url tertera dengan load() untuk ditampilkan di id container
+    // load() mengambil data dari URL yang diberikan dan langsung memasukkan ke elemen yang dipilih
+    // $("#container").load("ajax/mahasiswa.php?keyword=" + $("#keyword").val());
 
-  // eksekusi ajax
-  // menyiapkan permintaan dengan metode GET untuk mengambil data di url tersebut secara asynchronous (true)
-  xhr.open("GET", "ajax/mahasiswa.php?keyword=" + keyword.value, "true");
-  xhr.send(); // mengirim permintaan di atas ke server
+    // membuat permintaan HTTP GET ke url tertera
+    // get() mengambil data dari URL dan memnaggil fungsi callback dengan data yang diterima sebagai argumen (untuk diolah)
+    $.get("ajax/mahasiswa.php?keyword=" + $("#keyword").val(), function (data) {
+      $("#container").html(data); // menampilkan data yang diterima di id container
+      $(".loader").hide(); // menyembunyikan loader.gif
+    });
+  });
 });

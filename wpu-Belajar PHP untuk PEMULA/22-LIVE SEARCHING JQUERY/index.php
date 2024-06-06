@@ -1,5 +1,5 @@
 <?php
-session_start();
+session_start(); // memulai session
 
 // validasi user sudah login atau belum untuk mencegah function digunakan non user
 if (!isset($_SESSION["login"])) {
@@ -26,6 +26,15 @@ if (isset($_POST["cari"])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Halaman Admin</title>
+    <style>
+        /* styling loader */
+        .loader {
+            width: 50px;
+            position: absolute;
+            top: 100px;
+            display: none;
+        }
+    </style>
 </head>
 
 <body>
@@ -41,6 +50,7 @@ if (isset($_POST["cari"])) {
         <!-- input id keyword untuk digunakan di ajax -->
         <input type="text" name="keyword" size="40" placeholder="Masukkan keyword pencarian" autofocus autocomplete="off" id="keyword">
         <button type="submit" name="cari" id="tombol-cari">Cari</button> <!-- button id tombol-cari untuk digunakan di ajax -->
+        <img src="img/loader.gif" alt="" srcset="" class="loader"> <!-- tambah loader.gif -->
     </form>
     <br><br>
 

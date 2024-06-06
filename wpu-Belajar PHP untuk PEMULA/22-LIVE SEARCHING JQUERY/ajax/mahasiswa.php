@@ -1,5 +1,7 @@
 <!-- sekarang data mahasiswa dipanggil dari sini -->
 <?php
+sleep(1); // memberikan delay 1 detik
+
 // memanggil fuctions.php
 require '../functions.php';
 
