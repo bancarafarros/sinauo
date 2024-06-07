@@ -34,18 +34,28 @@ if (isset($_POST["cari"])) {
             top: 100px;
             display: none;
         }
+
+        /* hide ketika diprint */
+        @media print {
+
+            .logout,
+            .tambah,
+            .form-cari {
+                display: none;
+            }
+        }
     </style>
 </head>
 
 <body>
-    <a href="logout.php">Logout</a>
+    <a href="logout.php" class="logout">Logout</a> | <a href="print.php" target="_blank">Print</a>
 
     <h1>Daftar Mahasiswa</h1>
 
-    <a href="tambah.php">Tambah Data Mahasiswa</a>
+    <a href="tambah.php" class="tambah">Tambah Data Mahasiswa</a>
     <br><br>
 
-    <form action="" method="post">
+    <form action="" method="post" class="form-cari">
         <!-- autofocus = ngarahin kursor  autocomplete="off" = matiin suggestion-->
         <!-- input id keyword untuk digunakan di ajax -->
         <input type="text" name="keyword" size="40" placeholder="Masukkan keyword pencarian" autofocus autocomplete="off" id="keyword">
@@ -63,7 +73,7 @@ if (isset($_POST["cari"])) {
                 <th>Email</th>
                 <th>Jurusan</th>
                 <th>Gambar</th>
-                <th colspan="2">Aksi</th>
+                <th colspan="2" class="aksi">Aksi</th>
             </tr>
 
             <?php $no = 1; ?>
@@ -76,10 +86,10 @@ if (isset($_POST["cari"])) {
                     <td><?= $row["email"]; ?></td>
                     <td><?= $row["jurusan"]; ?></td>
                     <td><img src="img/<?= $row["gambar"]; ?>" alt="" width="100"></td>
-                    <td>
+                    <td class="aksi">
                         <a href="update.php?id=<?= $row["id"]; ?>">Ubah</a>
                     </td>
-                    <td>
+                    <td class="aksi">
                         <a href="hapus.php?id=<?= $row["id"]; ?>" onclick="return confirm('Yakin ingin hapus data?');">Hapus</a>
                     </td>
                 </tr>
