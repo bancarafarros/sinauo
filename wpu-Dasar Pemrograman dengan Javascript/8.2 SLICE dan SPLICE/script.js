@@ -55,5 +55,22 @@ var arr = ["sandhika", "galih", "nofa", "fufu"];
 // console.log(arr);
 
 // 5 shift mengahapus elemen pertama pada array
-arr.shift();
-console.log(arr);
+// arr.shift();
+// console.log(arr);
+
+// 6 splice (menyambung) untuk menambah elemen di tengah-tengah array
+// splice(indexPenempatan, mauDihapusBerapa, elemenBaru1, elemenBaruN)
+// arr.splice(2, 0, "Jajang");
+// console.log(arr.join("-"));
+
+// arr.splice(1, 2, "Jajang", "Mobil");
+// console.log(arr.join("-"));
+
+// 7 slice (mengiris) memisahkan array menjadi array yang baru
+// slice(indexAwal, indexAkhir) indexAwal akan menjadi array baru dan indexAkhir tetap di array lama
+
+// let arr = ["sandhika", "galih", "nofa", "fufu"];
+let arrDua = arr.slice(1, 3); // elemen pada index 1 dan 2 akan menjadi arrayDua dan elemen pada index 0 dan 3 akan tetap di arr
+console.log(arr.join("-"));
+console.log(arrDua.join("-"));
+console.log(arr.join("-"));
