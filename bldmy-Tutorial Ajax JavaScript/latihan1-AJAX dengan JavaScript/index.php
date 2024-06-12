@@ -21,23 +21,25 @@
 
     <script>
         function load_ajax() {
-            const ajax = new XMLHttpRequest();
+            const ajax = new XMLHttpRequest(); // buat object ajax dari class XMLHttpRequest()
 
-            ajax.open('GET', 'src/data.json', true);
-            ajax.onreadystatechange = function() {
-                if (this.readyState === 4 && this.status === 200) {
-                    // console.log('ajax berhasil dilakukan');
-                    // console.log(this.responseText);
-                    let data = JSON.parse(this.responseText);
+            ajax.open('GET', 'src/data.json', true); // inisialisasi permintaan dengan metode GET ke src/data.json dengan true untuk asynchronous
 
-                    document.getElementById('result').textContent = data.name;
+            // cek kesiapan ajax
+            ajax.onreadystatechange = function() { // define fungsi yang akan dipanggil setiap property readyState berubah
+                if (this.readyState === 4 && this.status === 200) { // 4 jika state siap dan 200 jika status ok
+                    console.log('ajax berhasil dilakukan');
+                    console.log(this.responseText);
+                    // buat variabel data
+                    let data = JSON.parse(this.responseText); // JSON.parse mengubah this.responseText dari JSON menjadi object JS
+
+                    document.getElementById('result').textContent = data.name; // mengambil elemen HTML dengan id result . mengatur teksnya (textContent) menjadi nilai property name dari data yang diterima dari server
                 }
             }
-            ajax.send();
+            ajax.send(); // mengirim HTTP request
         }
 
-        // menjalankan function secara otomatis
-        load_ajax();
+        load_ajax(); // menjalankan/memanggil function load_ajax()
     </script>
 </body>
 
