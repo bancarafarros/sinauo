@@ -1,0 +1,23 @@
+Menginstall PostGreSQL
+psql --host=localhost --port=5432 --dbaname=postgres --username=banca --password
+psql --username=postgres
+exit
+
+Database
+melihat database via psql
+\l
+select datname from pg_database; melihat database via dbms client
+
+// kosongkan terminal
+\! clear
+
+// membuat database baru
+create database nama_database;
+
+// menggunakan database
+\c nama_database
+
+// hapus database
+drop database nama_database;
+
+42:__
