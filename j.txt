@@ -1,0 +1,12 @@
+Pengenalan Automation Server
+> Automation server adalah aplikasi yang bisa kita gunakan untuk melakukan proses otomatisasi perintah yang kita instruksikan
+> Automation server mempercepat proses, karena kita tidak perlu menunggu di laptop kita
+> Bisa berjalan konsisten di berbagai perangkat
+> Bisa berjalan otomatis dan memberitahu kesalahan yang terjadi
+
+Pengenalan Jenkins
+> Jenkins platform untuk automation server
+> Kebanyakan fitur di Jenkins tersedia dalam bentuk plugin
+
+Menginstall Jenkins
+> 
