@@ -36,8 +36,22 @@ class Product
     }
 }
 
-// membuat object productTiga dari class Product dan mengisi parameter untuk __construct
-$productSatu = new Product("Naruto", "Masashi Kishimoto", "Shonen Jump", 3000);
+class CetakInfoProduct // class yang akan menerima inputan object
+{
+    // function dengan parameter class Product dan object $product
+    public function cetak(Product $product) // parameternya hanya bisa diisi oleh object yang berasal dari class tersebut
+    {
+        // $str = "Naruto | Masashi Kishimoto | Shonen Jump (Rp 30000)"; // menampilkan secara manual
+
+        // ditampilkan dengan menggunakan object yang berasal dari parameter (class)
+        $str = "{$product->judul} | {$product->getLabel()}  (Rp {$product->harga})";
+
+        return $str; // mengembalikan isi $str supaya bisa ditampilkan ke layar
+    }
+}
+
+// membuat object product dari class Product dan mengisi parameter untuk __construct
+$productSatu = new Product("Naruto", "Masashi Kishimoto", "Shonen Jump", 30000);
 $productDua = new Product("Uncharted", "Neil Druckmann", "Sony Computer", 250000);
 $productTiga = new Product("Dragon Ball"); // hanya mengisi satu parameter __construct karena sisanya sudah ada nilai default
 
@@ -46,3 +60,7 @@ print_r("<br><br>");
 echo "Game: " . $productDua->getLabel();
 print_r("<br><br>");
 echo "Game: " . $productTiga->getLabel();
+print_r("<br><br>");
+
+$infoProductSatu = new CetakInfoProduct(); // instansiasi object $infoProductSatu dari class CetakInfoProduct
+echo $infoProductSatu->cetak($productSatu); // menampilkan detail dari $productSatu via object $infoProductSatu dan class CetakInfoProduct
