@@ -1,5 +1,5 @@
 Menginstall PostGreSQL
-psql --host=localhost --port=5432 --dbaname=postgres --username=banca --password
+psql --host=localhost --port=5432 --dbname=postgres --username=banca --password
 psql --username=postgres
 exit
 
