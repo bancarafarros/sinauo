@@ -7,29 +7,19 @@ class Product
         $judul,
         $penulis,
         $penerbit,
-        $harga,
-        $jumlahHalaman,
-        $waktuMain;
+        $harga;
 
     // contructor adalah function/method yang otomatis dijalankan ketika sebuah class memiliki object baru
     // constructor biasa digunakan sebagai nilai default
 
     // parameter di __construct berbeda dengan property class dan sudah diberi nilai default
-    public function __construct($judul = "judul", $penulis = "penulis", $penerbit = "penerbit", $harga = 0, $jumlahHalaman = 0, $waktuMain = 0)
+    public function __construct($judul = "judul", $penulis = "penulis", $penerbit = "penerbit", $harga = 0)
     {
         // mengisi property class dengan value dari parameter __construct
         $this->judul = $judul;
         $this->penulis = $penulis;
         $this->penerbit = $penerbit;
         $this->harga = $harga;
-        $this->jumlahHalaman = $jumlahHalaman;
-        $this->waktuMain = $waktuMain;
-    }
-
-    // method
-    public function sayHello()
-    {
-        return "Hello World!";
     }
 
     public function getLabel()
@@ -41,10 +31,6 @@ class Product
     // getInfoLengkap untuk menmapilkan informasi detail dari produk dengan menerapkan inheritance
     public function getInfoProduct()
     {
-        // expected result
-        // Komik: Naruto | Masashi Kishimoto, Shonen Jump (Rp 30000) - 100 halaman
-        // Komik: Uncharted | Neil Druckmann, Sony Computer (Rp 25000) - 50 jam
-
         // {} untuk sebagai delimiter karena ditulis dalam bentuk string ""
         $str = "{$this->judul} | {$this->getLabel()} (Rp {$this->harga})"; // mengambil value dari property class yang berasal dari contructor
 
@@ -52,26 +38,43 @@ class Product
     }
 }
 
-// bikin child class Comic dari parent class Product
-class Comic extends Product
+class Comic extends Product // bikin child class Comic dari parent class Product
 {
+    public $jumlahHalaman; // property khusus milik child class Comic
+
+    // bikin construct samain kayak parent class Product ditambahin $jumlahHalaman; // property khusus milik child class Comic
+    public function __construct($judul = "judul", $penulis = "penulis", $penerbit = "penerbit", $harga = 0, $jumlahHalaman = 0)
+    {
+        parent::__construct($judul, $penulis, $penerbit, $harga); // panggil construct punya parent class Product tanpa parameter default
+        $this->jumlahHalaman = $jumlahHalaman; // mengisi property class dengan value dari parameter __construct
+    }
+
     public function getInfoProduct()
     {
         // {} sebagai dilimiter karena ditulis dalam bentuk string
-        $str = "Komik: {$this->judul} | {$this->getLabel()} (Rp {$this->harga} - {$this->jumlahHalaman} halaman"; // mengambil value dari property class yang berasal dari contructor
+        // parent::getInfoProduct() dari parent class Product untuk overriding getInfoProduct() child class Comic
+        $str = "Komik: " . parent::getInfoProduct() . " - {$this->jumlahHalaman} halaman"; // mengambil value dari property class yang berasal dari contructor
 
         return $str; // mengembalikan $str supaya bisa ditampilkan di layar
     }
 }
 
-// bikin child class Game dari parent class Product
-class Game extends Product
+class Game extends Product // bikin child class Game dari parent class Product
 {
+    public $waktuMain; // property khusus milik child class Comic
+
+    // bikin construct samain kayak parent class Product ditambahin $jumlahHalaman; // property khusus milik child class Game
+    public function __construct($judul = "judul", $penulis = "penulis", $penerbit = "penerbit", $harga = 0, $waktuMain = 0)
+    {
+        parent::__construct($judul, $penulis, $penerbit, $harga); // panggil construct punya parent class Product tanpa parameter default
+        $this->waktuMain = $waktuMain; // mengisi property class dengan value dari parameter __construct
+    }
 
     public function getInfoProduct()
     {
         // {} sebagai delimiter karena ditulis dalam bentuk string
-        $str = "Game: {$this->judul} | {$this->getLabel()} (Rp {$this->harga} - {$this->waktuMain} jam"; // mengambil value dari property class yang berasal dari constructor
+        // parent::getInfoProduct() dari parent class Product untuk overriding getInfoProduct() child class Game
+        $str = "Game: " . parent::getInfoProduct() . " - {$this->waktuMain} jam"; // mengambil value dari property class yang berasal dari constructor
 
         return $str; // mengembalikan $str supaya bisa ditampilkan di layar
     }
@@ -92,8 +95,8 @@ class CetakInfoProduct // class yang akan menerima inputan object
 }
 
 // membuat object product dari class Product dan mengisi parameter untuk __construct
-$productSatu = new Comic("Naruto", "Masashi Kishimoto", "Shonen Jump", 30000, 100, 0);
-$productDua = new Game("Uncharted", "Neil Druckmann", "Sony Computer", 250000, 0, 50);
+$productSatu = new Comic("Naruto", "Masashi Kishimoto", "Shonen Jump", 30000, 100);
+$productDua = new Game("Uncharted", "Neil Druckmann", "Sony Computer", 250000, 50);
 $productTiga = new Product("Dragon Ball"); // hanya mengisi satu parameter __construct karena sisanya sudah ada nilai default
 
 // echo "Komik: " . $productSatu->getLabel();
