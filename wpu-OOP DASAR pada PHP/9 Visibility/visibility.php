@@ -6,8 +6,11 @@ class Product
     public
         $judul,
         $penulis,
-        $penerbit,
-        $harga;
+        $penerbit;
+
+    protected $diskon = 0; // hanya bisa diakses oleh parent class dan child class
+
+    private $harga; // hanya bisa diakses oleh parent class saja
 
     // contructor adalah function/method yang otomatis dijalankan ketika sebuah class memiliki object baru
     // constructor biasa digunakan sebagai nilai default
@@ -20,6 +23,12 @@ class Product
         $this->penulis = $penulis;
         $this->penerbit = $penerbit;
         $this->harga = $harga;
+    }
+
+    // untuk mendapatkan dan menampilkan harga dari private property parent class Product
+    public function getHarga()
+    {
+        return $this->harga - ($this->harga * $this->diskon / 100);
     }
 
     public function getLabel()
@@ -70,6 +79,12 @@ class Game extends Product // bikin child class Game dari parent class Product
         $this->waktuMain = $waktuMain; // mengisi property class dengan value dari parameter __construct
     }
 
+    // mengisi property class
+    public function setDiskon($diskon)
+    {
+        $this->diskon = $diskon;
+    }
+
     public function getInfoProduct()
     {
         // {} sebagai delimiter karena ditulis dalam bentuk string
@@ -113,4 +128,9 @@ $productTiga = new Product("Dragon Ball"); // hanya mengisi satu parameter __con
 echo $productSatu->getInfoProduct();
 print_r("<br><br>");
 echo $productDua->getInfoProduct();
-print_r("<br><br>");
+print_r("<hr>");
+print_r("<br>");
+
+// set diskon
+$productDua->setDiskon(50);
+echo $productDua->getHarga();
