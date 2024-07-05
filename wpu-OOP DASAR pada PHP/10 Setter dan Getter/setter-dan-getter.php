@@ -3,18 +3,15 @@
 class Product
 {
     // property
-    public
+    private
         $judul,
         $penulis,
-        $penerbit;
-
-    protected $diskon = 0; // hanya bisa diakses oleh parent class dan child class
-
-    private $harga; // hanya bisa diakses oleh parent class saja
+        $penerbit,
+        $harga, // hanya bisa diakses oleh parent class saja
+        $diskon = 0;
 
     // contructor adalah function/method yang otomatis dijalankan ketika sebuah class memiliki object baru
     // constructor biasa digunakan sebagai nilai default
-
     // parameter di __construct berbeda dengan property class dan sudah diberi nilai default
     public function __construct($judul = "judul", $penulis = "penulis", $penerbit = "penerbit", $harga = 0)
     {
@@ -25,10 +22,61 @@ class Product
         $this->harga = $harga;
     }
 
+    // setter dan getter untuk memungkinkan mengakses private dan protected property milik class lain (umumnya milik parent class)
+    public function setJudul($judul) // untuk inisiasi/mendefinisikan nilai poperty $judul
+    {
+        // validasi judul harus string
+        // if (!is_string($judul)) {
+        //     throw new Exception("Judul harus dalam string");
+        // }
+
+        $this->judul = $judul; // mengisi property $judul dari parent class Product dengan $judul dari pengguna
+    }
+
+    public function getJudul() // untuk melihat/mendapatkan value property $judul
+    {
+        return $this->judul; // mengembalikan value property $judul milik parent class Product
+    }
+
+    public function setPenulis($penulis)
+    {
+        $this->penulis = $penulis;
+    }
+
+    public function getPenulis()
+    {
+        return $this->penulis;
+    }
+
+    public function setPenerbit($penerbit)
+    {
+        $this->penerbit = $penerbit;
+    }
+
+    public function getPenerbit()
+    {
+        return $this->penerbit;
+    }
+
+    public function setHarga($harga)
+    {
+        $this->harga = $harga;
+    }
+
     // untuk mendapatkan dan menampilkan harga dari private property parent class Product
     public function getHarga()
     {
         return $this->harga - ($this->harga * $this->diskon / 100);
+    }
+
+    public function setDiskon($diskon)
+    {
+        $this->diskon = $diskon;
+    }
+
+    public function getDiskon()
+    {
+        return $this->diskon;
     }
 
     public function getLabel()
@@ -77,12 +125,6 @@ class Game extends Product // bikin child class Game dari parent class Product
     {
         parent::__construct($judul, $penulis, $penerbit, $harga); // panggil construct punya parent class Product tanpa parameter default
         $this->waktuMain = $waktuMain; // mengisi property class dengan value dari parameter __construct
-    }
-
-    // mengisi property class
-    public function setDiskon($diskon)
-    {
-        $this->diskon = $diskon;
     }
 
     public function getInfoProduct()
@@ -134,3 +176,8 @@ print_r("<br>");
 // set diskon
 $productDua->setDiskon(50);
 echo $productDua->getHarga();
+print_r("<hr>");
+print_r("<br>");
+
+echo $productDua->setPenerbit("hahay"); // set value property $penerbit milik parent class Product
+echo $productDua->getPenerbit(); // mendapatkan/menampilkan value property $penerbit milik parent class Product
