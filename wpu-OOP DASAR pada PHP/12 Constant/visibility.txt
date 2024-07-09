@@ -1,0 +1,10 @@
+visibility, konsep yang digunakan untuk mengatur akses dari property dan method pada sebuah object
+
+public, bisa digunakan di mana saj, bahkan di luar kelas
+protected, hanya bisa digunakan di dalam kelas dan turunannya saja
+private, hanya bisa digunakan di dalam sebuah kelas tertentu saja
+
+kenapa?
+hanya memperlihatkan aspek dari class yang dibutuhkan client
+menentukan kebutuhan yang jelas untuk object
+memberikan kendali pada kode untuk menghindari bug
