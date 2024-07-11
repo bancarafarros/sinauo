@@ -1,0 +1,15 @@
+> sebuah class yang tidak dapat diintansiasi
+> mendefinisikan interface untuk class lain yang menjadi turunannya
+> berperan sebagai kerangka dasar untuk class turunannya
+> biasanya memiliki minimal 1 method abstract
+> digunakan dalam inheritance untuk memaksakan implementasi method abstract yang sama untuk semua class turunannya
+> semua class turunannya harus mengimplementasikan method abstract yang ada di class abstractnya
+> class abstract boleh memiliki property/method reguler
+> class abstract boleh memiliki property/method static
+
+kenapa class abstract?
+> merepresentasikan ide atau konsep dasar
+> composition over inheritance, mementingkan komposisi dibanding pewarisan di child class
+> salah satu cara menerapkan polymorphism
+> sentralisasi logic
+> mempermudah kerja tim
