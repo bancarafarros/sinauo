@@ -1,6 +1,5 @@
 <?php
-// membuat class Product
-class Product
+abstract class Product // membuat class abstract Product
 {
     // property
     private
@@ -85,11 +84,12 @@ class Product
         return "$this->penulis, $this->penerbit";
     }
 
-    // getInfoLengkap untuk menmapilkan informasi detail dari produk dengan menerapkan inheritance
-    public function getInfoProduct()
+    abstract public function getInfoProduct(); // membuat abstract method
+
+    public function getInfo()
     {
         // {} untuk sebagai delimiter karena ditulis dalam bentuk string ""
-        $str = "{$this->judul} | {$this->getLabel()} (Rp {$this->harga})"; // mengambil value dari property class yang berasal dari contructor
+        $str = "{$this->judul} | {$this->getLabel()} (Rp {$this->harga})";
 
         return $str; // mengambalikan $str supaya bisa ditampilkan di layar
     }
@@ -108,9 +108,7 @@ class Comic extends Product // bikin child class Comic dari parent class Product
 
     public function getInfoProduct()
     {
-        // {} sebagai dilimiter karena ditulis dalam bentuk string
-        // parent::getInfoProduct() dari parent class Product untuk overriding getInfoProduct() child class Comic
-        $str = "Komik: " . parent::getInfoProduct() . " - {$this->jumlahHalaman} halaman"; // mengambil value dari property class yang berasal dari contructor
+        $str = "Komik: " . $this->getInfo() . " - {$this->jumlahHalaman} halaman"; // mengambil value dari property class yang berasal dari contructor
 
         return $str; // mengembalikan $str supaya bisa ditampilkan di layar
     }
@@ -129,9 +127,7 @@ class Game extends Product // bikin child class Game dari parent class Product
 
     public function getInfoProduct()
     {
-        // {} sebagai delimiter karena ditulis dalam bentuk string
-        // parent::getInfoProduct() dari parent class Product untuk overriding getInfoProduct() child class Game
-        $str = "Game: " . parent::getInfoProduct() . " - {$this->waktuMain} jam"; // mengambil value dari property class yang berasal dari constructor
+        $str = "Game: " . $this->getInfo() . " - {$this->waktuMain} jam"; // mengambil value dari property class yang berasal dari constructor
 
         return $str; // mengembalikan $str supaya bisa ditampilkan di layar
     }
@@ -161,7 +157,6 @@ class CetakInfoProduct
 // membuat object product dari class Product dan mengisi parameter untuk __construct
 $productSatu = new Comic("Naruto", "Masashi Kishimoto", "Shonen Jump", 30000, 100);
 $productDua = new Game("Uncharted", "Neil Druckmann", "Sony Computer", 250000, 50);
-$productTiga = new Product("Dragon Ball"); // hanya mengisi satu parameter __construct karena sisanya sudah ada nilai default
 
 $cetakProduct = new CetakInfoProduct;
 $cetakProduct->addProduct($productSatu);
