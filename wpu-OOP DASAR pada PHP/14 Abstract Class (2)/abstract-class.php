@@ -137,15 +137,22 @@ class Game extends Product // bikin child class Game dari parent class Product
     }
 }
 
-class CetakInfoProduct // class yang akan menerima inputan object
+class CetakInfoProduct
 {
-    // function dengan parameter class Product dan object $product
-    public function cetak(Product $product) // parameternya hanya bisa diisi oleh object yang berasal dari class tersebut
-    {
-        // $str = "Naruto | Masashi Kishimoto | Shonen Jump (Rp 30000)"; // menampilkan secara manual
+    public $daftarProduct = [];
 
-        // ditampilkan dengan menggunakan object yang berasal dari parameter (class)
-        $str = "{$product->judul} | {$product->getLabel()}  (Rp {$product->harga})";
+    public function addProduct(Product $product)
+    {
+        $this->daftarProduct[] = $product;
+    }
+
+    public function cetak()
+    {
+        $str = "DAFTAR PRODUK: <br>";
+
+        foreach ($this->daftarProduct as $product) {
+            $str .= "- {$product->getInfoProduct()} <br>";
+        }
 
         return $str; // mengembalikan isi $str supaya bisa ditampilkan ke layar
     }
@@ -156,28 +163,7 @@ $productSatu = new Comic("Naruto", "Masashi Kishimoto", "Shonen Jump", 30000, 10
 $productDua = new Game("Uncharted", "Neil Druckmann", "Sony Computer", 250000, 50);
 $productTiga = new Product("Dragon Ball"); // hanya mengisi satu parameter __construct karena sisanya sudah ada nilai default
 
-// echo "Komik: " . $productSatu->getLabel();
-// print_r("<br><br>");
-// echo "Game: " . $productDua->getLabel();
-// print_r("<br><br>");
-// echo "Game: " . $productTiga->getLabel();
-// print_r("<br><br>");
-
-// $infoProductSatu = new CetakInfoProduct(); // instansiasi object $infoProductSatu dari class CetakInfoProduct
-// echo $infoProductSatu->cetak($productSatu); // menampilkan detail dari $productSatu via object $infoProductSatu dan class CetakInfoProduct
-
-// menjalankan getInfoLengkap() yang menerapkan inheritance
-echo $productSatu->getInfoProduct();
-print_r("<br><br>");
-echo $productDua->getInfoProduct();
-print_r("<hr>");
-print_r("<br>");
-
-// set diskon
-$productDua->setDiskon(50);
-echo $productDua->getHarga();
-print_r("<hr>");
-print_r("<br>");
-
-echo $productDua->setPenerbit("hahay"); // set value property $penerbit milik parent class Product
-echo $productDua->getPenerbit(); // mendapatkan/menampilkan value property $penerbit milik parent class Product
+$cetakProduct = new CetakInfoProduct;
+$cetakProduct->addProduct($productSatu);
+$cetakProduct->addProduct($productDua);
+echo $cetakProduct->cetak();
