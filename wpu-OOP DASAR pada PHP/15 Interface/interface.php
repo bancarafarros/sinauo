@@ -1,11 +1,26 @@
 <?php
+// class abstract, sama sekali tidak memiliki implementasi
+
+// class interface, template untuk class turunannya
+// > tidak boleh memiliki property, hanya deklarasi method saja
+// > semua method harus dideklarasikan dengan visibility public
+// > boleh mendeklarasikan __construct
+// > satu class turunannya boleh mengimplementasikan banyak interface
+// > dengan menggunakan type hinting dapat melakukan dependency injection
+// > pada akhirnya akan mencapai polymorphism
+
+// interface method
+interface InfoProduct
+{
+    public function getInfoProduct();
+}
+
 // class abstract tidak bisa diinstansiasi
 // hanya bisa diinstansiasi di class turunannya dengan inheritance terlebih dahulu
 abstract class Product // membuat class abstract Product
 {
     // property
-    private
-        $judul,
+    protected $judul,
         $penulis,
         $penerbit,
         $harga, // hanya bisa diakses oleh parent class saja
@@ -86,18 +101,11 @@ abstract class Product // membuat class abstract Product
         return "$this->penulis, $this->penerbit";
     }
 
-    abstract public function getInfoProduct(); // membuat abstract method
-
-    public function getInfo()
-    {
-        // {} untuk sebagai delimiter karena ditulis dalam bentuk string ""
-        $str = "{$this->judul} | {$this->getLabel()} (Rp {$this->harga})";
-
-        return $str; // mengambalikan $str supaya bisa ditampilkan di layar
-    }
+    abstract public function getInfo();
 }
 
-class Comic extends Product // bikin child class Comic dari parent class Product
+// implentasi interface InfoProduct
+class Comic extends Product implements InfoProduct // bikin child class Comic dari parent class Product
 {
     public $jumlahHalaman; // property khusus milik child class Comic
 
@@ -108,15 +116,23 @@ class Comic extends Product // bikin child class Comic dari parent class Product
         $this->jumlahHalaman = $jumlahHalaman; // mengisi property class dengan value dari parameter __construct
     }
 
-    public function getInfoProduct()
+    public function getInfoProduct() // implementasi interface InfoProduct
     {
         $str = "Komik: " . $this->getInfo() . " - {$this->jumlahHalaman} halaman"; // mengambil value dari property class yang berasal dari contructor
 
         return $str; // mengembalikan $str supaya bisa ditampilkan di layar
     }
+
+    public function getInfo() // implementasi method abstract
+    {
+        // {} untuk sebagai delimiter karena ditulis dalam bentuk string ""
+        $str = "{$this->judul} | {$this->getLabel()} (Rp {$this->harga})";
+
+        return $str; // mengambalikan $str supaya bisa ditampilkan di layar
+    }
 }
 
-class Game extends Product // bikin child class Game dari parent class Product
+class Game extends Product implements InfoProduct // bikin child class Game dari parent class Product
 {
     public $waktuMain; // property khusus milik child class Comic
 
@@ -127,11 +143,19 @@ class Game extends Product // bikin child class Game dari parent class Product
         $this->waktuMain = $waktuMain; // mengisi property class dengan value dari parameter __construct
     }
 
-    public function getInfoProduct()
+    public function getInfoProduct() // implentasi interface InfoProduct
     {
         $str = "Game: " . $this->getInfo() . " - {$this->waktuMain} jam"; // mengambil value dari property class yang berasal dari constructor
 
         return $str; // mengembalikan $str supaya bisa ditampilkan di layar
+    }
+
+    public function getInfo() // implentasi method abstract
+    {
+        // {} sebagai delimiter karena ditulis dalam bentuk string ""
+        $str = "{$this->judul} | {$this->getLabel()} (Rp {$this->harga})";
+
+        return $str; // mengambalikan $str supaya bisa ditampilkan di layar
     }
 }
 
