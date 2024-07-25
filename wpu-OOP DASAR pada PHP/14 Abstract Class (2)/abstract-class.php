@@ -1,4 +1,6 @@
 <?php
+// class abstract tidak bisa diinstansiasi
+// hanya bisa diinstansiasi di class turunannya dengan inheritance terlebih dahulu
 abstract class Product // membuat class abstract Product
 {
     // property
