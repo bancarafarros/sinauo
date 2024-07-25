@@ -1,45 +1,52 @@
-show databases; -- menampilkan seluruh database yang tersedia
-use classicmodels; -- menggunakan database classicmodels
-show tables; -- menampilkan seluruh table yang tersedia dalam database
+show databases;
+use classicmodels;
+show tables;
+describe productlines;
+select * from productlines;
+describe products;
+select * from products;
 
--- mulai dari bagian from baru ke bagian select
-select firstName, lastName -- memilih kolom firstName dan lastName
-from employees; -- dari table employees
+-- foreign key, sebuah kolom yang berasosiasi dengan primary key dari table lain
+-- productlines -> products = one to many, pemilik primary key dan pemilik foreign key
 
--- concat, menggabungkan kolom firstName dengan lastName menjadi satu 
-select concat(firstName, ' ', lastName) -- ' ' sebagai delimiter atau pemisah
-from employees;
+select p1.productcode, p1.productName, p2.textDescription -- kolom yang ingin ditampilkan
+from products p1                                          -- table yang ingin dijoinkan
+inner join productlines p2                                -- table yang ingin dijoinkan
+on p1.productLine=p2.productLine;                         -- nama kolom yang terdapat di kedua table
 
--- membuat sebuah kolom dengan isi firstName - lastName - email
-select concat(firstName, '-', lastName, '-', email) -- memilih dan menggabungkan kolom firstName, lastName, dan email dengan - sebagai pemisah
-from employees; -- dari table employees
+select p1.productcode, p1.productName, p2.textDescription -- kolom yang ingin ditampilkan
+from products p1                                          -- table yang ingin dijoinkan
+inner join productlines p2s                               -- table yang ingin dijoinkan
+using (productline);                                      -- nama kolom yag terdapat di kedua table
 
--- membuat sebuah kolom dengan isi firstName, lastName, dan email dengan menggunakan concat_ws
-select concat_ws('-', firstName, lastName, email) -- memilih dan menggabungkan kolom firstName, lastName, dan email dengan - sebagai pemisah
-from employees; -- dari table employees
+select p1.productcode, p1.productName, p2.textDescription
+from products p1 inner join productlines p2
+using (productline)
+where p1.buyPrice > 100;
 
--- membandingkan sebelum dan sesudah digabung
-select firstName, lastName, concat_ws(' ', firstName, lastName) -- memilih kolom firstName dan lastName (dipisah) serta memilih dan menggabungkan kolom firstName dan lastName dengan - sebagai pemisah
-from employees; -- dari table employees
+select o.orderNumber, o.orderDate, p.productName, od.quantityOrdered, od.priceEach -- kolom yang ingin ditampilkan
+from orders o                                                                      -- table pertama yang digunakan dalam join
+inner join orderdetails od                                                         -- join table orders dengan table orderdetails
+using (orderNumber)                                                                -- berdasarkan kolom orderNumber (ada di kedua table)
+inner join products p                                                              -- join table orderdetails dengan table products
+using (productCode)                                                                -- berdasarkan kolom productCode (ada di kedua table)
+order by o.orderNumber;                                                            -- mengurutkan hasil berdasarkan kolom orderNumber table orders
 
--- as untuk membuat nama baru bagi sebuah kolom
-select firstName, lastName, concat_ws(' ', firstName, lastName) as fullName -- as fullname ditambahkan untuk memberi nama kolom baru hasil concat_ws
-from employees;
+select o.orderNumber, o.orderDate, p.productName, od.quantityOrdered, od.priceEach -- kolom yang ingin ditampilkan
+from orders o                                                                      -- table pertama yang digunakan dalam join
+inner join orderdetails od                                                         -- join table orders dengan table orderdetails
+using (orderNumber)                                                                -- berdasarkan kolom orderNumber (ada di kedua table)
+inner join products p                                                              -- join table orderdetails dengan table products
+using (productCode)                                                                -- berdasarlan kolom productCode (ada di kedua table)
+where o.orderNumber = 10200                                                        -- yang memiliki nilai 10200 di kolom ordernumber
+order by o.orderNumber;                                                            -- diurutkan berdasarkan nilai kolom orderNumber
 
--- langsung menulis nama alias atau nama baru bagi sebuah kolom tanpa keyword as
-select firstName, lastName, concat_ws(' ', firstName, lastName) fullname -- pemberian alias juga bisa dilakukan tanpa keyword as
-from employees;
-
--- mengurutkan data berdasarkan kolom baru
-select firstName, lastName, concat_ws(' ', firstName, lastName) fullname
-from employees
-order by fullname;
-
--- selain kolom, table juga bisa diberi alias
-select e.firstName, e.lastName
-from employees e;
-
--- mengurutkan data dengan menggunakan alias
-select e.firstName, e.lastName
-from employees e
-order by e.lastName;
+select o.orderNumber, o.orderDate, p.productName, od.quantityOrdered, od.priceEach, c.customerNumber, c.customerName -- kolom yang ingin ditampilkan
+from orders o                                                                                                        -- table pertama yang digunakan dalam join
+inner join orderdetails od                                                                                           -- join table orders dengan table orderdetails
+using (orderNumber)                                                                                                  -- berdasarkan kolom orderNumber (ada di kedua table)
+inner join products p                                                                                                -- join table orderdetails dengan table products
+using (productCode)                                                                                                  -- berdasarkan table productCode (ada di kedua table)
+inner join customers c                                                                                               -- join table products dengan table customers
+using (customerNumber)                                                                                               -- berdasarkan kolom customerNumber (ada di kedua table)
+order by o.orderNumber;                                                                                              -- diurutkan berdasarkan kolom orderNumber di table orders
