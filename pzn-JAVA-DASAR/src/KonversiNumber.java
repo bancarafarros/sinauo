@@ -10,10 +10,9 @@ public class KonversiNumber {
         int iniInt = iniShort;
         int iniIntDua = iniByte; // bisa langsung skip dari byte ke int
 
-        // nwrrowing casting
+        // narrowing casting
         // byte iniByteDua = iniInt; // gk bisa, harus konversi manual
         int iniIntNarrow = 1000;
-        byte iniByteNarrow = (byte) iniIntNarrow; // hati-hati ketika narrow casting atau konversi naik, bisa terkena
-                                                  // number overflow
+        byte iniByteNarrow = (byte) iniIntNarrow; // hati-hati ketika narrow casting atau konversi naik, bisa terkena number overflow
     }
 }
