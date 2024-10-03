@@ -31,11 +31,11 @@ public class SwitchStatement {
         // muncul di java v14
         // lebih mempermudah karena tidak menggunakan "break"
         switch (nilai) {
-            case 'A' -> System.out.println("Akreditasi A");
+            case 'A' -> System.out.println("Akreditasi A"); // kondisi yang haris terpenuhi dan perintah yang akan dieksekusi
             case 'B' -> System.out.println("Akreditasi B");
             case 'C' -> System.out.println("Akreditasi C");
-            case 'D', 'E' -> System.out.println("Tidak lulus akreditasi");
-            default -> {System.out.println("Maaf, data tidak ditemukan")};
+            case 'D', 'E' -> System.out.println("Tidak lulus akreditasi"); // kondisinya bisa digabung
+            default -> System.out.println("Maaf, data tidak ditemukan"); // pengganti else
         }
         System.out.println("==============================================================================");
 
@@ -44,12 +44,12 @@ public class SwitchStatement {
         // memudahkan ketika kita membuat data berdasarkan kondisi switch statement
 
         // yield + lambda
-        var ucapan = switch (nilai) {
-            case 'A': yield "Akreditasi A";
-            case 'B': yield "Akreditasi B";
+        var ucapan = switch (nilai) { // switch statement disimpan dalam sebuah variabel karena menggunakan yield
+            case 'A': yield "Akreditasi A"; // kondisi yang harus terpenuhi sekaligus peintah yang akan diekseskusi
+            case 'B': yield "Akreditasi B"; // yield untuk menyimpan value yang akan ditampilkan di akhir nanti
             case 'C': yield "Akreditasi C";
-            case 'D', 'E': yield "Tidak lulus akreditasi";
-            default: yield "Maaf, data tidak ditemukan";
+            case 'D', 'E': yield "Tidak lulus akreditasi"; // kondisi bisa digabung
+            default: yield "Maaf, data tidak ditemukan"; // pengganti else
         };
         System.out.println(ucapan);
     }
