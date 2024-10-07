@@ -13,6 +13,11 @@ public class DoWhileLoop {
             counter++; // post statement
         } while (counter <= 10); // kondisi perulangan
 
+        // 12, perintah diekseskusi di awal
+        // 13, nilai counter ditambah
+        // 14, cek kondisi
+        // 12, perintah diekseskusi di awal
+
         // contoh implementasi do while, menampilkan menu program sebanyak satu kali
         // jika user pilih next makan akan ditampilkan yg lain
         // jika tidak maka langsung ditutup
